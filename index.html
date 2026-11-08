@@ -1,66 +1,204 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CINEMA_CRC</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#090b10;color:white;font-family:Arial,sans-serif}
-header{padding:25px 6%;background:#11151e;border-bottom:1px solid #292e3b}
-.logo{font-size:27px;font-weight:bold;color:#e8b84a}
-nav{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px}
-nav a{color:#ddd;text-decoration:none}
-.hero{padding:75px 6%;background:linear-gradient(90deg,#11151e,#25202a)}
-.hero h1{font-size:42px;margin:0 0 15px}
-.hero p{color:#aaa}
-section{padding:35px 6%}
-h2{border-left:4px solid #e8b84a;padding-left:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px}
-.card{background:#171c27;border-radius:10px;overflow:hidden}
-.poster{height:190px;background:#272d3a;display:grid;place-items:center;color:#e8b84a}
-.card p{padding:0 12px}
-footer{text-align:center;padding:30px;color:#888;background:#11151e}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #090d18;
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #111827;
+  border-bottom: 1px solid #26344c;
+  padding: 22px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.logo {
+  color: #e8b84a;
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  color: #d5d9e2;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #e8b84a;
+}
+
+.hero {
+  margin: 35px 6%;
+  padding: 75px 25px;
+  text-align: center;
+  border-radius: 15px;
+  background: linear-gradient(130deg, #111d35, #25202a);
+  border: 1px solid #293954;
+}
+
+.hero h1 {
+  font-size: 38px;
+  color: #e8b84a;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #c4cad6;
+  font-size: 17px;
+}
+
+main {
+  padding: 10px 6% 50px;
+}
+
+section {
+  margin: 35px 0;
+}
+
+section h2 {
+  color: #e8b84a;
+  border-left: 4px solid #e8b84a;
+  padding-left: 13px;
+  margin-bottom: 22px;
+  font-size: 23px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #151e30;
+  border: 1px solid #26344c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #e8b84a;
+}
+
+.poster {
+  height: 190px;
+  background: linear-gradient(145deg, #1d3557, #101522);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8b84a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card p {
+  padding: 13px;
+  text-align: center;
+  color: #e0e4ec;
+}
+
+footer {
+  background: #111827;
+  border-top: 1px solid #26344c;
+  text-align: center;
+  padding: 25px;
+  color: #9ba5b8;
+}
+
+footer span {
+  color: #e8b84a;
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">CINEMA_CRC</div>
-<nav>
-<a href="#">Home</a>
-<a href="#series">Series</a>
-<a href="#movies">Movies</a>
-<a href="#anime">Anime</a>
-<a href="#subtitles">Subtitles</a>
-</nav>
+  <div class="logo">CINEMA_CRC</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#series">Series</a>
+    <a href="#movies">Movies</a>
+    <a href="#anime">Anime</a>
+    <a href="#subtitles">Subtitles</a>
+  </nav>
 </header>
+
 <div class="hero">
-<h1>Welcome to CINEMA_CRC</h1>
-<p>Your world of cinema, series and stories.</p>
+  <h1>Welcome to CINEMA_CRC</h1>
+  <p>Your world of cinema, series and stories.</p>
 </div>
+
+<main>
+
 <section id="series">
-<h2>Latest Series</h2>
-<div class="grid">
-<div class="card"><div class="poster">SERIES 01</div><p>Coming Soon</p></div>
-<div class="card"><div class="poster">SERIES 02</div><p>Coming Soon</p></div>
-</div>
+  <h2>Latest Series</h2>
+  <div class="grid">
+    <div class="card"><div class="poster">SERIES</div><p>Series Title</p></div>
+    <div class="card"><div class="poster">SERIES</div><p>Series Title</p></div>
+    <div class="card"><div class="poster">SERIES</div><p>Series Title</p></div>
+  </div>
 </section>
+
 <section id="movies">
-<h2>Movies</h2>
-<div class="grid">
-<div class="card"><div class="poster">MOVIE 01</div><p>Coming Soon</p></div>
-</div>
+  <h2>Movies</h2>
+  <div class="grid">
+    <div class="card"><div class="poster">MOVIE</div><p>Movie Title</p></div>
+    <div class="card"><div class="poster">MOVIE</div><p>Movie Title</p></div>
+    <div class="card"><div class="poster">MOVIE</div><p>Movie Title</p></div>
+  </div>
 </section>
+
 <section id="anime">
-<h2>Anime</h2>
-<div class="grid">
-<div class="card"><div class="poster">ANIME 01</div><p>Coming Soon</p></div>
-</div>
+  <h2>Anime</h2>
+  <div class="grid">
+    <div class="card"><div class="poster">ANIME</div><p>Anime Title</p></div>
+    <div class="card"><div class="poster">ANIME</div><p>Anime Title</p></div>
+    <div class="card"><div class="poster">ANIME</div><p>Anime Title</p></div>
+  </div>
 </section>
+
 <section id="subtitles">
-<h2>Kurdish Subtitles</h2>
-<p>Discover Kurdish subtitle projects.</p>
+  <h2>Kurdish Subtitles</h2>
+  <div class="grid">
+    <div class="card"><div class="poster">KURDISH</div><p>Subtitle Title</p></div>
+    <div class="card"><div class="poster">KURDISH</div><p>Subtitle Title</p></div>
+  </div>
 </section>
-<footer>© CINEMA_CRC</footer>
+
+</main>
+
+<footer>
+  © 2026 <span>CINEMA_CRC</span> — All Rights Reserved
+</footer>
+
 </body>
 </html>
