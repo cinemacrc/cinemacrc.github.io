@@ -28,7 +28,7 @@ section h2{color:#e8b84a;border-right:4px solid #e8b84a;padding-right:12px;margi
 .card:hover{transform:translateY(-4px);border-color:#e8b84a}
 .poster{height:200px;background:#17243a;display:flex;align-items:center;justify-content:center;color:#e8b84a;overflow:hidden}
 .poster img{width:100%;height:100%;object-fit:cover}
-.card p{padding:12px;text-align:center;color:#e0e4ec;font-size:14px}
+.card-meta{padding:10px 8px 12px;text-align:center;display:grid;gap:5px;color:#e0e4ec;font-size:13px}.card-meta .en{direction:ltr;color:#aeb9ca;font-size:12px}.card-meta .year{color:#e8b84a;font-size:12px}
 .empty{color:#9ba5b8;padding:15px 0}
 footer{background:#111827;border-top:1px solid #26344c;text-align:center;padding:25px;color:#9ba5b8}
 footer span{color:#e8b84a}
@@ -53,22 +53,8 @@ button:hover{opacity:.88}
 .hidden{display:none!important}
 .field-group{border-top:1px solid #34445e;margin-top:12px;padding-top:10px}
 .field-group h3{color:#e8b84a;margin:8px 0}
-
-/* CINEMA_CRC premium redesign */
-:root{--gold:#e8b84a;--muted:#aeb9ca;--panel:#111b2c;--line:#263750;--bg:#080e19}
-body{background:radial-gradient(ellipse at 50% -20%,#1b2c47 0%,#080e19 55%);font-family:Tahoma,Arial,sans-serif;line-height:1.6}
-header{position:sticky;top:0;z-index:8;background:#091321ed;backdrop-filter:blur(14px);border-bottom:1px solid #34445c;padding:12px 5%}
-.logo{letter-spacing:.5px}.logo img{border:1px solid #80652d;box-shadow:0 0 18px #e8b84a22}
-nav a{padding:8px 10px;border-radius:8px}nav a:hover{background:#e8b84a16}
-.search-area{max-width:1250px;margin:auto;padding-top:24px}#search{background:#101c2e;border-color:#344761;border-radius:13px}
-.hero{position:relative;overflow:hidden;max-width:1250px;margin:25px auto;padding:78px 22px;border:1px solid #8b6b2c55;background:linear-gradient(110deg,#0b1729,#17243a 55%,#292119);box-shadow:0 22px 60px #0005}
-.hero:before{content:'✦';position:absolute;right:7%;top:12%;font-size:90px;color:#e8b84a18}.hero h1{font-size:clamp(28px,5vw,48px);text-shadow:0 5px 25px #000}.hero p{font-size:16px}
-main{max-width:1320px;margin:auto;padding:10px 4% 55px}section{margin:48px 0}section h2{font-size:25px;display:flex;align-items:center;gap:10px;border:0;padding:0}section h2:before{content:'';width:5px;height:27px;border-radius:5px;background:var(--gold);box-shadow:0 0 15px #e8b84a77}
-.grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:20px}.card{background:linear-gradient(160deg,#17243a,#0e1726);border:1px solid #293b55;border-radius:14px;box-shadow:0 8px 22px #0003}.card:hover{transform:translateY(-6px);box-shadow:0 15px 30px #0007,0 0 0 1px #e8b84a55}.poster{height:235px;background:linear-gradient(145deg,#172b45,#0a111d)}.poster img{transition:transform .35s}.card:hover .poster img{transform:scale(1.045)}.card p{font-weight:700;padding:13px 9px;min-height:52px}
-.panel{max-width:1150px;margin:25px auto;background:#101a2aee;border-color:#40516b;border-radius:16px;box-shadow:0 20px 55px #0006}.panel input:not([type=checkbox]),.panel textarea,.panel select{background:#080f1b;border-color:#344761;border-radius:10px}.panel label{font-weight:600;color:#d7dfeb}
-#detail{background:#030712ed;backdrop-filter:blur(10px);padding:22px;z-index:20}.detail-box{max-width:1120px;margin:24px auto;background:linear-gradient(145deg,#121f32,#0a1220);border:1px solid #42516a;border-radius:20px;padding:clamp(15px,3vw,32px);box-shadow:0 25px 80px #0009;overflow:hidden}.detail-box .close{float:left;position:sticky;top:0;z-index:3;border-radius:30px;background:#26364d}.detail-hero{display:grid;grid-template-columns:minmax(190px,280px) 1fr;gap:28px;align-items:start;clear:both;padding-top:12px}.detail-poster{width:100%;height:auto;max-height:410px;object-fit:cover;border-radius:14px;border:1px solid #52627a;box-shadow:0 15px 35px #0008}.detail-main h2{font-size:clamp(25px,4vw,38px);margin:0 0 8px;color:#f2c65e}.detail-sub{color:#aebbd0;margin-bottom:16px}.imdb-rating{display:inline-flex;align-items:center;gap:10px;background:#0a1321;border:1px solid #3c4d65;border-radius:12px;padding:9px 14px;margin:5px 0 17px}.imdb-logo{background:#f5c518;color:#111;font-weight:1000;font-size:12px;border-radius:4px;padding:2px 5px}.rating-number{font-size:22px;font-weight:800;color:#fff}.rating-number small{font-size:13px;color:#9eacc0}.detail-description{color:#d5deeb;line-height:1.9;margin:12px 0 20px}.detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}.fact{border-bottom:1px solid #283950;padding:8px 0;color:#d9e1ed;font-size:14px}.fact b{display:block;color:#92a4bc;font-size:12px;font-weight:500}.detail-section{margin-top:28px;border-top:1px solid #2d405a;padding-top:20px}.detail-section h3{color:#f0c35b;margin-bottom:14px;font-size:19px}.actor-list{display:flex;flex-wrap:wrap;gap:9px}.actor-chip{background:#1b2a40;border:1px solid #344964;border-radius:30px;padding:7px 13px;color:#e3e9f1;font-size:13px}.text-link{border:0;background:transparent;color:#f0c35b;padding:5px 8px;text-decoration:underline}.primary-action{display:inline-flex;align-items:center;gap:9px;margin-top:12px;padding:13px 22px;border-radius:11px;background:linear-gradient(135deg,#f3ce70,#c58d28);color:#101722;text-decoration:none;font-weight:800}.season-tabs{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 18px}.season-tab{background:#17263b;border:1px solid #40536e;color:#e2e8f0;border-radius:9px}.season-tab.active{background:#e8b84a;color:#101722;border-color:#e8b84a}.episode-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:13px}.episode-card{background:#101c2d;border:1px solid #30445f;border-radius:12px;padding:14px;cursor:pointer;transition:.2s}.episode-card:hover{border-color:#e8b84a;transform:translateY(-3px)}.episode-number{color:#e8b84a;font-size:12px;font-weight:800}.episode-card h4{color:#f1f4f8;margin:5px 0;font-size:15px}.episode-card p{font-size:12px;color:#9eacc0;margin:2px 0}.episode-player{margin-top:22px;background:#050a12;border:1px solid #34445e;border-radius:14px;padding:14px}.episode-player h3{color:#f0c35b;margin:0 0 12px}.episode-player video,.episode-player iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:9px;background:#000}.admin-inline{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.admin-inline button{font-size:13px}.stats-strip{max-width:1200px;margin:0 auto 15px;padding:0 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat-box{background:#101d30;border:1px solid #30435d;border-radius:12px;padding:14px;text-align:center}.stat-box strong{display:block;color:#f0c35b;font-size:24px}.stat-box span{font-size:12px;color:#aab8ca}footer{margin-top:35px;background:#070e19;border-top:1px solid #34445e;padding:35px 5%}footer .footer-brand{color:#e8b84a;font-weight:900;font-size:22px}footer .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin:14px 0}footer a{color:#aebbd0;text-decoration:none}
-@media(max-width:700px){header{position:relative;justify-content:center}.detail-hero{grid-template-columns:1fr;gap:17px}.detail-poster{max-width:220px;max-height:320px;display:block;margin:auto}.detail-main{text-align:right}.detail-facts{grid-template-columns:1fr 1fr}.episode-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats-strip{grid-template-columns:repeat(2,1fr)}.hero{margin:18px 4%;padding:55px 18px}.grid{grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:13px}.poster{height:190px}#detail{padding:8px}.detail-box{margin:8px auto;border-radius:14px}}
-
+.season-list{display:grid;gap:9px;margin:16px 0}.season-btn{width:100%;text-align:right;background:#202e45;color:#e8b84a;border:1px solid #465875}.episode-list{display:grid;gap:10px;margin:12px 0}.episode-row{background:#151e30;border:1px solid #34445e;border-radius:8px;padding:12px}.episode-row small{display:block;color:#aeb9ca;margin-top:5px}.player-wrap{margin-top:15px;background:#05080e;border-radius:10px;overflow:hidden}.player-wrap video,.player-wrap iframe{width:100%;aspect-ratio:16/9;border:0}.actor-more{background:none;color:#e8b84a;padding:4px 0;text-decoration:underline}.detail-names{direction:rtl;color:#e8b84a;margin:6px 0}.detail-names .en{direction:ltr;display:block;color:#b9c3d2;font-size:14px}
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center}.hero h1{font-size:27px}.poster{height:180px}}
 </style>
 </head>
 <body>
@@ -96,12 +82,6 @@ main{max-width:1320px;margin:auto;padding:10px 4% 55px}section{margin:48px 0}sec
   <h1>بەخێربێیت بۆ CINEMA_CRC</h1>
   <p>جیهانی فیلم و زنجیرە و چیرۆکەکانت.</p>
 </div>
-<div class="stats-strip">
-  <div class="stat-box"><strong id="totalCount">0</strong><span>کۆی بەرهەمەکان</span></div>
-  <div class="stat-box"><strong id="movieCount">0</strong><span>فیلم</span></div>
-  <div class="stat-box"><strong id="seriesCount">0</strong><span>زنجیرە</span></div>
-  <div class="stat-box"><strong id="animeCount">0</strong><span>ئەنیمە</span></div>
-</div>
 
 <div id="adminPanel" class="panel">
   <h2>بەشی بەڕێوەبەرایەتی</h2>
@@ -120,6 +100,9 @@ main{max-width:1320px;margin:auto;padding:10px 4% 55px}section{margin:48px 0}sec
 
     <label>ناونیشان</label>
     <input id="title" type="text" placeholder="ناوی فیلم یان زنجیرە">
+
+    <label>ناوی ئینگلیزی</label>
+    <input id="titleEn" type="text" placeholder="English title">
 
     <label>جۆر</label>
     <select id="category">
@@ -182,8 +165,6 @@ main{max-width:1320px;margin:auto;padding:10px 4% 55px}section{margin:48px 0}sec
       <input id="episodes" type="number" min="1" placeholder="24">
     </div>
 
-    <label>لینکی ڤیدیۆی فیلم (ئارەزوومەندانە)</label>
-    <input id="videoUrl" type="url" placeholder="لینکی MP4 یان embed">
     <label>لینکی تریلەر</label>
     <input id="trailer" type="url" placeholder="https://...">
 
@@ -215,7 +196,7 @@ main{max-width:1320px;margin:auto;padding:10px 4% 55px}section{margin:48px 0}sec
   </div>
 </div>
 
-<footer><div class="footer-brand">CINEMA_CRC</div><div>جیهانی فیلم، زنجیرە و چیرۆکەکان</div><div class="footer-links"><a href="#">سەرەتا</a><a href="#movies">فیلمەکان</a><a href="#series">زنجیرەکان</a><a href="#anime">ئەنیمە</a></div><small>© 2026 CINEMA_CRC — هەموو مافەکان پارێزراون</small></footer>
+<footer>© 2026 <span>CINEMA_CRC</span> — هەموو مافەکان پارێزراون</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
@@ -255,9 +236,24 @@ function makeCard(item) {
     const img = document.createElement("img");
     img.src = item.poster_url; img.alt = item.title; poster.appendChild(img);
   } else poster.textContent = "CINEMA_CRC";
-  const title = document.createElement("p");
-  title.textContent = item.title;
-  card.append(poster, title);
+  const meta = document.createElement("div");
+  meta.className = "card-meta";
+  const kurdish = document.createElement("strong");
+  kurdish.textContent = item.title || "";
+  meta.appendChild(kurdish);
+  if (item.title_en) {
+    const english = document.createElement("span");
+    english.className = "en";
+    english.textContent = item.title_en;
+    meta.appendChild(english);
+  }
+  if (item.release_year) {
+    const year = document.createElement("span");
+    year.className = "year";
+    year.textContent = String(item.release_year);
+    meta.appendChild(year);
+  }
+  card.append(poster, meta);
   card.onclick = () => showDetail(item);
   return card;
 }
@@ -271,94 +267,124 @@ function renderMedia() {
   renderGrid("moviesGrid", mediaList.filter(x => x.category === "movie"));
   renderGrid("animeGrid", mediaList.filter(x => x.category === "anime"));
   renderGrid("subtitlesGrid", mediaList.filter(x => x.category === "subtitles"));
-  document.getElementById("totalCount").textContent = mediaList.length;
-  document.getElementById("movieCount").textContent = mediaList.filter(x=>x.category==="movie").length;
-  document.getElementById("seriesCount").textContent = mediaList.filter(x=>x.category==="series").length;
-  document.getElementById("animeCount").textContent = mediaList.filter(x=>x.category==="anime").length;
 }
-function esc(value) {
-  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
-function actorNames(value) { return String(value || "").split(/[,،\n]/).map(x=>x.trim()).filter(Boolean); }
 async function showDetail(item) {
-  const content = document.getElementById("detailContent");
-  const categoryNames = {movie:"فیلم",series:"زنجیرە",anime:"ئەنیمە",subtitles:"ژێرنووس"};
-  const actors = actorNames(item.actors);
-  const rating = item.rating !== null && item.rating !== undefined && item.rating !== "" ? Number(item.rating).toFixed(1) : null;
-  const poster = item.poster_url ? `<img class="detail-poster" src="${esc(item.poster_url)}" alt="${esc(item.title)}">` : `<div class="detail-poster" style="aspect-ratio:2/3;display:grid;place-items:center;background:#17243a">CINEMA_CRC</div>`;
-  const facts = [
-    ["جۆر",categoryNames[item.category] || item.category], ["ساڵی دەرچوون",item.release_year], ["ژانەر",item.genres],
-    ["کوالێتی",item.quality], ["کۆمپانیای بەرهەمهێنان",item.production_company], ["بەڕێوەبەر / نووسەر",item.writer], ["وەرگێڕ",item.translator]
+  const content = document.getElementById("detailContent"); content.innerHTML = "";
+  if (item.poster_url) {
+    const img = document.createElement("img"); img.src = item.poster_url; img.alt = item.title; content.appendChild(img);
+  }
+  const names = document.createElement("div"); names.className = "detail-names";
+  const kurdish = document.createElement("strong"); kurdish.textContent = item.title || ""; names.appendChild(kurdish);
+  if (item.title_en) { const en = document.createElement("span"); en.className = "en"; en.textContent = item.title_en; names.appendChild(en); }
+  content.appendChild(names);
+
+  const info = [
+    ["ساڵی بڵاوکردنەوە", item.release_year],
+    ["هەڵسەنگاندنی IMDb", item.rating !== null && item.rating !== undefined && item.rating !== "" ? item.rating + "/10" : null],
+    ["ژانەر", item.genres],
+    ["کوالێتی", item.quality],
+    ["کۆمپانیای بەرهەمهێنان", item.production_company],
+    ["نوسەر", item.writer],
+    ["وەرگێڕ", item.translator]
   ];
-  if(item.category==="movie") facts.push(["ماوە",item.duration_minutes ? item.duration_minutes+" خولەک":null],["بودجە",item.budget],["داهات",item.revenue]);
-  if(item.category==="series") facts.push(["ژمارەی وەرزەکان",item.seasons],["کۆی ئەڵقەکان",item.episodes],["ماوەی ئەڵقە",item.duration_minutes ? item.duration_minutes+" خولەک":null]);
-  const factsHtml=facts.filter(x=>x[1]!==null&&x[1]!==undefined&&x[1]!=="").map(x=>`<div class="fact"><b>${esc(x[0])}</b>${esc(x[1])}</div>`).join("");
-  content.innerHTML = `<div class="detail-hero">${poster}<div class="detail-main"><h2>${esc(item.title)}</h2><div class="detail-sub">${esc(categoryNames[item.category]||item.category)}${item.release_year?" • "+esc(item.release_year):""}${item.genres?" • "+esc(item.genres):""}</div>${rating?`<div class="imdb-rating"><span class="imdb-logo">IMDb</span><span class="rating-number">${rating}<small> / 10</small></span></div>`:""}<p class="detail-description">${esc(item.description||"کورتەی ئەم بەرهەمە هێشتا زیاد نەکراوە.")}</p><div class="detail-facts">${factsHtml}</div>${item.category==="movie"&&item.video_url?`<button class="primary-action" onclick="playVideo('${esc(item.video_url)}','${esc(item.title)}')">▶ بینینی فیلم</button>`:""}</div></div>
-  ${actors.length?`<div class="detail-section"><h3>ئەکتەرەکان</h3><div class="actor-list" id="actorList">${actors.slice(0,3).map(a=>`<span class="actor-chip">${esc(a)}</span>`).join("")}</div>${actors.length>3?`<button class="text-link" id="showActors" onclick="toggleActors()">بینینی هەموو ${actors.length} ئەکتەر</button>`:""}</div>`:""}
-  ${item.category==="series"?`<div class="detail-section"><h3>وەرز و ئەڵقەکان</h3><div id="seasonArea"><p class="empty">بارکردنی وەرزەکان...</p></div></div>`:""}
-  ${item.trailer_url?`<div class="detail-section"><h3>تریلەر</h3><button class="admin-btn" onclick="playVideo('${esc(item.trailer_url)}','تریلەری ${esc(item.title)}')">▶ بینینی تریلەر</button><div id="trailerPlayer"></div></div>`:""}
-  ${isAdmin?`<div class="admin-inline"><button onclick="editMediaById('${esc(item.id)}')">دەستکاریکردن</button><button class="admin-btn" onclick="addSeason('${esc(item.id)}')">+ زیادکردنی وەرز</button><button class="admin-btn" onclick="deleteMediaById('${esc(item.id)}')">سڕینەوە</button></div>`:""}`;
-  window.currentDetailItem=item; window.currentActors=actors; window.currentSeasonId=null;
-  document.getElementById("detail").style.display="block";
-  if(item.category==="series") await loadSeasons(item.id);
-}
-function toggleActors(){
-  const list=document.getElementById("actorList"),btn=document.getElementById("showActors");
-  if(!list||!btn)return;
-  const expanded=btn.dataset.expanded==="1";
-  list.innerHTML=(expanded?window.currentActors.slice(0,3):window.currentActors).map(a=>`<span class="actor-chip">${esc(a)}</span>`).join("");
-  btn.dataset.expanded=expanded?"0":"1";btn.textContent=expanded?`بینینی هەموو ${window.currentActors.length} ئەکتەر`:"کەمتر پیشاندان";
-}
-function editMediaById(id){const item=mediaList.find(x=>String(x.id)===String(id));if(item){closeDetail();editMedia(item);}}
-function deleteMediaById(id){const item=mediaList.find(x=>String(x.id)===String(id));if(item)deleteMedia(item);}
-async function loadSeasons(mediaId){
-  const area=document.getElementById("seasonArea");if(!area)return;
-  const {data,error}=await db.from("media_seasons").select("*").eq("media_id",mediaId).order("season_number");
-  if(error){area.innerHTML='<p class="empty">وەرزەکان نەتوانرا باربکرێن. پێویستە گۆڕانکاریی داتابەیس جێبەجێ بکرێت.</p>';console.error(error);return;}
-  if(!data.length){area.innerHTML='<p class="empty">هێشتا هیچ وەرزێک زیاد نەکراوە.</p>';return;}
-  area.innerHTML=`<div class="season-tabs">${data.map((x,i)=>`<button class="season-tab ${i===0?'active':''}" onclick="selectSeason('${x.id}',this)">وەرزی ${x.season_number}</button>`).join("")}</div><div id="episodesArea"></div>`;
-  await loadEpisodes(data[0].id);
-}
-async function selectSeason(id,button){document.querySelectorAll('.season-tab').forEach(x=>x.classList.remove('active'));button.classList.add('active');window.currentSeasonId=id;await loadEpisodes(id);}
-async function loadEpisodes(seasonId){
-  const area=document.getElementById("episodesArea");if(!area)return;
-  window.currentSeasonId=seasonId;
-  const {data,error}=await db.from("media_episodes").select("*").eq("season_id",seasonId).order("episode_number");
-  if(error){area.innerHTML='<p class="empty">ئەڵقەکان نەتوانرا باربکرێن.</p>';return;}
-  area.innerHTML=data.length?`<div class="episode-grid">${data.map(ep=>`<div class="episode-card" onclick="playEpisode('${esc(ep.id)}')"><div class="episode-number">ئەڵقەی ${ep.episode_number}</div><h4>${esc(ep.title)}</h4><p>${ep.release_date?"بڵاوکراوەتەوە: "+esc(ep.release_date):""}</p>${ep.duration_minutes?`<p>${ep.duration_minutes} خولەک</p>`:""}</div>`).join("")}</div>`:'<p class="empty">هیچ ئەڵقەیەک بۆ ئەم وەرزە زیاد نەکراوە.</p>';
-  if(isAdmin){area.insertAdjacentHTML('beforeend',`<div class="admin-inline"><button class="admin-btn" onclick="addEpisode('${seasonId}')">+ زیادکردنی ئەڵقە</button></div>`);}
-}
-async function addSeason(mediaId){
-  if(!isAdmin)return;
-  const number=prompt("ژمارەی وەرز بنووسە:");if(!number)return;
-  const title=prompt("ناوی وەرز (ئارەزوومەندانە):")||`وەرزی ${number}`;
-  const {error}=await db.from("media_seasons").insert({media_id:mediaId,season_number:Number(number),title});
-  if(error){alert("زیادکردنی وەرز سەرکەوتوو نەبوو: "+error.message);return;}await loadSeasons(mediaId);
-}
-async function addEpisode(seasonId){
-  if(!isAdmin)return;
-  const no=prompt("ژمارەی ئەڵقە:");if(!no)return;
-  const title=prompt("ناونیشانی ئەڵقە:");if(!title)return;
-  const date=prompt("بەرواری بڵاوکردنەوە (YYYY-MM-DD)، ئەگەر نییە بەتاڵی بهێڵە:")||null;
-  const duration=prompt("ماوە بە خولەک (ئارەزوومەندانە):")||null;
-  const video=prompt("لینکی ڤیدیۆ (MP4 یان YouTube embed/link):")||null;
-  const {error}=await db.from("media_episodes").insert({season_id:seasonId,episode_number:Number(no),title,release_date:date,duration_minutes:duration?Number(duration):null,video_url:video});
-  if(error){alert("زیادکردنی ئەڵقە سەرکەوتوو نەبوو: "+error.message);return;}await loadEpisodes(seasonId);
-}
-async function playEpisode(id){
-  const {data,error}=await db.from("media_episodes").select("*").eq("id",id).single();
-  if(error||!data.video_url){alert("لینکی ڤیدیۆی ئەم ئەڵقەیە هێشتا زیاد نەکراوە.");return;}
-  playVideo(data.video_url,data.title);
-}
-function playVideo(url,title){
-  const target=document.getElementById("episodePlayer")||document.getElementById("trailerPlayer");
-  if(!target){const box=document.createElement("div");box.id="episodePlayer";box.className="episode-player";document.getElementById("detailContent").appendChild(box);return playVideo(url,title);}
-  const clean=String(url||"").trim();let embed="";
-  const yt=clean.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
-  if(/\.(mp4|webm|ogg)(\?.*)?$/i.test(clean)){embed=`<video controls autoplay playsinline src="${esc(clean)}"></video>`;}
-  else if(yt){embed=`<iframe src="https://www.youtube-nocookie.com/embed/${yt[1]}?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;}
-  else{embed=`<iframe src="${esc(clean)}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;}
-  target.className="episode-player";target.innerHTML=`<h3>${esc(title||"پەخشکردنی ڤیدیۆ")}</h3>${embed}`;target.scrollIntoView({behavior:"smooth",block:"center"});
+  if (item.description) {
+    const p = document.createElement("p");
+    p.textContent = "کورتە: " + item.description;
+    content.appendChild(p);
+  }
+  if (item.actors) {
+    const actorWrap = document.createElement("div");
+    const actorLabel = document.createElement("p"); actorLabel.textContent = "ئەکتەرەکان:"; actorWrap.appendChild(actorLabel);
+    const actorNames = String(item.actors).split(",").map(x => x.trim()).filter(Boolean);
+    const actorText = document.createElement("p");
+    const renderActors = expanded => {
+      actorText.textContent = (expanded ? actorNames : actorNames.slice(0, 3)).join("، ");
+    };
+    renderActors(false);
+    actorWrap.appendChild(actorText);
+    if (actorNames.length > 3) {
+      const more = document.createElement("button"); more.className = "actor-more"; more.textContent = "بینینی زیاتر";
+      let expanded = false;
+      more.onclick = () => { expanded = !expanded; renderActors(expanded); more.textContent = expanded ? "کەمتر" : "بینینی زیاتر"; };
+      actorWrap.appendChild(more);
+    }
+    content.appendChild(actorWrap);
+  }
+  if (item.category === "movie") {
+    info.push(["ماوە", item.duration_minutes ? item.duration_minutes + " خولەک" : null]);
+    info.push(["بودجە", item.budget], ["داهات", item.revenue]);
+  }
+  if (item.category === "series") {
+    info.push(["ماوەی هەر ئەڵقە", item.duration_minutes ? item.duration_minutes + " خولەک" : null]);
+  }
+  info.forEach(([label, value]) => {
+    if (value !== null && value !== undefined && value !== "") {
+      const p = document.createElement("p"); p.textContent = label + ": " + value; content.appendChild(p);
+    }
+  });
+
+  if (item.category === "series") {
+    const seasonHeading = document.createElement("h3"); seasonHeading.textContent = "وەرزەکان"; content.appendChild(seasonHeading);
+    const seasonWrap = document.createElement("div"); seasonWrap.className = "season-list"; content.appendChild(seasonWrap);
+    const {data: seasons, error} = await db.from("media_seasons").select("*").eq("media_id", item.id).order("season_number");
+    if (error) {
+      const err = document.createElement("p"); err.textContent = "کێشە لە وەرگرتنی وەرزەکان: " + error.message; seasonWrap.appendChild(err);
+    } else if (!seasons || !seasons.length) {
+      const empty = document.createElement("p"); empty.textContent = "هێشتا هیچ وەرزێک زیاد نەکراوە."; seasonWrap.appendChild(empty);
+    } else {
+      seasons.forEach(season => {
+        const btn = document.createElement("button"); btn.className = "season-btn";
+        btn.textContent = season.title || ("وەرزی " + ["یەکەم","دووەم","سێیەم","چوارەم","پێنجەم","شەشەم","حەوتەم","هەشتەم","نۆیەم","دەیەم"][season.season_number-1] || season.season_number);
+        const episodeBox = document.createElement("div"); episodeBox.className = "episode-list hidden";
+        btn.onclick = async () => {
+          episodeBox.classList.toggle("hidden");
+          if (episodeBox.dataset.loaded) return;
+          const {data: eps, error: epError} = await db.from("media_episodes").select("*").eq("season_id", season.id).order("episode_number");
+          episodeBox.innerHTML = "";
+          if (epError) { episodeBox.textContent = "هەڵە: " + epError.message; return; }
+          if (!eps || !eps.length) { episodeBox.textContent = "هێشتا ئەڵقە زیاد نەکراوە."; return; }
+          eps.forEach(ep => {
+            const row = document.createElement("div"); row.className = "episode-row";
+            const title = document.createElement("strong"); title.textContent = "ئەڵقەی " + ep.episode_number + " — " + ep.title; row.appendChild(title);
+            if (ep.release_date) { const date = document.createElement("small"); date.textContent = "بەرواری بڵاوکردنەوە: " + ep.release_date; row.appendChild(date); }
+            if (ep.video_url) {
+              const play = document.createElement("button"); play.style.marginTop = "10px"; play.textContent = "بینینی ئەڵقە";
+              play.onclick = () => {
+                let player = row.querySelector(".player-wrap");
+                if (player) { player.remove(); return; }
+                player = document.createElement("div"); player.className = "player-wrap";
+                const url = ep.video_url.trim();
+                if (/\.(mp4|webm|ogg)(\?.*)?$/i.test(url)) {
+                  const video = document.createElement("video"); video.controls = true; video.src = url; player.appendChild(video);
+                } else {
+                  const frame = document.createElement("iframe"); frame.src = url; frame.allow = "autoplay; fullscreen; picture-in-picture"; frame.allowFullscreen = true; player.appendChild(frame);
+                }
+                row.appendChild(player);
+              };
+              row.appendChild(play);
+            } else {
+              const note = document.createElement("small"); note.textContent = "لینکی بینین هێشتا دانەنراوە."; row.appendChild(note);
+            }
+            episodeBox.appendChild(row);
+          });
+          episodeBox.dataset.loaded = "1";
+        };
+        seasonWrap.append(btn, episodeBox);
+      });
+    }
+  }
+
+  if (item.trailer_url) {
+    const a = document.createElement("a"); a.href = item.trailer_url; a.target = "_blank"; a.rel = "noopener";
+    a.textContent = "بینینی تریلەر"; a.style.color = "#e8b84a"; content.appendChild(a);
+  }
+  if (isAdmin) {
+    const edit = document.createElement("button"); edit.textContent = "دەستکاریکردن"; edit.style.margin = "15px 8px 0 0";
+    edit.onclick = () => { closeDetail(); editMedia(item); };
+    const del = document.createElement("button"); del.textContent = "سڕینەوە"; del.style.background = "#9b3434"; del.style.color = "white";
+    del.onclick = () => deleteMedia(item); content.append(edit, del);
+  }
+  document.getElementById("detail").style.display = "block";
 }
 function closeDetail() { document.getElementById("detail").style.display = "none"; }
 
@@ -366,7 +392,7 @@ document.getElementById("search").addEventListener("input", function() {
   const term = this.value.trim().toLowerCase();
   const results = document.getElementById("searchResults"); results.innerHTML = "";
   if (!term) return;
-  const found = mediaList.filter(item => [item.title,item.actors,item.genres,item.writer].some(v => String(v||"").toLowerCase().includes(term)));
+  const found = mediaList.filter(item => (item.title || "").toLowerCase().includes(term));
   found.forEach(item => results.appendChild(makeCard(item)));
   if (!found.length) results.innerHTML = '<p class="empty">هیچ ئەنجامێک نەدۆزرایەوە.</p>';
 });
@@ -390,7 +416,7 @@ async function checkAdmin() {
     message("ئەم هەژمارە دەسەڵاتی بەڕێوەبەری نییە."); return;
   }
   isAdmin = true; document.getElementById("loginArea").classList.add("hidden");
-  document.getElementById("manageArea").classList.remove("hidden"); renderMedia();
+  document.getElementById("manageArea").classList.remove("hidden"); renderMedia(); refreshSeriesSelects();
 }
 async function login() {
   const email = val("email"), password = document.getElementById("password").value;
@@ -404,7 +430,7 @@ async function logout() {
   await db.auth.signOut(); isAdmin = false; clearForm(); await checkAdmin(); message("چوویتە دەرەوە."); renderMedia();
 }
 function clearForm() {
-  ["editId","title","posterFile","description","year","rating","genres","quality","productionCompany","writer","actors","translator","durationMovie","budget","revenue","durationEpisode","seasons","episodes","trailer","videoUrl"].forEach(id => {
+  ["editId","title","titleEn","posterFile","description","year","rating","genres","quality","productionCompany","writer","actors","translator","durationMovie","budget","revenue","durationEpisode","seasons","episodes","trailer"].forEach(id => {
     const el = document.getElementById(id); if (el) el.value = "";
   });
   document.getElementById("category").value = "movie";
@@ -415,6 +441,7 @@ function editMedia(item) {
   document.getElementById("adminPanel").style.display = "block";
   document.getElementById("editId").value = item.id;
   document.getElementById("title").value = item.title || "";
+  document.getElementById("titleEn").value = item.title_en || "";
   document.getElementById("category").value = item.category || "movie";
   document.getElementById("description").value = item.description || "";
   document.getElementById("year").value = item.release_year || "";
@@ -432,10 +459,63 @@ function editMedia(item) {
   document.getElementById("budget").value = item.budget || "";
   document.getElementById("revenue").value = item.revenue || "";
   document.getElementById("trailer").value = item.trailer_url || "";
-  document.getElementById("videoUrl").value = item.video_url || "";
   document.getElementById("featured").checked = !!item.featured;
   updateCategoryFields();
   document.getElementById("adminPanel").scrollIntoView({behavior:"smooth"});
+}
+async function refreshSeriesSelects() {
+  const series = mediaList.filter(x => x.category === "series");
+  const mediaSelect = document.getElementById("episodeMedia");
+  const current = mediaSelect.value;
+  mediaSelect.innerHTML = '<option value="">زنجیرە هەڵبژێرە</option>';
+  series.forEach(item => {
+    const opt = document.createElement("option"); opt.value = item.id; opt.textContent = item.title;
+    mediaSelect.appendChild(opt);
+  });
+  if (series.some(x => String(x.id) === current)) mediaSelect.value = current;
+  await loadSeasonOptions();
+}
+async function loadSeasonOptions() {
+  const mediaId = document.getElementById("episodeMedia").value;
+  const select = document.getElementById("episodeSeason");
+  select.innerHTML = '<option value="">وەرز هەڵبژێرە</option>';
+  if (!mediaId) return;
+  const {data, error} = await db.from("media_seasons").select("*").eq("media_id", mediaId).order("season_number");
+  if (error) { document.getElementById("episodeStatus").textContent = error.message; return; }
+  (data || []).forEach(s => {
+    const opt = document.createElement("option"); opt.value = s.id;
+    opt.textContent = s.title || ("وەرزی " + s.season_number); select.appendChild(opt);
+  });
+}
+async function addSeason() {
+  if (!isAdmin) return;
+  const mediaId = document.getElementById("episodeMedia").value;
+  const number = Number(document.getElementById("seasonNumber").value);
+  const title = document.getElementById("seasonTitle").value.trim();
+  const status = document.getElementById("episodeStatus");
+  if (!mediaId || !number || number < 1) { status.textContent = "زنجیرە و ژمارەی وەرز هەڵبژێرە."; return; }
+  const {error} = await db.from("media_seasons").insert({media_id:mediaId, season_number:number, title:title || null});
+  if (error) { status.textContent = "زیادکردنی وەرز سەرکەوتوو نەبوو: " + error.message; return; }
+  status.textContent = "وەرز بە سەرکەوتوویی زیادکرا.";
+  document.getElementById("seasonNumber").value = ""; document.getElementById("seasonTitle").value = "";
+  await loadSeasonOptions();
+}
+async function addEpisode() {
+  if (!isAdmin) return;
+  const seasonId = document.getElementById("episodeSeason").value;
+  const number = Number(document.getElementById("episodeNumber").value);
+  const title = document.getElementById("episodeTitle").value.trim();
+  const status = document.getElementById("episodeStatus");
+  if (!seasonId || !number || number < 1 || !title) { status.textContent = "وەرز، ژمارە و ناوی ئەڵقە پێویستن."; return; }
+  const record = {
+    season_id: seasonId, episode_number: number, title,
+    release_date: document.getElementById("episodeDate").value || null,
+    video_url: document.getElementById("episodeVideoUrl").value.trim() || null
+  };
+  const {error} = await db.from("media_episodes").insert(record);
+  if (error) { status.textContent = "زیادکردنی ئەڵقە سەرکەوتوو نەبوو: " + error.message; return; }
+  status.textContent = "ئەڵقە بە سەرکەوتوویی زیادکرا.";
+  ["episodeNumber","episodeTitle","episodeDate","episodeVideoUrl"].forEach(id => document.getElementById(id).value = "");
 }
 async function saveMedia() {
   if (!isAdmin) return message("پێویستە وەک بەڕێوەبەر بچیتە ژوورەوە.");
@@ -457,12 +537,11 @@ async function saveMedia() {
   const duration = category === "movie" ? numberOrNull("durationMovie") :
                    category === "series" ? numberOrNull("durationEpisode") : null;
   const record = {
-    title, category, poster_url: posterUrl,
+    title, title_en: val("titleEn") || null, category, poster_url: posterUrl,
     description: val("description") || null,
     release_year: numberOrNull("year"),
     rating: numberOrNull("rating"),
     trailer_url: val("trailer") || null,
-    video_url: val("videoUrl") || null,
     featured: document.getElementById("featured").checked,
     genres: val("genres") || null,
     duration_minutes: duration,
