@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CINEMA_CRC</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090b10;color:white;font-family:Arial,sans-serif}
+header{padding:25px 6%;background:#11151e;border-bottom:1px solid #292e3b}
+.logo{font-size:27px;font-weight:bold;color:#e8b84a}
+nav{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px}
+nav a{color:#ddd;text-decoration:none}
+.hero{padding:75px 6%;background:linear-gradient(90deg,#11151e,#25202a)}
+.hero h1{font-size:42px;margin:0 0 15px}
+.hero p{color:#aaa}
+section{padding:35px 6%}
+h2{border-left:4px solid #e8b84a;padding-left:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px}
+.card{background:#171c27;border-radius:10px;overflow:hidden}
+.poster{height:190px;background:#272d3a;display:grid;place-items:center;color:#e8b84a}
+.card p{padding:0 12px}
+footer{text-align:center;padding:30px;color:#888;background:#11151e}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">CINEMA_CRC</div>
+<nav>
+<a href="#">Home</a>
+<a href="#series">Series</a>
+<a href="#movies">Movies</a>
+<a href="#anime">Anime</a>
+<a href="#subtitles">Subtitles</a>
+</nav>
+</header>
+<div class="hero">
+<h1>Welcome to CINEMA_CRC</h1>
+<p>Your world of cinema, series and stories.</p>
+</div>
+<section id="series">
+<h2>Latest Series</h2>
+<div class="grid">
+<div class="card"><div class="poster">SERIES 01</div><p>Coming Soon</p></div>
+<div class="card"><div class="poster">SERIES 02</div><p>Coming Soon</p></div>
+</div>
+</section>
+<section id="movies">
+<h2>Movies</h2>
+<div class="grid">
+<div class="card"><div class="poster">MOVIE 01</div><p>Coming Soon</p></div>
+</div>
+</section>
+<section id="anime">
+<h2>Anime</h2>
+<div class="grid">
+<div class="card"><div class="poster">ANIME 01</div><p>Coming Soon</p></div>
+</div>
+</section>
+<section id="subtitles">
+<h2>Kurdish Subtitles</h2>
+<p>Discover Kurdish subtitle projects.</p>
+</section>
+<footer>© CINEMA_CRC</footer>
+</body>
+</html>
