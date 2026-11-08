@@ -4,181 +4,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CINEMA_CRC</title>
-
 <link rel="icon" href="IMG_20261108_140345_137.jpg">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #090d18;
-  color: #f5f5f5;
-  font-family: Arial, sans-serif;
-}
-
-/* HEADER */
-
-header {
-  background: #111827;
-  border-bottom: 1px solid #26344c;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #e8b84a;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.logo img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-nav a {
-  color: #d5d9e2;
-  text-decoration: none;
-  font-size: 15px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #e8b84a;
-}
-
-/* HERO */
-
-.hero {
-  margin: 35px 6%;
-  padding: 75px 25px;
-  text-align: center;
-  border-radius: 15px;
-  background: linear-gradient(130deg, #111d35, #25202a);
-  border: 1px solid #293954;
-}
-
-.hero h1 {
-  font-size: 38px;
-  color: #e8b84a;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  color: #c4cad6;
-  font-size: 17px;
-}
-
-/* CONTENT */
-
-main {
-  padding: 10px 6% 50px;
-}
-
-section {
-  margin: 35px 0;
-  scroll-margin-top: 20px;
-}
-
-section h2 {
-  color: #e8b84a;
-  border-left: 4px solid #e8b84a;
-  padding-left: 13px;
-  margin-bottom: 22px;
-  font-size: 23px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: #151e30;
-  border: 1px solid #26344c;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.25s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #e8b84a;
-}
-
-.poster {
-  height: 190px;
-  background: linear-gradient(145deg, #1d3557, #101522);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e8b84a;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.card p {
-  padding: 13px;
-  text-align: center;
-  color: #e0e4ec;
-}
-
-/* FOOTER */
-
-footer {
-  background: #111827;
-  border-top: 1px solid #26344c;
-  text-align: center;
-  padding: 25px;
-  color: #9ba5b8;
-}
-
-footer span {
-  color: #e8b84a;
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-  header {
-    justify-content: center;
-  }
-
-  .logo {
-    font-size: 22px;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#090d18;color:#f5f5f5;font-family:Arial,sans-serif}
+header{background:#111827;border-bottom:1px solid #26344c;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:#e8b84a;font-size:22px;font-weight:bold}
+.logo img{width:48px;height:48px;object-fit:contain;border-radius:8px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:#d5d9e2;text-decoration:none;font-size:14px}
+nav a:hover{color:#e8b84a}
+.search-area{padding:20px 5% 0}
+#search{width:100%;padding:14px;border-radius:9px;border:1px solid #34445e;background:#151e30;color:white;font-size:16px;outline:none}
+#search:focus{border-color:#e8b84a}
+#searchResults{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:14px;margin-top:15px}
+.hero{margin:30px 5%;padding:65px 20px;text-align:center;border-radius:15px;background:linear-gradient(130deg,#111d35,#25202a);border:1px solid #293954}
+.hero h1{font-size:34px;color:#e8b84a;margin-bottom:12px}
+.hero p{color:#c4cad6}
+main{padding:10px 5% 45px}
+section{margin:35px 0;scroll-margin-top:20px}
+section h2{color:#e8b84a;border-left:4px solid #e8b84a;padding-left:12px;margin-bottom:20px;font-size:23px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:17px}
+.card{background:#151e30;border:1px solid #26344c;border-radius:10px;overflow:hidden;cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#e8b84a}
+.poster{height:200px;background:#17243a;display:flex;align-items:center;justify-content:center;color:#e8b84a;overflow:hidden}
+.poster img{width:100%;height:100%;object-fit:cover}
+.card p{padding:12px;text-align:center;color:#e0e4ec;font-size:14px}
+.empty{color:#9ba5b8;padding:15px 0}
+footer{background:#111827;border-top:1px solid #26344c;text-align:center;padding:25px;color:#9ba5b8}
+footer span{color:#e8b84a}
+button{cursor:pointer;border:0;border-radius:7px;padding:11px 15px;background:#dcae42;color:#101522;font-weight:bold}
+button:hover{opacity:.88}
+.admin-btn{background:#202e45;color:#e8b84a;border:1px solid #465875}
+.panel{display:none;background:#111827;border:1px solid #34445e;border-radius:12px;padding:20px;margin:25px 5%}
+.panel h2{color:#e8b84a;margin-bottom:15px}
+.panel input,.panel textarea,.panel select{width:100%;padding:12px;margin:7px 0 13px;border-radius:7px;border:1px solid #34445e;background:#090d18;color:white;font-size:15px}
+.panel textarea{min-height:90px;resize:vertical}
+.panel label{color:#cbd3df;font-size:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+#status{margin:12px 0;color:#e8b84a;font-size:14px}
+#detail{display:none;position:fixed;inset:0;background:#000c;z-index:10;overflow:auto;padding:25px}
+.detail-box{max-width:550px;margin:35px auto;background:#111827;border:1px solid #34445e;border-radius:12px;padding:20px}
+.detail-box img{width:100%;max-height:330px;object-fit:contain;background:#090d18;border-radius:8px}
+.detail-box h2{color:#e8b84a;margin:15px 0}
+.detail-box p{color:#d5d9e2;line-height:1.6;margin:8px 0;white-space:pre-wrap}
+.close{float:right;background:#34445e;color:white}
+.hidden{display:none!important}
+@media(max-width:600px){
+ header{justify-content:center}
+ nav{justify-content:center}
+ .hero h1{font-size:27px}
+ .poster{height:180px}
 }
 </style>
 </head>
@@ -186,13 +64,10 @@ footer span {
 <body>
 
 <header>
-
   <div class="logo">
-    <img src="IMG_20261108_140345_137.jpg"
-         alt="CINEMA_CRC Logo">
+    <img src="IMG_20261108_140345_137.jpg" alt="CINEMA_CRC">
     <span>CINEMA_CRC</span>
   </div>
-
   <nav>
     <a href="#">Home</a>
     <a href="#series">Series</a>
@@ -200,89 +75,438 @@ footer span {
     <a href="#anime">Anime</a>
     <a href="#subtitles">Subtitles</a>
   </nav>
-
+  <button class="admin-btn" onclick="toggleAdmin()">Admin</button>
 </header>
+
+<div class="search-area">
+  <input id="search" type="search" placeholder="Search movies, series and anime...">
+  <div id="searchResults"></div>
+</div>
 
 <div class="hero">
   <h1>Welcome to CINEMA_CRC</h1>
   <p>Your world of cinema, series and stories.</p>
 </div>
 
+<div id="adminPanel" class="panel">
+  <h2>Administrator</h2>
+
+  <div id="loginArea">
+    <p>Sign in to manage CINEMA_CRC.</p>
+    <label>Email</label>
+    <input id="email" type="email" placeholder="Your admin email">
+    <label>Password</label>
+    <input id="password" type="password" placeholder="Your password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="manageArea" class="hidden">
+    <p>You are logged in as administrator.</p>
+    <div id="status"></div>
+
+    <label>Title</label>
+    <input id="title" type="text" placeholder="Movie or series title">
+
+    <label>Category</label>
+    <select id="category">
+      <option value="movie">Movie</option>
+      <option value="series">Series</option>
+      <option value="anime">Anime</option>
+      <option value="subtitles">Subtitles</option>
+    </select>
+
+    <label>Poster image</label>
+    <input id="posterFile" type="file" accept="image/*">
+
+    <label>Description</label>
+    <textarea id="description" placeholder="Write details..."></textarea>
+
+    <label>Release year</label>
+    <input id="year" type="number" placeholder="2026">
+
+    <label>Rating</label>
+    <input id="rating" type="number" min="0" max="10" step="0.1" placeholder="8.5">
+
+    <label>Trailer URL</label>
+    <input id="trailer" type="url" placeholder="https://...">
+
+    <label>
+      <input id="featured" type="checkbox" style="width:auto">
+      Featured
+    </label>
+
+    <div class="actions">
+      <button onclick="saveMedia()">Save</button>
+      <button class="admin-btn" onclick="clearForm()">Clear</button>
+      <button class="admin-btn" onclick="logout()">Logout</button>
+    </div>
+    <input id="editId" type="hidden">
+    <p id="status"></p>
+  </div>
+</div>
+
 <main>
+  <section id="series">
+    <h2>Latest Series</h2>
+    <div class="grid" id="seriesGrid"></div>
+  </section>
 
-<section id="series">
-  <h2>Latest Series</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="poster">SERIES</div>
-      <p>Series Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">SERIES</div>
-      <p>Series Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">SERIES</div>
-      <p>Series Title</p>
-    </div>
-  </div>
-</section>
+  <section id="movies">
+    <h2>Movies</h2>
+    <div class="grid" id="moviesGrid"></div>
+  </section>
 
-<section id="movies">
-  <h2>Movies</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="poster">MOVIE</div>
-      <p>Movie Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">MOVIE</div>
-      <p>Movie Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">MOVIE</div>
-      <p>Movie Title</p>
-    </div>
-  </div>
-</section>
+  <section id="anime">
+    <h2>Anime</h2>
+    <div class="grid" id="animeGrid"></div>
+  </section>
 
-<section id="anime">
-  <h2>Anime</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="poster">ANIME</div>
-      <p>Anime Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">ANIME</div>
-      <p>Anime Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">ANIME</div>
-      <p>Anime Title</p>
-    </div>
-  </div>
-</section>
-
-<section id="subtitles">
-  <h2>Kurdish Subtitles</h2>
-  <div class="grid">
-    <div class="card">
-      <div class="poster">KURDISH</div>
-      <p>Subtitle Title</p>
-    </div>
-    <div class="card">
-      <div class="poster">KURDISH</div>
-      <p>Subtitle Title</p>
-    </div>
-  </div>
-</section>
-
+  <section id="subtitles">
+    <h2>Kurdish Subtitles</h2>
+    <div class="grid" id="subtitlesGrid"></div>
+  </section>
 </main>
+
+<div id="detail">
+  <div class="detail-box">
+    <button class="close" onclick="closeDetail()">Close ✕</button>
+    <div id="detailContent"></div>
+  </div>
+</div>
 
 <footer>
   © 2026 <span>CINEMA_CRC</span> — All Rights Reserved
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://pywdrfyopvvyelcwrrku.supabase.co";
+const SUPABASE_KEY = "sb_publishable_3GUchBQyYKXrXfDn1386eQ_h-BnT4oK";
+
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let mediaList = [];
+let isAdmin = false;
+
+function message(text) {
+  document.getElementById("status").textContent = text;
+}
+
+async function loadMedia() {
+  const { data, error } = await db
+    .from("media")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  mediaList = data || [];
+  renderMedia();
+}
+
+function makeCard(item) {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const poster = document.createElement("div");
+  poster.className = "poster";
+
+  if (item.poster_url) {
+    const img = document.createElement("img");
+    img.src = item.poster_url;
+    img.alt = item.title;
+    poster.appendChild(img);
+  } else {
+    poster.textContent = "CINEMA_CRC";
+  }
+
+  const title = document.createElement("p");
+  title.textContent = item.title;
+
+  card.append(poster, title);
+  card.onclick = () => showDetail(item);
+  return card;
+}
+
+function renderGrid(id, items) {
+  const grid = document.getElementById(id);
+  grid.innerHTML = "";
+
+  if (!items.length) {
+    grid.innerHTML = '<p class="empty">No content added yet.</p>';
+    return;
+  }
+
+  items.forEach(item => grid.appendChild(makeCard(item)));
+}
+
+function renderMedia() {
+  renderGrid("seriesGrid", mediaList.filter(x => x.category === "series"));
+  renderGrid("moviesGrid", mediaList.filter(x => x.category === "movie"));
+  renderGrid("animeGrid", mediaList.filter(x => x.category === "anime"));
+  renderGrid("subtitlesGrid", mediaList.filter(x => x.category === "subtitles"));
+}
+
+function showDetail(item) {
+  const content = document.getElementById("detailContent");
+  content.innerHTML = "";
+
+  if (item.poster_url) {
+    const img = document.createElement("img");
+    img.src = item.poster_url;
+    img.alt = item.title;
+    content.appendChild(img);
+  }
+
+  const heading = document.createElement("h2");
+  heading.textContent = item.title;
+  content.appendChild(heading);
+
+  const info = [
+    ["Category", item.category],
+    ["Year", item.release_year],
+    ["Rating", item.rating],
+    ["Description", item.description]
+  ];
+
+  info.forEach(([label, value]) => {
+    if (value !== null && value !== undefined && value !== "") {
+      const p = document.createElement("p");
+      p.textContent = label + ": " + value;
+      content.appendChild(p);
+    }
+  });
+
+  if (item.trailer_url) {
+    const a = document.createElement("a");
+    a.href = item.trailer_url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Watch Trailer";
+    a.style.color = "#e8b84a";
+    content.appendChild(a);
+  }
+
+  if (isAdmin) {
+    const edit = document.createElement("button");
+    edit.textContent = "Edit";
+    edit.style.margin = "15px 8px 0 0";
+    edit.onclick = () => {
+      closeDetail();
+      editMedia(item);
+    };
+
+    const del = document.createElement("button");
+    del.textContent = "Delete";
+    del.style.background = "#9b3434";
+    del.style.color = "white";
+    del.onclick = () => deleteMedia(item);
+
+    content.append(edit, del);
+  }
+
+  document.getElementById("detail").style.display = "block";
+}
+
+function closeDetail() {
+  document.getElementById("detail").style.display = "none";
+}
+
+document.getElementById("search").addEventListener("input", function() {
+  const term = this.value.trim().toLowerCase();
+  const results = document.getElementById("searchResults");
+  results.innerHTML = "";
+
+  if (!term) return;
+
+  const found = mediaList.filter(item =>
+    item.title.toLowerCase().includes(term)
+  );
+
+  found.forEach(item => results.appendChild(makeCard(item)));
+
+  if (!found.length) {
+    results.innerHTML = '<p class="empty">No results found.</p>';
+  }
+});
+
+function toggleAdmin() {
+  const panel = document.getElementById("adminPanel");
+  panel.style.display = panel.style.display === "block" ? "none" : "block";
+  panel.scrollIntoView({ behavior: "smooth" });
+}
+
+async function checkAdmin() {
+  const { data: sessionData } = await db.auth.getSession();
+  const session = sessionData.session;
+
+  if (!session) {
+    isAdmin = false;
+    document.getElementById("loginArea").classList.remove("hidden");
+    document.getElementById("manageArea").classList.add("hidden");
+    return;
+  }
+
+  const { data, error } = await db.rpc("is_admin");
+
+  if (error || data !== true) {
+    isAdmin = false;
+    await db.auth.signOut();
+    document.getElementById("loginArea").classList.remove("hidden");
+    document.getElementById("manageArea").classList.add("hidden");
+    message("This account is not an administrator.");
+    return;
+  }
+
+  isAdmin = true;
+  document.getElementById("loginArea").classList.add("hidden");
+  document.getElementById("manageArea").classList.remove("hidden");
+  renderMedia();
+}
+
+async function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    message("Enter your email and password.");
+    return;
+  }
+
+  message("Signing in...");
+
+  const { error } = await db.auth.signInWithPassword({ email, password });
+
+  if (error) {
+    message("Login failed: " + error.message);
+    return;
+  }
+
+  await checkAdmin();
+  if (isAdmin) message("Welcome, administrator!");
+}
+
+async function logout() {
+  await db.auth.signOut();
+  isAdmin = false;
+  clearForm();
+  await checkAdmin();
+  message("Logged out.");
+  renderMedia();
+}
+
+function clearForm() {
+  document.getElementById("editId").value = "";
+  document.getElementById("title").value = "";
+  document.getElementById("category").value = "movie";
+  document.getElementById("posterFile").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("year").value = "";
+  document.getElementById("rating").value = "";
+  document.getElementById("trailer").value = "";
+  document.getElementById("featured").checked = false;
+}
+
+function editMedia(item) {
+  document.getElementById("adminPanel").style.display = "block";
+  document.getElementById("editId").value = item.id;
+  document.getElementById("title").value = item.title || "";
+  document.getElementById("category").value = item.category;
+  document.getElementById("description").value = item.description || "";
+  document.getElementById("year").value = item.release_year || "";
+  document.getElementById("rating").value = item.rating || "";
+  document.getElementById("trailer").value = item.trailer_url || "";
+  document.getElementById("featured").checked = !!item.featured;
+  document.getElementById("adminPanel").scrollIntoView({ behavior: "smooth" });
+}
+
+async function saveMedia() {
+  if (!isAdmin) return message("Administrator login required.");
+
+  const title = document.getElementById("title").value.trim();
+  if (!title) return message("Please enter a title.");
+
+  message("Saving...");
+
+  const editId = document.getElementById("editId").value;
+  const oldItem = mediaList.find(x => String(x.id) === editId);
+  let posterUrl = oldItem?.poster_url || null;
+
+  const file = document.getElementById("posterFile").files[0];
+
+  if (file) {
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const filePath = Date.now() + "-" + safeName;
+
+    const { error: uploadError } = await db.storage
+      .from("posters")
+      .upload(filePath, file, { upsert: false });
+
+    if (uploadError) return message("Poster upload failed: " + uploadError.message);
+
+    const { data: urlData } = db.storage.from("posters").getPublicUrl(filePath);
+    posterUrl = urlData.publicUrl;
+  }
+
+  const record = {
+    title,
+    category: document.getElementById("category").value,
+    poster_url: posterUrl,
+    description: document.getElementById("description").value.trim(),
+    release_year: document.getElementById("year").value
+      ? Number(document.getElementById("year").value) : null,
+    rating: document.getElementById("rating").value
+      ? Number(document.getElementById("rating").value) : null,
+    trailer_url: document.getElementById("trailer").value.trim() || null,
+    featured: document.getElementById("featured").checked
+  };
+
+  let result;
+
+  if (editId) {
+    result = await db.from("media").update(record).eq("id", editId);
+  } else {
+    result = await db.from("media").insert(record);
+  }
+
+  if (result.error) {
+    message("Save failed: " + result.error.message);
+    return;
+  }
+
+  message("Saved successfully!");
+  clearForm();
+  await loadMedia();
+}
+
+async function deleteMedia(item) {
+  if (!isAdmin) return;
+
+  if (!confirm("Delete " + item.title + "?")) return;
+
+  const { error } = await db.from("media").delete().eq("id", item.id);
+
+  if (error) {
+    alert("Delete failed: " + error.message);
+    return;
+  }
+
+  closeDetail();
+  await loadMedia();
+  alert("Deleted successfully.");
+}
+
+db.auth.onAuthStateChange(() => {
+  setTimeout(checkAdmin, 0);
+});
+
+loadMedia();
+checkAdmin();
+</script>
 
 </body>
 </html>
