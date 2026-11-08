@@ -53,7 +53,7 @@ button:hover{opacity:.88}
 .hidden{display:none!important}
 .field-group{border-top:1px solid #34445e;margin-top:12px;padding-top:10px}
 .field-group h3{color:#e8b84a;margin:8px 0}
-.season-list{display:grid;gap:9px;margin:16px 0}.season-btn{width:100%;text-align:right;background:#202e45;color:#e8b84a;border:1px solid #465875}.episode-list{display:grid;gap:10px;margin:12px 0}.episode-row{background:#151e30;border:1px solid #34445e;border-radius:8px;padding:12px}.episode-row small{display:block;color:#aeb9ca;margin-top:5px}.player-wrap{margin-top:15px;background:#05080e;border-radius:10px;overflow:hidden}.player-wrap video,.player-wrap iframe{width:100%;aspect-ratio:16/9;border:0}.actor-more{background:none;color:#e8b84a;padding:4px 0;text-decoration:underline}.detail-names{direction:rtl;color:#e8b84a;margin:6px 0}.detail-names .en{direction:ltr;display:block;color:#b9c3d2;font-size:14px}
+.season-list{display:grid;gap:9px;margin:16px 0}.season-btn{width:100%;text-align:right;background:#202e45;color:#e8b84a;border:1px solid #465875}.episode-list{display:grid;gap:10px;margin:12px 0}.episode-row{background:#151e30;border:1px solid #34445e;border-radius:8px;padding:12px}.episode-row small{display:block;color:#aeb9ca;margin-top:5px}.player-wrap{margin-top:15px;background:#05080e;border-radius:10px;overflow:hidden}.player-wrap video,.player-wrap iframe{width:100%;aspect-ratio:16/9;border:0}.actor-more{background:none;color:#e8b84a;padding:4px 0;text-decoration:underline}.imdb-rating{display:flex;align-items:center;gap:9px;margin:12px 0;padding:9px 12px;background:#151e30;border:1px solid #34445e;border-radius:8px;width:max-content;max-width:100%}.imdb-logo{display:inline-flex;align-items:center;justify-content:center;background:#f5c518;color:#111;font-weight:900;font-family:Arial,sans-serif;font-size:15px;padding:3px 6px;border-radius:4px;letter-spacing:-.5px}.imdb-score{font-size:17px;font-weight:bold;color:#fff;direction:ltr}.imdb-score small{font-size:12px;color:#aeb9ca;font-weight:normal}.detail-names{direction:rtl;color:#e8b84a;margin:6px 0}.detail-names .en{direction:ltr;display:block;color:#b9c3d2;font-size:14px}
 @media(max-width:600px){header{justify-content:center}nav{justify-content:center}.hero h1{font-size:27px}.poster{height:180px}}
 </style>
 </head>
@@ -278,9 +278,17 @@ async function showDetail(item) {
   if (item.title_en) { const en = document.createElement("span"); en.className = "en"; en.textContent = item.title_en; names.appendChild(en); }
   content.appendChild(names);
 
+  if (item.rating !== null && item.rating !== undefined && item.rating !== "") {
+    const rating = document.createElement("div"); rating.className = "imdb-rating";
+    const logo = document.createElement("span"); logo.className = "imdb-logo"; logo.textContent = "IMDb";
+    const score = document.createElement("span"); score.className = "imdb-score";
+    score.innerHTML = "";
+    score.textContent = Number(item.rating).toFixed(1) + "/10";
+    rating.append(logo, score); content.appendChild(rating);
+  }
+
   const info = [
     ["ساڵی بڵاوکردنەوە", item.release_year],
-    ["هەڵسەنگاندنی IMDb", item.rating !== null && item.rating !== undefined && item.rating !== "" ? item.rating + "/10" : null],
     ["ژانەر", item.genres],
     ["کوالێتی", item.quality],
     ["کۆمپانیای بەرهەمهێنان", item.production_company],
@@ -295,7 +303,7 @@ async function showDetail(item) {
   if (item.actors) {
     const actorWrap = document.createElement("div");
     const actorLabel = document.createElement("p"); actorLabel.textContent = "ئەکتەرەکان:"; actorWrap.appendChild(actorLabel);
-    const actorNames = String(item.actors).split(",").map(x => x.trim()).filter(Boolean);
+    const actorNames = String(item.actors).split(/[,،;\n]+/).map(x => x.trim()).filter(Boolean);
     const actorText = document.createElement("p");
     const renderActors = expanded => {
       actorText.textContent = (expanded ? actorNames : actorNames.slice(0, 3)).join("، ");
