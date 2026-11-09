@@ -124,6 +124,34 @@ footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:3
 .socials{display:flex;justify-content:center;gap:12px;margin:14px 0}
 @media(max-width:760px){.header-inner{justify-content:center}.brand{width:100%;justify-content:center}nav{justify-content:center;gap:12px}.admin-open{margin-bottom:3px}.detail-columns{grid-template-columns:1fr}.detail-shell{padding:13px}.detail-title-row .ku{font-size:21px}.detail-title-row .en{font-size:17px}.episode-row{grid-template-columns:78px 1fr}.episode-thumb{width:78px;height:62px}.admin-grid{grid-template-columns:1fr}}
 @media(max-width:420px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.poster{height:190px}.hero{padding:42px 14px}.season-list{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-poster{max-height:350px}}
+
+/* ڕێکخستنی پەڕەکان و مێنیۆی نوێ */
+.header-actions{display:flex;align-items:center;gap:10px}
+.menu-button{background:#171215;color:var(--gold);border:1px solid #741020;border-radius:9px;padding:8px 14px;font-size:23px;line-height:1}
+.search-area{position:relative;z-index:30}
+#searchResults{display:none;position:absolute;top:calc(100% + 5px);right:0;left:0;max-height:65vh;overflow-y:auto;padding:12px;background:#111114;border:1px solid #711020;border-radius:10px;box-shadow:0 14px 35px #000b;z-index:50}
+.search-area.search-active #searchResults{display:grid}
+.search-area.search-active #searchResults:empty{display:none}
+#searchCounts{display:none}
+#sideMenu{position:fixed;z-index:10002;top:0;right:0;width:min(290px,84vw);height:100dvh;overflow-y:auto;padding:20px;background:#111114;border-left:1px solid #741020;box-shadow:-12px 0 35px #0009;transform:translateX(110%);transition:transform .25s}
+#sideMenu.open{transform:translateX(0)}
+.side-menu-head{display:flex;align-items:center;justify-content:space-between;color:var(--gold);font-size:20px;margin-bottom:15px;padding-bottom:13px;border-bottom:1px solid #4b1821}
+#sideMenu button{display:block;width:100%;text-align:right;padding:12px 9px;margin:3px 0;background:transparent;color:var(--text);border:0;border-bottom:1px solid #30272b}
+#sideMenu .close-menu{width:auto;border:1px solid #51454a;border-radius:7px;padding:5px 9px}
+#sideMenu .staff-menu-link{color:var(--gold);font-weight:800}
+.side-menu-divider{height:1px;background:#5b1722;margin:13px 0}
+#sideMenu h3{color:var(--gold);font-size:14px;margin:8px 0}
+#menuBackdrop{display:none;position:fixed;inset:0;z-index:10001;background:#0009}
+#menuBackdrop.visible{display:block}
+.page-view{display:none;min-height:70vh;padding-top:25px;padding-bottom:45px}
+.back-button{margin-bottom:22px}
+.staff-role-section{margin:25px 0}
+.staff-role-section h2{color:var(--gold);font-size:19px;margin-bottom:13px;border-right:3px solid var(--red2);padding-right:10px}
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+#staffForm{scroll-margin-top:100px}
+#watchPage{display:none;position:fixed;inset:0;z-index:10000;overflow:auto;background:var(--bg);padding:20px}
+@media(max-width:760px){.header-actions{width:100%;justify-content:center}.search-area{padding-top:16px}}
+
 </style>
 </head><body>
 <header>
@@ -132,13 +160,10 @@ footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:3
    <img src="IMG_20261108_140345_137.jpg" alt="CINEMA_CRC">
    <span>CINEMA_CRC</span>
   </a>
-  <nav>
-   <a href="#home">سەرەکی</a>
-   <a href="#series">زنجیرە</a>
-   <a href="#movies">فیلم</a>
-   <a href="#anime">ئەنیمە</a>
-  </nav>
-  <button class="admin-open" onclick="toggleAdmin()">بەڕێوەبەر</button>
+  <div class="header-actions">
+   <button id="menuButton" type="button" class="menu-button" onclick="toggleMenu()" aria-label="کردنەوەی مێنیۆ">☰</button>
+   <button class="admin-open" onclick="toggleAdmin()">بەڕێوەبەر</button>
+  </div>
  </div>
 </header>
 
@@ -177,6 +202,26 @@ footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:3
   <section class="content-section" id="anime">
    <h2 class="section-title">ئەنیمە</h2>
    <div class="grid" id="animeGrid"></div>
+  </section>
+
+  <section class="content-section" id="seriesFilmSection">
+   <h2 class="section-title">زنجیرە فیلم</h2>
+   <div class="grid" id="seriesFilmGrid"></div>
+  </section>
+
+  <section class="content-section" id="koreanSeriesSection">
+   <h2 class="section-title">زنجیرە کۆرییەکان</h2>
+   <div class="grid" id="koreanSeriesGrid"></div>
+  </section>
+
+  <section class="content-section" id="bollywoodSection">
+   <h2 class="section-title">بۆڵیوود</h2>
+   <div class="grid" id="bollywoodGrid"></div>
+  </section>
+
+  <section class="content-section" id="mangaSection">
+   <h2 class="section-title">مانگا</h2>
+   <div class="grid" id="mangaGrid"></div>
   </section>
  </main>
 
@@ -390,6 +435,33 @@ footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:3
     </div>
     <div id="episodeAdminList"></div>
    </div>
+
+   <div class="admin-sub" id="staffForm">
+    <h3>بەڕێوەبردنی ستاف</h3>
+    <div class="admin-grid">
+     <div class="field">
+      <label for="staffName">ناوی ستاف</label>
+      <input id="staffName" type="text" placeholder="ناوی ستاف">
+     </div>
+     <div class="field">
+      <label for="staffRole">پلەی ستاف</label>
+      <select id="staffRole">
+       <option value="translator">وەرگێڕ</option>
+       <option value="designer">دیزاینەر</option>
+       <option value="technician">تەکنیککار</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="staffPhoto">وێنەی ستاف</label>
+      <input id="staffPhoto" type="file" accept="image/*">
+     </div>
+    </div>
+    <input id="staffId" type="hidden">
+    <div class="admin-actions">
+     <button class="primary" onclick="saveStaff()">پاشەکەوتکردنی ستاف</button>
+     <button class="secondary" onclick="clearStaffForm()">پاککردنەوە</button>
+    </div>
+   </div>
   </div>
  </section>
 
@@ -402,6 +474,61 @@ footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:3
    <div class="stat"><strong id="detailEpisodes">0</strong><span>ئەڵقەکان</span></div>
   </div>
  </section>
+</div>
+
+<!-- مێنیۆی لای ڕاست؛ تەنها ناوی ستاف و جۆرەکان -->
+<nav id="sideMenu" aria-label="مێنیۆی سەرەکی">
+ <div class="side-menu-head">
+  <strong>CINEMA_CRC</strong>
+  <button type="button" class="close-menu" onclick="closeMenu()" aria-label="داخستن">✕</button>
+ </div>
+ <button type="button" onclick="backHome();closeMenu()">سەرەکی</button>
+ <button type="button" onclick="openCategory('series')">زنجیرە</button>
+ <button type="button" onclick="openCategory('movie')">فیلم</button>
+ <button type="button" onclick="openCategory('series_film')">زنجیرە فیلم</button>
+ <button type="button" onclick="openCategory('korean_series')">زنجیرە کۆرییەکان</button>
+ <button type="button" onclick="openCategory('bollywood')">بۆڵیوود</button>
+ <button type="button" onclick="openCategory('manga')">مانگا</button>
+ <button type="button" onclick="openCategory('anime')">ئەنیمە</button>
+ <div class="side-menu-divider"></div>
+ <button type="button" class="staff-menu-link" onclick="openStaffPage()">ستاف</button>
+ <div class="side-menu-divider"></div>
+ <h3>گۆڕینی ڕەنگ</h3>
+ <button type="button" onclick="setTheme('black')">ڕەشی</button>
+ <button type="button" onclick="setTheme('white')">سپی</button>
+ <button type="button" onclick="setTheme('red')">سوور</button>
+ <button type="button" onclick="setTheme('dark')">تاریک</button>
+ <button type="button" onclick="setTheme('grey')">خۆڵەمێشی</button>
+</nav>
+<div id="menuBackdrop" onclick="closeMenu()"></div>
+
+<section id="categoryPage" class="container page-view">
+ <button class="secondary back-button" type="button" onclick="backHome()">← گەڕانەوە بۆ سەرەکی</button>
+ <h2 id="categoryPageTitle" class="section-title"></h2>
+ <div id="categoryPageGrid" class="grid"></div>
+</section>
+
+<section id="staffPage" class="container page-view">
+ <button class="secondary back-button" type="button" onclick="backHome()">← گەڕانەوە بۆ سەرەکی</button>
+ <h1 class="section-title">ستافی CINEMA_CRC</h1>
+ <section class="staff-role-section">
+  <h2>وەرگێڕەکان</h2>
+  <div id="translatorsGrid" class="staff-grid"></div>
+ </section>
+ <section class="staff-role-section">
+  <h2>دیزاینەرەکان</h2>
+  <div id="designersGrid" class="staff-grid"></div>
+ </section>
+ <section class="staff-role-section">
+  <h2>تەکنیککارەکان</h2>
+  <div id="techniciansGrid" class="staff-grid"></div>
+ </section>
+</section>
+
+<div id="watchPage">
+ <button class="secondary" type="button" onclick="closeWatchPage()">← گەڕانەوە</button>
+ <h2 id="watchTitle"></h2>
+ <div id="watchContent"></div>
 </div>
 
 <div id="detail" role="dialog" aria-modal="true">
@@ -547,7 +674,10 @@ function makeCard(item) {
     }
 
     card.append(poster, meta);
-    card.addEventListener('click', () => showDetail(item));
+    card.addEventListener('click', () => {
+        $('search')?.blur();
+        showDetail(item);
+    });
 
     card.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -643,54 +773,45 @@ function renderMedia() {
 
 function openCategory(category) {
     currentCategory = category;
+    closeMenu();
 
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.style.display = 'none';
-    });
-
-    const homeSections = [
-        'featuredSection',
-        'newestGrid'
-    ];
-
-    if (category === 'all') {
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.style.display = '';
-        });
-        return;
-    }
-
+    const home = $('home');
     const page = $('categoryPage');
-    if (page) {
-        page.style.display = 'block';
+    const staffPage = $('staffPage');
 
-        const title = $('categoryPageTitle');
-        const grid = $('categoryPageGrid');
+    if (home) home.style.display = 'none';
+    if (staffPage) staffPage.style.display = 'none';
+    if (page) page.style.display = 'block';
 
-        if (title) title.textContent = categories[category] || category;
-        if (grid) {
-            grid.innerHTML = '';
-            const found = mediaList.filter(item => item.category === category);
-
-            if (!found.length) {
-                grid.textContent = 'هێشتا هیچ ناوەڕۆکێک زیاد نەکراوە.';
-            } else {
-                found.forEach(item => grid.appendChild(makeCard(item)));
-            }
+    const title = $('categoryPageTitle');
+    const grid = $('categoryPageGrid');
+    if (title) title.textContent = categories[category] || category;
+    if (grid) {
+        grid.innerHTML = '';
+        const found = mediaList.filter(item => item.category === category);
+        if (!found.length) {
+            grid.textContent = 'هێشتا هیچ ناوەڕۆکێک بۆ ئەم بەشە زیاد نەکراوە.';
+        } else {
+            found.forEach(item => grid.appendChild(makeCard(item)));
         }
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openStaffPage() {
+    closeMenu();
+    if ($('home')) $('home').style.display = 'none';
+    if ($('categoryPage')) $('categoryPage').style.display = 'none';
+    if ($('staffPage')) $('staffPage').style.display = 'block';
+    loadStaff();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function backHome() {
     currentCategory = 'all';
-
-    const page = $('categoryPage');
-    if (page) page.style.display = 'none';
-
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.style.display = '';
-    });
-
+    if ($('home')) $('home').style.display = 'block';
+    if ($('categoryPage')) $('categoryPage').style.display = 'none';
+    if ($('staffPage')) $('staffPage').style.display = 'none';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -788,12 +909,16 @@ function updateSearchSuggestions() {
     const term = input.value.trim().toLocaleLowerCase();
     const countsBox = $('searchCounts');
 
+    const searchArea = input.closest('.search-area');
     if (!term) {
         if ($('searchResults')) $('searchResults').innerHTML = '';
         if (countsBox) countsBox.innerHTML = '';
+        searchArea?.classList.remove('search-active');
         return;
     }
 
+    if (document.activeElement !== input && !searchArea?.classList.contains('search-active')) return;
+    searchArea?.classList.add('search-active');
     performSearch(term);
 
     if (countsBox) {
@@ -817,7 +942,19 @@ function updateSearchSuggestions() {
 }
 
 if ($('search')) {
+    $('search').addEventListener('focus', () => {
+        $('search').closest('.search-area')?.classList.add('search-active');
+        updateSearchSuggestions();
+    });
     $('search').addEventListener('input', updateSearchSuggestions);
+    $('search').addEventListener('blur', () => {
+        setTimeout(() => {
+            $('search').closest('.search-area')?.classList.remove('search-active');
+            if ($('searchResults')) $('searchResults').innerHTML = '';
+            if ($('searchCounts')) $('searchCounts').innerHTML = '';
+        }, 180);
+    });
+    $('searchResults')?.addEventListener('mousedown', event => event.preventDefault());
 
     $('search').addEventListener('keydown', e => {
         if (e.key === 'Enter') {
@@ -832,12 +969,18 @@ if ($('search')) {
 
 function toggleMenu() {
     const menu = $('sideMenu');
-    if (menu) menu.classList.toggle('open');
+    const backdrop = $('menuBackdrop');
+    if (!menu) return;
+    const opening = !menu.classList.contains('open');
+    menu.classList.toggle('open', opening);
+    backdrop?.classList.toggle('visible', opening);
+    document.body.style.overflow = opening ? 'hidden' : '';
 }
 
 function closeMenu() {
-    const menu = $('sideMenu');
-    if (menu) menu.classList.remove('open');
+    $('sideMenu')?.classList.remove('open');
+    $('menuBackdrop')?.classList.remove('visible');
+    document.body.style.overflow = '';
 }
 
 /* =========================
@@ -1950,10 +2093,12 @@ function editStaff(person) {
     $('staffName').value = person.name;
     $('staffRole').value = person.role;
 
-    $('staffForm')?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-    });
+    if ($('home')) $('home').style.display = 'block';
+    if ($('staffPage')) $('staffPage').style.display = 'none';
+    if ($('categoryPage')) $('categoryPage').style.display = 'none';
+    const panel = $('adminPanel');
+    if (panel) panel.style.display = 'block';
+    $('staffForm')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 async function saveStaff() {
@@ -2059,310 +2204,6 @@ loadMedia();
 checkAdmin();
 loadStaff();
 
-</script><style>
-:root {
-    --bg:#080809;
-    --panel:#111114;
-    --text:#f4f1ee;
-    --red2:#790d1b;
-}
-body {
-    background:var(--bg);
-    color:var(--text);
-}
-#categoryPage,#statsPage,#watchPage {display:none;padding:20px}
-#categoryPageTitle {font-size:24px;margin-bottom:20px}
-#categoryPageGrid,.media-grid,.actor-grid,.staff-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
-    gap:15px;
-}
-.media-card {
-    background:var(--panel);
-    border-radius:12px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:.2s;
-}
-.media-card:hover {transform:translateY(-4px)}
-.poster {height:220px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.poster img {width:100%;height:100%;object-fit:cover}
-.card-meta {padding:10px;display:flex;flex-direction:column;gap:5px}
-.card-meta strong {font-size:14px}
-.card-meta .en,.card-meta .year {font-size:12px;opacity:.7}
-.card-rating,.imdb-rating {color:#f5c518;font-weight:bold}
-.content-section {padding:22px 15px}
-.content-section h2 {margin-bottom:16px}
-#detail {
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    overflow:auto;
-    background:#000e;
-    padding:15px;
-}
-#detailContent {
-    max-width:900px;
-    margin:30px auto;
-    padding:20px;
-    background:var(--panel);
-    border-radius:15px;
-}
-.detail-poster-wrap {text-align:center}
-.detail-poster {width:190px;max-height:280px;object-fit:cover;border-radius:10px}
-.detail-title-row {display:flex;flex-direction:column;gap:7px;margin:15px 0}
-.detail-title-row .ku {font-size:23px;font-weight:bold}
-.detail-columns {display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
-.detail-panel {background:var(--bg);padding:15px;border-radius:10px;margin-bottom:12px}
-.detail-panel h3 {margin-bottom:12px;color:var(--red2)}
-.meta-table {width:100%;border-collapse:collapse}
-.meta-table th,.meta-table td {padding:8px;text-align:right;border-bottom:1px solid #444}
-.meta-table th {color:#aaa;width:40%}
-.synopsis {line-height:2}
-.actor-grid {grid-template-columns:repeat(auto-fill,minmax(90px,1fr))}
-.actor-card {display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center}
-.actor-card img,.staff-card img {
-    width:75px;height:75px;object-fit:cover;border-radius:50%;
-}
-.actor-card span {font-size:13px}
-.watch-btn,.episode-play,.secondary,.danger,button {
-    cursor:pointer;
-}
-.watch-btn,.episode-play {
-    background:var(--red2);color:white;border:0;
-    padding:10px 16px;border-radius:8px;
-}
-#watchPage {
-    position:fixed;inset:0;z-index:10000;
-    overflow:auto;background:var(--bg);padding:20px;
-}
-.watch-player video,.watch-player iframe {
-    width:100%;height:min(65vh,500px);border:0;
-    background:#000;border-radius:10px;
-}
-.watch-season-grid {display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-.watch-season-card {padding:12px;background:var(--panel);color:var(--text);border:1px solid #555;border-radius:8px}
-.watch-season-card.active {background:var(--red2)}
-.episode-row,.admin-actions {
-    display:flex;justify-content:space-between;align-items:center;
-    gap:12px;padding:12px;margin:8px 0;
-    background:var(--panel);border-radius:8px;
-}
-.episode-info {display:flex;flex-direction:column;gap:5px}
-.episode-info small {opacity:.6}
-.staff-grid {grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
-.staff-card {
-    background:var(--panel);padding:15px;border-radius:12px;
-    display:flex;align-items:center;flex-direction:column;gap:10px;
-}
-.staff-actions {display:flex;gap:5px}
-.staff-actions button {font-size:11px}
-#sideMenu {
-    position:fixed;z-index:10001;top:0;right:-290px;
-    width:270px;height:100vh;overflow:auto;
-    background:var(--panel);padding:25px;
-    transition:right .25s;box-shadow:0 0 20px #0008;
-}
-#sideMenu.open {right:0}
-#sideMenu button {
-    display:block;width:100%;text-align:right;
-    padding:13px;margin:5px 0;background:transparent;
-    color:var(--text);border:0;border-bottom:1px solid #444;
-}
-#searchPanel {padding:15px;background:var(--panel)}
-#searchResults {display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
-#searchCounts {display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
-.search-count {background:var(--bg);padding:8px 12px;border-radius:8px}
-.history-item {padding:7px;margin:4px;background:var(--bg);color:var(--text);border:0;border-radius:6px}
-#adminPanel {display:none;padding:20px;background:var(--panel)}
-#adminPanel input,#adminPanel textarea,#adminPanel select {
-    display:block;width:100%;padding:11px;margin:8px 0;
-    border-radius:7px;border:1px solid #555;
-    background:var(--bg);color:var(--text);
-}
-#adminPanel button,.detail-admin-actions button {
-    padding:10px 15px;border:0;border-radius:7px;margin:5px;
-}
-.secondary {background:#444;color:white}
-.danger {background:#a31327;color:white}
-.empty {padding:20px;text-align:center;opacity:.7}
-.hidden {display:none!important}
-@media(max-width:650px) {
-    .detail-columns {grid-template-columns:1fr}
-    .poster {height:190px}
-    #detailContent {padding:12px}
-}
-</style>
-
-<!-- گەڕان -->
-<section id="searchPanel">
-    <input id="search" type="search" placeholder="گەڕان بەدوای فیلم و زنجیرە...">
-    <div id="searchCounts"></div>
-    <div id="searchResults"></div>
-    <h3>مێژووی گەڕان</h3>
-    <div id="searchHistory"></div>
-    <button onclick="clearSearchHistory()">لابردنی سێرچەکان</button>
-</section>
-
-<!-- مێنیۆ -->
-<nav id="sideMenu">
-    <h2>CINEMA_CRC</h2>
-    <button onclick="closeMenu();backHome()">سەرەکی</button>
-    <button onclick="closeMenu();openCategory('series')">زنجیرە</button>
-    <button onclick="closeMenu();openCategory('movie')">فیلم</button>
-    <button onclick="closeMenu();openCategory('series_film')">زنجیرە فیلم</button>
-    <button onclick="closeMenu();openCategory('korean_series')">زنجیرە کۆرییەکان</button>
-    <button onclick="closeMenu();openCategory('bollywood')">بۆڵیوود</button>
-    <button onclick="closeMenu();openCategory('manga')">مانگا</button>
-    <button onclick="closeMenu();openCategory('anime')">ئەنیمە</button>
-    <button onclick="closeMenu();document.getElementById('staffSection').scrollIntoView()">ستاف</button>
-    <hr>
-    <h3>دۆخەکان</h3>
-    <button onclick="setTheme('black')">ڕەشی</button>
-    <button onclick="setTheme('white')">سپی</button>
-    <button onclick="setTheme('red')">سوور</button>
-    <button onclick="setTheme('dark')">تاریک</button>
-    <button onclick="setTheme('grey')">خۆڵەمێشی</button>
-    <button onclick="closeMenu()">داخستن ✕</button>
-</nav>
-
-<!-- پەڕەی جۆرەکان -->
-<section id="categoryPage">
-    <button onclick="backHome()">← گەڕانەوە بۆ سەرەکی</button>
-    <h2 id="categoryPageTitle"></h2>
-    <div id="categoryPageGrid" class="media-grid"></div>
-</section>
-
-<!-- بەشی ناوەڕۆک -->
-<section class="content-section" id="featuredSection">
-    <h2>⭐ تایبەتەکان</h2>
-    <div id="featuredGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>🆕 تازە زیادکراوەکان</h2>
-    <div id="newestGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>زنجیرەکان</h2>
-    <div id="seriesGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>فیلمەکان</h2>
-    <div id="moviesGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>زنجیرە فیلم</h2>
-    <div id="seriesFilmGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>زنجیرە کۆرییەکان</h2>
-    <div id="koreanSeriesGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>بۆڵیوود</h2>
-    <div id="bollywoodGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>مانگا</h2>
-    <div id="mangaGrid" class="media-grid"></div>
-</section>
-
-<section class="content-section">
-    <h2>ئەنیمە</h2>
-    <div id="animeGrid" class="media-grid"></div>
-</section>
-
-<!-- ستاف -->
-<section class="content-section" id="staffSection">
-    <h2>وەرگێڕەکان</h2>
-    <div id="translatorsGrid" class="staff-grid"></div>
-    <h2>دیزاینەرەکان</h2>
-    <div id="designersGrid" class="staff-grid"></div>
-    <h2>تەکنیکارەکان</h2>
-    <div id="techniciansGrid" class="staff-grid"></div>
-</section>
-
-<!-- پەڕەی زانیاری -->
-<div id="detail">
-    <button onclick="closeDetail()">✕ داخستن</button>
-    <div id="detailContent"></div>
-</div>
-
-<!-- پەڕەی سەیرکردن -->
-<div id="watchPage">
-    <button onclick="closeWatchPage()">← گەڕانەوە</button>
-    <h2 id="watchTitle"></h2>
-    <div id="watchContent"></div>
-</div>
-
-<!-- بەشی ستاف لە بەڕێوەبەر -->
-<div id="staffForm" class="detail-panel">
-    <h3>بەڕێوەبردنی ستاف</h3>
-    <input id="staffId" type="hidden">
-    <input id="staffName" placeholder="ناوی ستاف">
-    <select id="staffRole">
-        <option value="translator">وەرگێڕ</option>
-        <option value="designer">دیزاینەر</option>
-        <option value="technician">تەکنیکار</option>
-    </select>
-    <input id="staffPhoto" type="file" accept="image/*">
-    <button onclick="saveStaff()">پاشەکەوتکردنی ستاف</button>
-    <button onclick="clearStaffForm()">پاککردنەوە</button>
-</div>
-
-<!-- کۆتایی و پەیوەندی -->
-<footer>
-    <p>CINEMA_CRC</p>
-    <a href="https://t.me/CINEMA_CRC1" target="_blank" rel="noopener">Telegram</a>
-    <a href="https://www.tiktok.com/@cinema_crc" target="_blank" rel="noopener">TikTok</a>
-    <button onclick="toggleAdmin()">بەڕێوەبەر</button>
-</footer>
-
-<script>
-/* زیادکردنی دوگمەی مێنیۆ لە هەدەر */
-(function () {
-    const header = document.querySelector('header');
-
-    if (header && !document.getElementById('menuButton')) {
-        const button = document.createElement('button');
-        button.id = 'menuButton';
-        button.type = 'button';
-        button.textContent = '☰';
-        button.setAttribute('aria-label', 'مێنیۆ');
-        button.style.cssText =
-            'font-size:25px;padding:8px 14px;background:transparent;color:var(--text);border:0;cursor:pointer';
-        button.onclick = toggleMenu;
-        header.appendChild(button);
-    }
-
-    if (header && !document.getElementById('searchJump')) {
-        const button = document.createElement('button');
-        button.id = 'searchJump';
-        button.type = 'button';
-        button.textContent = '⌕';
-        button.style.cssText =
-            'font-size:25px;padding:8px 14px;background:transparent;color:var(--text);border:0;cursor:pointer';
-        button.onclick = () => {
-            document.getElementById('searchPanel')
-                ?.scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('search')?.focus();
-        };
-        header.appendChild(button);
-    }
-})();
-
-/* نوێکردنەوەی ستاف دوای چوونەژوورەوە */
-document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && isAdmin) loadStaff();
-});
 </script>
 
 </body>
