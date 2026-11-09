@@ -11,180 +11,2359 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{min-height:100vh;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.65;position:relative;isolation:isolate}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 12% 18%,rgba(125,8,28,.16),transparent 30%),radial-gradient(ellipse at 86% 72%,rgba(145,12,34,.13),transparent 32%),repeating-linear-gradient(132deg,transparent 0,transparent 118px,rgba(145,15,35,.17) 119px,rgba(145,15,35,.17) 120px,transparent 122px,transparent 235px),repeating-linear-gradient(42deg,transparent 0,transparent 188px,rgba(112,10,27,.12) 190px,rgba(112,10,27,.12) 193px,transparent 196px,transparent 310px),linear-gradient(115deg,transparent 0 48%,rgba(125,8,28,.09) 48.2%,transparent 49%)}
-a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0,transparent 104px,rgba(121,13,27,.20) 105px,transparent 106px),repeating-linear-gradient(0deg,transparent 0,transparent 142px,rgba(121,13,27,.13) 143px,transparent 144px)}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
 .container{width:min(1200px,92%);margin:auto}
 header{position:sticky;top:0;z-index:20;background:rgba(8,8,9,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(121,13,27,.75)}
 .header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:10px 0}
 .brand{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:900;letter-spacing:.7px;font-size:21px}
 .brand img{width:43px;height:43px;object-fit:contain;border-radius:8px}
-nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}nav a{font-size:14px;color:#d6d0ce;transition:.2s}nav a:hover,nav a:focus{color:var(--gold)}
-.admin-open,.primary{border:1px solid var(--red2);background:linear-gradient(135deg,#650b18,#a31327);color:#fff;border-radius:9px;padding:10px 16px;font-weight:700}.admin-open:hover,.primary:hover{filter:brightness(1.15)}
-.search-area{padding:22px 0 0}.search-area input{width:100%;padding:14px 16px;border-radius:10px;border:1px solid #40363a;background:#111114;color:#fff;outline:none}.search-area input:focus,.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--red2);box-shadow:0 0 0 2px #790d1b33}
+nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+nav a{font-size:14px;color:#d6d0ce;transition:.2s}
+nav a:hover,nav a:focus{color:var(--gold)}
+.admin-open,.primary{border:1px solid var(--red2);background:linear-gradient(135deg,#650b18,#a31327);color:#fff;border-radius:9px;padding:10px 16px;font-weight:700}
+.admin-open:hover,.primary:hover{filter:brightness(1.15)}
+.search-area{padding:22px 0 0}
+.search-area input{width:100%;padding:14px 16px;border-radius:10px;border:1px solid #40363a;background:#111114;color:#fff;outline:none}
+.search-area input:focus,.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--red2);box-shadow:0 0 0 2px #790d1b33}
 #searchResults{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;margin-top:12px}
-.hero{margin:28px auto 35px;padding:64px 20px;text-align:center;border:1px solid #5b101d;border-radius:18px;background:#101013;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:0;left:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--red2),transparent)}.hero h1{font-size:clamp(26px,4vw,42px);color:var(--gold);margin-bottom:10px}.hero p{color:#c1baba}
-.stat{background:#111114;border:1px solid #49101a;border-radius:12px;padding:16px;text-align:center}.stat strong{display:block;font-size:27px;color:var(--gold);direction:ltr}.stat span{font-size:13px;color:var(--muted)}
-section.content-section{margin:38px auto}.section-title{font-size:22px;color:var(--gold);border-right:3px solid var(--red2);padding-right:12px;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:17px}.media-card{background:#111114;border:1px solid #302a2d;border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .22s,border-color .22s,box-shadow .22s}.media-card:hover{transform:translateY(-5px);border-color:var(--red2);box-shadow:0 12px 28px #0008}.poster{height:225px;background:#0c0c0e;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--gold)}.poster img{width:100%;height:100%;object-fit:cover;display:block}.card-meta{padding:11px 9px 13px;display:grid;gap:3px;text-align:center}.card-meta strong{font-size:14px;color:#f5eeee}.card-meta .en{direction:ltr;font-size:12px;color:#bcb4b4}.card-meta .year{font-size:12px;color:var(--gold);direction:ltr}.card-rating{font-size:12px;color:#e8c66e;direction:ltr}.empty{color:var(--muted);padding:14px 0}
+.hero{margin:28px auto 35px;padding:64px 20px;text-align:center;border:1px solid #5b101d;border-radius:18px;background:#101013;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:0;left:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--red2),transparent)}
+.hero h1{font-size:clamp(26px,4vw,42px);color:var(--gold);margin-bottom:10px}
+.hero p{color:#c1baba}
+.stat{background:#111114;border:1px solid #49101a;border-radius:12px;padding:16px;text-align:center}
+.stat strong{display:block;font-size:27px;color:var(--gold);direction:ltr}
+.stat span{font-size:13px;color:var(--muted)}
+section.content-section{margin:38px auto}
+.section-title{font-size:22px;color:var(--gold);border-right:3px solid var(--red2);padding-right:12px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:17px}
+.media-card{background:#111114;border:1px solid #302a2d;border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .22s,border-color .22s,box-shadow .22s}
+.media-card:hover{transform:translateY(-5px);border-color:var(--red2);box-shadow:0 12px 28px #0008}
+.poster{height:225px;background:#0c0c0e;display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--gold)}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.card-meta{padding:11px 9px 13px;display:grid;gap:3px;text-align:center}
+.card-meta strong{font-size:14px;color:#f5eeee}
+.card-meta .en{direction:ltr;font-size:12px;color:#bcb4b4}
+.card-meta .year{font-size:12px;color:var(--gold);direction:ltr}
+.card-rating{font-size:12px;color:#e8c66e;direction:ltr}
+.empty{color:var(--muted);padding:14px 0}
 /* Admin */
-#adminPanel{display:none;margin:26px auto;padding:22px;background:#101013;border:1px solid #68101f;border-radius:15px}.admin-heading{color:var(--gold);font-size:22px;margin-bottom:12px}.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{min-width:0}.field.full{grid-column:1/-1}.field label{display:block;color:#d4cbca;font-size:13px;margin:0 0 5px}.field input,.field textarea,.field select{width:100%;background:#080809;color:#f6f1ef;border:1px solid #393338;border-radius:8px;padding:11px;outline:none}.field textarea{min-height:85px;resize:vertical}.field input[type=file]{padding:8px}.admin-sub{border-top:1px solid #4b1821;margin-top:20px;padding-top:17px}.admin-sub h3{color:var(--gold);margin-bottom:12px}.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.secondary{background:#262226;color:#eee;border:1px solid #51454a;border-radius:8px;padding:10px 14px}.danger{background:#5e101b;color:#fff;border:1px solid #a31327;border-radius:8px;padding:9px 12px}.status{min-height:24px;color:var(--gold);font-size:13px;margin:10px 0}.hidden{display:none!important}.checkline{display:flex;align-items:center;gap:8px;color:#ddd}.checkline input{width:auto}
+#adminPanel{display:none;margin:26px auto;padding:22px;background:#101013;border:1px solid #68101f;border-radius:15px}
+.admin-heading{color:var(--gold);font-size:22px;margin-bottom:12px}
+.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field{min-width:0}
+.field.full{grid-column:1/-1}
+.field label{display:block;color:#d4cbca;font-size:13px;margin:0 0 5px}
+.field input,.field textarea,.field select{width:100%;background:#080809;color:#f6f1ef;border:1px solid #393338;border-radius:8px;padding:11px;outline:none}
+.field textarea{min-height:85px;resize:vertical}
+.field input[type=file]{padding:8px}
+.admin-sub{border-top:1px solid #4b1821;margin-top:20px;padding-top:17px}
+.admin-sub h3{color:var(--gold);margin-bottom:12px}
+.admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.secondary{background:#262226;color:#eee;border:1px solid #51454a;border-radius:8px;padding:10px 14px}
+.danger{background:#5e101b;color:#fff;border:1px solid #a31327;border-radius:8px;padding:9px 12px}
+.status{min-height:24px;color:var(--gold);font-size:13px;margin:10px 0}
+.hidden{display:none!important}
+.checkline{display:flex;align-items:center;gap:8px;color:#ddd}
+.checkline input{width:auto}
 /* Detail page overlay */
-#detail{display:none;position:fixed;inset:0;z-index:40;overflow-y:auto;background:rgba(0,0,0,.94);padding:22px 12px}.detail-shell{width:min(1000px,100%);margin:15px auto 35px;background:#0c0c0e;border:1px solid #741020;border-radius:17px;padding:20px;box-shadow:0 20px 80px #000b;position:relative}.detail-top{display:flex;justify-content:flex-start}.close{background:#252226;border:1px solid #51454a;color:#eee;border-radius:8px;padding:8px 12px}.detail-poster-wrap{width:min(330px,100%);margin:18px auto 14px;background:#050506;border:1px solid #30262a;border-radius:10px;padding:7px}.detail-poster{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:6px;background:#050506}.detail-title-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;text-align:center;margin:12px 0 4px}.detail-title-row .ku{font-size:25px;color:var(--gold);font-weight:900}.detail-title-row .en{font-size:20px;color:#e7e0de;direction:ltr}.title-separator{color:var(--red2)}.imdb-rating{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px auto 20px;width:max-content;max-width:100%;background:#171719;border:1px solid #4a3c22;border-radius:9px;padding:8px 13px}.imdb-logo{font-family:Arial,sans-serif;background:#f5c518;color:#111;font-weight:1000;font-size:17px;padding:2px 6px;border-radius:4px;letter-spacing:-.6px}.imdb-score{font-size:19px;font-weight:800;direction:ltr;color:#fff}.watch-row{text-align:center;margin:12px 0 22px}.watch-btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#690b19,#a31327);border:1px solid #d23a4d;color:#fff;border-radius:8px;padding:11px 22px;font-weight:800;box-shadow:0 5px 20px #710d1b44}.watch-btn span{font-size:18px}
-.detail-columns{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}.detail-panel{background:#121215;border:1px solid #30292d;border-radius:12px;padding:15px;min-width:0}.detail-panel h3{color:var(--gold);font-size:17px;margin-bottom:10px}.meta-table{width:100%;border-collapse:collapse;font-size:14px}.meta-table tr{border-bottom:1px solid #332c30}.meta-table tr:last-child{border:0}.meta-table th,.meta-table td{padding:9px 7px;text-align:right;vertical-align:top}.meta-table th{width:42%;color:#c9bfc0;font-weight:600}.meta-table td{color:#f4eeee;overflow-wrap:anywhere}.synopsis{white-space:pre-wrap;color:#ddd4d4;line-height:1.9}.actor-names{color:#eee;line-height:1.9;overflow-wrap:anywhere}.actor-more{background:none;border:0;color:var(--gold);text-decoration:underline;padding:5px 0;font-size:13px}.detail-extra{display:grid;gap:14px}.detail-section{margin-top:20px}.detail-section h3{color:var(--gold);border-right:3px solid var(--red2);padding-right:10px;margin-bottom:12px}.season-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px}.season-btn{background:#151215;border:1px solid #751020;color:#f3dede;border-radius:9px;padding:12px;text-align:center}.season-btn:hover,.season-btn.active{background:#5d0c19;border-color:#bd263e}.season-count{font-size:12px;color:#c7aaaa;display:block}.episode-list{display:grid;gap:11px;margin-top:13px}.episode-row{display:grid;grid-template-columns:1fr;gap:13px;align-items:center;background:#141417;border:1px solid #3b3034;border-radius:10px;padding:10px}.episode-thumb{display:none}.episode-info strong{display:block;color:#f2eaea}.episode-info small{display:block;color:#b8adae;font-size:12px}.episode-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}.episode-play{background:#780e20;color:#fff;border:1px solid #b62940;border-radius:7px;padding:7px 12px}.player-wrap{margin-top:12px;background:#000;border:1px solid #4b111d;border-radius:10px;overflow:hidden}.player-wrap video,.player-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}.player-note{font-size:12px;color:#c9b5b8;margin-top:7px}.media-player{margin:18px auto;max-width:850px}.media-player video,.media-player iframe{width:100%;aspect-ratio:16/9;border:0;background:#000;border-radius:10px}.detail-admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}#watchPage{display:none;position:fixed;inset:0;z-index:60;overflow-y:auto;background:rgba(5,5,6,.98);padding:18px 12px}.watch-shell{width:min(1000px,100%);margin:12px auto 35px;background:#0d0d10;border:1px solid #741020;border-radius:16px;padding:18px;min-height:80vh}.watch-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:18px 0}.watch-heading h2{color:var(--gold);font-size:22px}.watch-season-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:18px 0}.watch-season-card{background:#171216;border:1px solid #761326;color:#f5e7e8;border-radius:10px;padding:18px 12px;text-align:center;font-weight:800}.watch-season-card:hover,.watch-season-card.active{background:#650d1d;border-color:#d13b50}.episode-table-wrap{overflow-x:auto;margin:15px 0}.episode-table{width:100%;border-collapse:collapse;min-width:570px;background:#111114}.episode-table th,.episode-table td{padding:11px 9px;text-align:right;border-bottom:1px solid #38272d}.episode-table th{color:var(--gold);background:#1a1317}.episode-table td{color:#eee}.episode-table .episode-play{white-space:nowrap}.watch-player{margin:18px 0;background:#000;border:1px solid #741020;border-radius:10px;padding:10px}.watch-player .media-player{margin:0;max-width:none}.watch-empty{color:#c7b7ba;padding:18px 0}.actor-names{white-space:pre-line}footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:30px 0 20px;text-align:center;color:#aaa}.footer-brand{font-size:20px;color:var(--gold);font-weight:900;margin-bottom:6px}.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:14px 0}.footer-links a:hover{color:var(--gold)}.socials{display:flex;justify-content:center;gap:12px;margin:14px 0}.socials a{border:1px solid #5b1722;border-radius:30px;padding:6px 14px;color:#e7d8d9;font-size:13px}.socials a:hover{background:#5d0c19}
-#statsPage{display:none;min-height:55vh;padding:45px 0}#statsPage h1{color:var(--gold);margin-bottom:20px}.stats-details{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.stats-details .stat{padding:25px}
-@media(max-width:760px){.header-inner{justify-content:center}.brand{width:100%;justify-content:center}nav{justify-content:center;gap:12px}.admin-open{margin-bottom:3px}.detail-columns{grid-template-columns:1fr}.detail-shell{padding:13px}.detail-title-row .ku{font-size:21px}.detail-title-row .en{font-size:17px}.episode-row{grid-template-columns:1fr}.episode-thumb{display:none}.watch-shell{padding:12px}.watch-season-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-grid{grid-template-columns:1fr}}
+#detail{display:none;position:fixed;inset:0;z-index:40;overflow-y:auto;background:rgba(0,0,0,.94);padding:22px 12px}
+.detail-shell{width:min(1000px,100%);margin:15px auto 35px;background:#0c0c0e;border:1px solid #741020;border-radius:17px;padding:20px;box-shadow:0 20px 80px #000b;position:relative}
+.detail-top{display:flex;justify-content:flex-start}
+.close{background:#252226;border:1px solid #51454a;color:#eee;border-radius:8px;padding:8px 12px}
+.detail-poster-wrap{width:min(330px,100%);margin:18px auto 14px;background:#050506;border:1px solid #30262a;border-radius:10px;padding:7px}
+.detail-poster{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:6px;background:#050506}
+.detail-title-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;text-align:center;margin:12px 0 4px}
+.detail-title-row .ku{font-size:25px;color:var(--gold);font-weight:900}
+.detail-title-row .en{font-size:20px;color:#e7e0de;direction:ltr}
+.title-separator{color:var(--red2)}
+.imdb-rating{display:flex;align-items:center;justify-content:center;gap:10px;margin:12px auto 20px;width:max-content;max-width:100%;background:#171719;border:1px solid #4a3c22;border-radius:9px;padding:8px 13px}
+.imdb-logo{font-family:Arial,sans-serif;background:#f5c518;color:#111;font-weight:1000;font-size:17px;padding:2px 6px;border-radius:4px;letter-spacing:-.6px}
+.imdb-score{font-size:19px;font-weight:800;direction:ltr;color:#fff}
+.watch-row{text-align:center;margin:12px 0 22px}
+.watch-btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#690b19,#a31327);border:1px solid #d23a4d;color:#fff;border-radius:8px;padding:11px 22px;font-weight:800;box-shadow:0 5px 20px #710d1b44}
+.watch-btn span{font-size:18px}
+.detail-columns{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:start}
+.detail-panel{background:#121215;border:1px solid #30292d;border-radius:12px;padding:15px;min-width:0}
+.detail-panel h3{color:var(--gold);font-size:17px;margin-bottom:10px}
+.meta-table{width:100%;border-collapse:collapse;font-size:14px}
+.meta-table tr{border-bottom:1px solid #332c30}
+.meta-table tr:last-child{border:0}
+.meta-table th,.meta-table td{padding:9px 7px;text-align:right;vertical-align:top}
+.meta-table th{width:42%;color:#c9bfc0;font-weight:600}
+.meta-table td{color:#f4eeee;overflow-wrap:anywhere}
+.synopsis{white-space:pre-wrap;color:#ddd4d4;line-height:1.9}
+.actor-names{color:#eee;line-height:1.9;overflow-wrap:anywhere}
+.actor-more{background:none;border:0;color:var(--gold);text-decoration:underline;padding:5px 0;font-size:13px}
+.detail-extra{display:grid;gap:14px}
+.detail-section{margin-top:20px}
+.detail-section h3{color:var(--gold);border-right:3px solid var(--red2);padding-right:10px;margin-bottom:12px}
+.season-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px}
+.season-btn{background:#151215;border:1px solid #751020;color:#f3dede;border-radius:9px;padding:12px;text-align:center}
+.season-btn:hover,.season-btn.active{background:#5d0c19;border-color:#bd263e}
+.season-count{font-size:12px;color:#c7aaaa;display:block}
+.episode-list{display:grid;gap:11px;margin-top:13px}
+.episode-row{display:grid;grid-template-columns:100px 1fr;gap:13px;align-items:center;background:#141417;border:1px solid #3b3034;border-radius:10px;padding:10px}
+.episode-thumb{width:100px;height:70px;object-fit:cover;border-radius:7px;background:#080809}
+.episode-info strong{display:block;color:#f2eaea}
+.episode-info small{display:block;color:#b8adae;font-size:12px}
+.episode-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.episode-play{background:#780e20;color:#fff;border:1px solid #b62940;border-radius:7px;padding:7px 12px}
+.player-wrap{margin-top:12px;background:#000;border:1px solid #4b111d;border-radius:10px;overflow:hidden}
+.player-wrap video,.player-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+.player-note{font-size:12px;color:#c9b5b8;margin-top:7px}
+.media-player{margin:18px auto;max-width:850px}
+.media-player video,.media-player iframe{width:100%;aspect-ratio:16/9;border:0;background:#000;border-radius:10px}
+.detail-admin-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+footer{margin-top:60px;border-top:1px solid #711020;background:#09090b;padding:30px 0 20px;text-align:center;color:#aaa}
+.footer-brand{font-size:20px;color:var(--gold);font-weight:900;margin-bottom:6px}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:14px 0}
+.footer-links a:hover{color:var(--gold)}
+.socials{display:flex;justify-content:center;gap:12px;margin:14px 0}
+@media(max-width:760px){.header-inner{justify-content:center}.brand{width:100%;justify-content:center}nav{justify-content:center;gap:12px}.admin-open{margin-bottom:3px}.detail-columns{grid-template-columns:1fr}.detail-shell{padding:13px}.detail-title-row .ku{font-size:21px}.detail-title-row .en{font-size:17px}.episode-row{grid-template-columns:78px 1fr}.episode-thumb{width:78px;height:62px}.admin-grid{grid-template-columns:1fr}}
 @media(max-width:420px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.poster{height:190px}.hero{padding:42px 14px}.season-list{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-poster{max-height:350px}}
 </style>
-</head>
-<body>
+</head><body>
 <header>
  <div class="container header-inner">
-  <a class="brand" href="#home"><img src="IMG_20261108_140345_137.jpg" alt="CINEMA_CRC logo"><span>CINEMA_CRC</span></a>
-  <nav aria-label="ناوبەری سەرەکی">
-   <a href="#home">سەرەتا</a><a href="#series">زنجیرەکان</a><a href="#movies">فیلمەکان</a><a href="#anime">ئەنیمە</a>
+  <a class="brand" href="#home">
+   <img src="IMG_20261108_140345_137.jpg" alt="CINEMA_CRC">
+   <span>CINEMA_CRC</span>
+  </a>
+  <nav>
+   <a href="#home">سەرەکی</a>
+   <a href="#series">زنجیرە</a>
+   <a href="#movies">فیلم</a>
+   <a href="#anime">ئەنیمە</a>
   </nav>
   <button class="admin-open" onclick="toggleAdmin()">بەڕێوەبەر</button>
  </div>
 </header>
+
 <div id="home" class="container">
- <div class="search-area"><input id="search" type="search" placeholder="گەڕان بە ناوی کوردی یان ئینگلیزی..." autocomplete="off"><div id="searchResults"></div></div>
- <section class="hero"><h1>بەخێربێیت بۆ CINEMA_CRC</h1><p>جیهانی فیلم و زنجیرە و چیرۆکەکانت</p></section>
+ <div class="search-area">
+  <input id="search" type="search" placeholder="گەڕان بە ناوی کوردی یان ئینگلیزی..." autocomplete="off">
+  <div id="searchResults"></div>
+ </div>
+
+ <section class="hero">
+  <h1>بەخێربێیت بۆ CINEMA_CRC</h1>
+  <p>جیهانی فیلم و زنجیرە و چیرۆکەکانت</p>
+ </section>
+
  <main>
-  <section class="content-section" id="featuredSection"><h2 class="section-title">پێشنیارە تایبەتەکان</h2><div class="grid" id="featuredGrid"></div></section>
-  <section class="content-section"><h2 class="section-title">نوێترین زیادکراوەکان</h2><div class="grid" id="newestGrid"></div></section>
-  <section class="content-section" id="series"><h2 class="section-title">زنجیرەکان</h2><div class="grid" id="seriesGrid"></div></section>
-  <section class="content-section" id="movies"><h2 class="section-title">فیلمەکان</h2><div class="grid" id="moviesGrid"></div></section>
-  <section class="content-section" id="anime"><h2 class="section-title">ئەنیمە</h2><div class="grid" id="animeGrid"></div></section>
+  <section class="content-section" id="featuredSection">
+   <h2 class="section-title">پێشنیارە تایبەتەکان</h2>
+   <div class="grid" id="featuredGrid"></div>
+  </section>
+
+  <section class="content-section">
+   <h2 class="section-title">نوێترین زیادکراوەکان</h2>
+   <div class="grid" id="newestGrid"></div>
+  </section>
+
+  <section class="content-section" id="series">
+   <h2 class="section-title">زنجیرەکان</h2>
+   <div class="grid" id="seriesGrid"></div>
+  </section>
+
+  <section class="content-section" id="movies">
+   <h2 class="section-title">فیلمەکان</h2>
+   <div class="grid" id="moviesGrid"></div>
+  </section>
+
+  <section class="content-section" id="anime">
+   <h2 class="section-title">ئەنیمە</h2>
+   <div class="grid" id="animeGrid"></div>
+  </section>
  </main>
+
  <section id="adminPanel">
-  <h2 class="admin-heading">بەشی بەڕێوەبەرایەتی</h2><p id="statusMessage" class="status" role="status" aria-live="polite"></p>
+  <h2 class="admin-heading">بەشی بەڕێوەبەرایەتی</h2>
+  <p id="statusMessage" class="status"></p>
+
   <div id="loginArea">
-   <div class="admin-grid"><div class="field"><label for="email">ئیمەیڵ</label><input id="email" type="email" autocomplete="username"></div><div class="field"><label for="password">وشەی نهێنی</label><input id="password" type="password" autocomplete="current-password"></div></div>
-   <div class="admin-actions"><button class="primary" onclick="login()">چوونەژوورەوە</button></div>
-  </div>
-  <div id="manageArea" class="hidden">
-   <h3>زیادکردن و دەستکاریکردنی فیلم و زنجیرە</h3>
    <div class="admin-grid">
-    <div class="field"><label for="title">ناوی کوردی</label><input id="title" type="text"></div>
-    <div class="field"><label for="titleEn">ناوی ئینگلیزی</label><input id="titleEn" type="text" dir="ltr"></div>
-    <div class="field"><label for="category">جۆر</label><select id="category"><option value="movie">فیلم</option><option value="series">زنجیرە</option><option value="anime">ئەنیمە</option></select></div>
-    <div class="field"><label for="posterFile">پۆستەر</label><input id="posterFile" type="file" accept="image/*"></div>
-    <div class="field full"><label for="description">کورتە</label><textarea id="description"></textarea></div>
-    <div class="field"><label for="year">ساڵی دەرچوون</label><input id="year" type="number" min="1880" max="2100"></div>
-    <div class="field"><label for="rating">ڕەیتینگی IMDb (لە 10)</label><input id="rating" type="number" min="0" max="10" step="0.1" placeholder="8.7"></div>
-    <div class="field"><label for="genres">ژانەرەکان</label><input id="genres" type="text" placeholder="دراما، ئەکشن... "></div>
-    <div class="field"><label for="quality">کوالێتی</label><select id="quality"><option value="">هەڵبژێرە</option><option>480p</option><option>720p</option><option>1080p</option><option>2K</option><option>4K</option></select></div>
-    <div class="field"><label for="productionCompany">کۆمپانیای بەرهەمهێنان</label><input id="productionCompany" type="text"></div>
-    <div class="field"><label for="writer">نوسەر</label><input id="writer" type="text"></div>
-    <div class="field full"><label for="actors">ئەکتەرەکان (بە کۆما جیا بکەرەوە)</label><textarea id="actors"></textarea></div>
-    <div class="field"><label for="translator">وەرگێڕ</label><input id="translator" type="text"></div>
-    <div class="field"><label for="durationMovie">ماوەی فیلم (خولەک)</label><input id="durationMovie" type="number" min="1"></div>
-    <div class="field"><label for="budget">بودجە</label><input id="budget" type="text" placeholder="USD"></div>
-    <div class="field"><label for="revenue">داهات</label><input id="revenue" type="text" placeholder="USD"></div>
-    <div class="field"><label for="durationEpisode">ماوەی هەر ئەڵقە (خولەک)</label><input id="durationEpisode" type="number" min="1"></div>
-    <div class="field"><label for="movieVideoUrl">لینکی تەواوی فیلم (بۆ پەخشکردن)</label><input id="movieVideoUrl" type="url" dir="ltr" placeholder="https://..."></div>
-    <div class="field"><label for="trailer">لینکی تڕەیلەر (ئارەزوومەندانە)</label><input id="trailer" type="url" dir="ltr" placeholder="https://..."></div>
-    <div class="field"><label class="checkline"><input id="featured" type="checkbox"> پێشنیاری تایبەت</label></div>
+    <div class="field">
+     <label for="email">ئیمەیڵ</label>
+     <input id="email" type="email">
+    </div>
+    <div class="field">
+     <label for="password">وشەی نهێنی</label>
+     <input id="password" type="password">
+    </div>
    </div>
+   <div class="admin-actions">
+    <button class="primary" onclick="login()">چوونەژوورەوە</button>
+   </div>
+  </div>
+
+  <div id="manageArea" class="hidden">
+   <h3>زیادکردن و دەستکاریکردنی بەرهەمەکان</h3>
+
+   <div class="admin-grid">
+    <div class="field">
+     <label for="title">ناوی کوردی</label>
+     <input id="title" type="text">
+    </div>
+    <div class="field">
+     <label for="titleEn">ناوی ئینگلیزی</label>
+     <input id="titleEn" type="text" dir="ltr">
+    </div>
+
+    <div class="field">
+     <label for="category">جۆری بەرهەم</label>
+     <select id="category">
+      <option value="movie">فیلم</option>
+      <option value="series">زنجیرە</option>
+      <option value="series_film">زنجیرە فیلم</option>
+      <option value="korean_series">زنجیرە کۆرییەکان</option>
+      <option value="bollywood">بۆڵیوود</option>
+      <option value="manga">مانگا</option>
+      <option value="anime">ئەنیمە</option>
+     </select>
+    </div>
+
+    <div class="field">
+     <label for="posterFile">پۆستەر</label>
+     <input id="posterFile" type="file" accept="image/*">
+    </div>
+
+    <div class="field full">
+     <label for="description">کورتە</label>
+     <textarea id="description"></textarea>
+    </div>
+
+    <div class="field">
+     <label for="year">ساڵی دەرچوون</label>
+     <input id="year" type="number">
+    </div>
+
+    <div class="field">
+     <label for="rating">ڕەیتینگی IMDb</label>
+     <input id="rating" type="number" min="0" max="10" step="0.1">
+    </div>
+
+    <div class="field">
+     <label for="genres">ژانەرەکان</label>
+     <input id="genres" type="text">
+    </div>
+
+    <div class="field">
+     <label for="quality">کوالێتی</label>
+     <select id="quality">
+      <option value="">هەڵبژێرە</option>
+      <option>480p</option>
+      <option>720p</option>
+      <option>1080p</option>
+      <option>2K</option>
+      <option>4K</option>
+     </select>
+    </div>
+
+    <div class="field">
+     <label for="productionCompany">کۆمپانیای بەرهەمهێنان</label>
+     <input id="productionCompany">
+    </div>
+
+    <div class="field">
+     <label for="writer">نووسەر</label>
+     <input id="writer">
+    </div>
+
+    <div class="field full">
+     <label for="actors">ئەکتەرەکان (بە کۆما جیا بکەرەوە)</label>
+     <textarea id="actors"></textarea>
+    </div>
+
+    <div class="field">
+     <label for="translator">وەرگێڕ</label>
+     <input id="translator">
+    </div>
+
+    <div class="field">
+     <label for="durationMovie">ماوەی فیلم (خولەک)</label>
+     <input id="durationMovie" type="number">
+    </div>
+
+    <div class="field">
+     <label for="budget">بودجە</label>
+     <input id="budget">
+    </div>
+
+    <div class="field">
+     <label for="revenue">داهات</label>
+     <input id="revenue">
+    </div>
+
+    <div class="field">
+     <label for="durationEpisode">ماوەی ئەڵقە (خولەک)</label>
+     <input id="durationEpisode" type="number">
+    </div>
+
+    <div class="field">
+     <label for="movieVideoUrl">لینکی پەخشکردن</label>
+     <input id="movieVideoUrl" type="url" dir="ltr">
+    </div>
+
+    <div class="field">
+     <label for="trailer">لینکی تڕەیلەر</label>
+     <input id="trailer" type="url" dir="ltr">
+    </div>
+
+    <div class="field">
+     <label class="checkline">
+      <input id="featured" type="checkbox">
+      پێشنیاری تایبەت
+     </label>
+    </div>
+   </div>
+
    <input id="editId" type="hidden">
-   <div class="admin-actions"><button id="saveMediaButton" class="primary" onclick="saveMedia()">پاشەکەوتکردن</button><button class="secondary" onclick="clearMediaForm()">پاککردنەوە</button><button class="secondary" onclick="logout()">چوونەدەرەوە</button></div>
-   <div class="admin-sub"><h3>زیادکردنی وەرز بۆ زنجیرە</h3>
-    <div class="admin-grid"><div class="field"><label for="seasonMedia">زنجیرە</label><select id="seasonMedia"><option value="">زنجیرە هەڵبژێرە</option></select></div><div class="field"><label for="seasonNumber">ژمارەی وەرز</label><input id="seasonNumber" type="number" min="1" placeholder="بەتاڵ بهێڵە بۆ ژمارەی خۆکار"></div></div>
-    <div class="admin-actions"><button class="primary" onclick="addSeason()">زیادکردنی وەرز</button></div><div id="seasonAdminList" class="admin-list"></div>
+
+   <div class="admin-actions">
+    <button id="saveMediaButton" class="primary" onclick="saveMedia()">پاشەکەوتکردن</button>
+    <button class="secondary" onclick="clearMediaForm()">پاککردنەوە</button>
+    <button class="secondary" onclick="logout()">چوونەدەرەوە</button>
    </div>
-   <div class="admin-sub"><h3>زیادکردن و دەستکاریکردنی ئەڵقە</h3>
-    <div class="admin-grid"><div class="field"><label for="episodeSeason">وەرز</label><select id="episodeSeason"><option value="">وەرز هەڵبژێرە</option></select></div><div class="field"><label for="episodeNumber">ژمارەی ئەڵقە</label><input id="episodeNumber" type="number" min="1"></div><div class="field"><label for="episodeTitle">ناوی ئەڵقە</label><input id="episodeTitle" type="text"></div><div class="field"><label for="episodeDate">بەرواری بڵاوکردنەوە</label><input id="episodeDate" type="date"></div><div class="field"><label for="episodeDuration">ماوە (خولەک)</label><input id="episodeDuration" type="number" min="1"></div><div class="field full"><label for="episodeVideoUrl">لینکی تەواوی ئەڵقە بۆ پەخشکردن</label><input id="episodeVideoUrl" type="url" dir="ltr" placeholder="MP4 یان لینکی embed"></div></div>
-    <input id="episodeEditId" type="hidden"><div class="admin-actions"><button class="primary" onclick="saveEpisode()">پاشەکەوتکردنی ئەڵقە</button><button class="secondary" onclick="clearEpisodeForm()">پاککردنەوە</button></div><div id="episodeAdminList" class="admin-list"></div>
+
+   <div class="admin-sub">
+    <h3>زیادکردنی وەرز بۆ زنجیرە</h3>
+    <div class="admin-grid">
+     <div class="field">
+      <label for="seasonMedia">زنجیرە</label>
+      <select id="seasonMedia">
+       <option value="">زنجیرە هەڵبژێرە</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="seasonNumber">ژمارەی وەرز</label>
+      <input id="seasonNumber" type="number">
+     </div>
+    </div>
+    <div class="admin-actions">
+     <button class="primary" onclick="addSeason()">زیادکردنی وەرز</button>
+    </div>
+    <div id="seasonAdminList"></div>
+   </div>
+
+   <div class="admin-sub">
+    <h3>زیادکردن و دەستکاریکردنی ئەڵقە</h3>
+    <div class="admin-grid">
+     <div class="field">
+      <label for="episodeSeason">وەرز</label>
+      <select id="episodeSeason">
+       <option value="">وەرز هەڵبژێرە</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="episodeNumber">ژمارەی ئەڵقە</label>
+      <input id="episodeNumber" type="number">
+     </div>
+     <div class="field">
+      <label for="episodeTitle">ناوی ئەڵقە</label>
+      <input id="episodeTitle">
+     </div>
+     <div class="field">
+      <label for="episodeDate">بەرواری بڵاوکردنەوە</label>
+      <input id="episodeDate" type="date">
+     </div>
+     <div class="field">
+      <label for="episodeDuration">ماوە (خولەک)</label>
+      <input id="episodeDuration" type="number">
+     </div>
+     <div class="field">
+      <label for="episodePoster">وێنەی ئەڵقە</label>
+      <input id="episodePoster" type="file" accept="image/*">
+     </div>
+     <div class="field full">
+      <label for="episodeVideoUrl">لینکی پەخشکردنی ئەڵقە</label>
+      <input id="episodeVideoUrl" type="url" dir="ltr">
+     </div>
+    </div>
+    <input id="episodeEditId" type="hidden">
+    <div class="admin-actions">
+     <button class="primary" onclick="saveEpisode()">پاشەکەوتکردنی ئەڵقە</button>
+     <button class="secondary" onclick="clearEpisodeForm()">پاککردنەوە</button>
+    </div>
+    <div id="episodeAdminList"></div>
    </div>
   </div>
  </section>
- <section id="statsPage"><h1>زانیارییەکانی CINEMA_CRC</h1><div class="stats-details"><div class="stat"><strong id="detailTotal">0</strong><span>کۆی بەرهەمەکان</span></div><div class="stat"><strong id="detailMovies">0</strong><span>فیلمەکان</span></div><div class="stat"><strong id="detailSeries">0</strong><span>زنجیرەکان</span></div><div class="stat"><strong id="detailEpisodes">0</strong><span>ئەڵقەکان</span></div></div><p class="player-note" style="margin-top:18px">ئەم ئامارانە بە شێوەی خۆکار لە داتابەیسەوە نوێ دەبنەوە.</p></section>
+
+ <section id="statsPage">
+  <h1>زانیارییەکانی CINEMA_CRC</h1>
+  <div class="stats-details">
+   <div class="stat"><strong id="detailTotal">0</strong><span>کۆی بەرهەمەکان</span></div>
+   <div class="stat"><strong id="detailMovies">0</strong><span>فیلمەکان</span></div>
+   <div class="stat"><strong id="detailSeries">0</strong><span>زنجیرەکان</span></div>
+   <div class="stat"><strong id="detailEpisodes">0</strong><span>ئەڵقەکان</span></div>
+  </div>
+ </section>
 </div>
-<div id="watchPage" role="dialog" aria-modal="true" aria-label="پەخشکردن"><div class="watch-shell"><button class="close" onclick="closeWatchPage()">گەڕانەوە ←</button><div class="watch-heading"><h2 id="watchTitle"></h2></div><div id="watchContent"></div></div></div>
-<div id="detail" role="dialog" aria-modal="true" aria-label="زانیاریی بەرهەم"><div class="detail-shell"><div class="detail-top"><button class="close" onclick="closeDetail()">داخستن ✕</button></div><div id="detailContent"></div></div></div>
-<footer><div class="container"><div class="footer-brand">CINEMA_CRC</div><div>جیهانی فیلم، زنجیرە و چیرۆکەکان</div><div class="footer-links"><a href="#home">سەرەتا</a><a href="#movies">فیلمەکان</a><a href="#series">زنجیرەکان</a><a href="#statsPage" onclick="showStats(event)">زانیارییەکان</a></div><div class="socials"><a href="https://t.me/CINEMA_CRC" target="_blank" rel="noopener">Telegram</a><a href="https://www.tiktok.com/@cinema_crc" target="_blank" rel="noopener">TikTok</a></div><small>© 2026 CINEMA_CRC — هەموو مافەکان پارێزراون</small></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
+
+<div id="detail" role="dialog" aria-modal="true">
+ <div class="detail-shell">
+  <div class="detail-top">
+   <button class="close" onclick="closeDetail()">داخستن ✕</button>
+  </div>
+  <div id="detailContent"></div>
+ </div>
+</div>
+
+<footer>
+ <div class="container">
+  <div class="footer-brand">CINEMA_CRC</div>
+  <div>جیهانی فیلم، زنجیرە و چیرۆکەکان</div>
+  <div class="footer-links">
+   <a href="#home">سەرەتا</a>
+   <a href="#movies">فیلمەکان</a>
+   <a href="#series">زنجیرەکان</a>
+   <a href="#statsPage" onclick="showStats(event)">زانیارییەکان</a>
+  </div>
+  <div class="socials">
+   <a href="https://t.me/CINEMA_CRC1" target="_blank" rel="noopener">Telegram</a>
+   <a href="https://www.tiktok.com/@cinema_crc" target="_blank" rel="noopener">TikTok</a>
+  </div>
+  <small>© 2026 CINEMA_CRC — هەموو مافەکان پارێزراون</small>
+ </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
 'use strict';
-const SUPABASE_URL='https://pywdrfyopvvyelcwrrku.supabase.co';
-const SUPABASE_KEY='sb_publishable_3GUchBQyYKXrXfDn1386eQ_h-BnT4oK';
-const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
-let mediaList=[];let isAdmin=false;let currentDetailItem=null;
-const $=id=>document.getElementById(id);
-const value=id=>($(id)?.value??'').trim();
-const numberValue=id=>value(id)===''?null:Number(value(id));
-function setStatus(text){$('statusMessage').textContent=text||''}
-function safeText(el,text){el.textContent=text??'';return el}
-function makeCard(item){
- const card=document.createElement('article');card.className='media-card';card.tabIndex=0;card.setAttribute('role','button');card.setAttribute('aria-label',item.title||item.title_en||'');
- const poster=document.createElement('div');poster.className='poster';
- if(item.poster_url){const img=document.createElement('img');img.src=item.poster_url;img.alt=item.title||item.title_en||'Poster';img.loading='lazy';poster.appendChild(img)}else safeText(poster,'CINEMA_CRC');
- const meta=document.createElement('div');meta.className='card-meta';const ku=document.createElement('strong');safeText(ku,item.title);meta.appendChild(ku);
- if(item.title_en){const en=document.createElement('span');en.className='en';safeText(en,item.title_en);meta.appendChild(en)}
- if(item.release_year){const yr=document.createElement('span');yr.className='year';safeText(yr,String(item.release_year));meta.appendChild(yr)}
- if(item.rating!==null&&item.rating!==undefined&&item.rating!==''){const rt=document.createElement('span');rt.className='card-rating';safeText(rt,'IMDb '+Number(item.rating).toFixed(1)+'/10');meta.appendChild(rt)}
- card.append(poster,meta);card.addEventListener('click',()=>showDetail(item));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showDetail(item)}});return card;
-}
-function renderGrid(id,items,limit=0){const grid=$(id);grid.innerHTML='';const list=limit?items.slice(0,limit):items;if(!list.length){const p=document.createElement('p');p.className='empty';p.textContent='هێشتا هیچ ناوەڕۆکێک زیاد نەکراوە.';grid.appendChild(p);return}list.forEach(x=>grid.appendChild(makeCard(x)))}function renderMedia(){
- const sorted=[...mediaList].sort((a,b)=>new Date(b.created_at||0)-new Date(a.created_at||0));
- renderGrid('seriesGrid',sorted.filter(x=>x.category==='series'));renderGrid('moviesGrid',sorted.filter(x=>x.category==='movie'));renderGrid('animeGrid',sorted.filter(x=>x.category==='anime'));
- renderGrid('newestGrid',sorted,8);renderGrid('featuredGrid',sorted.filter(x=>x.featured),8);
- $('detailTotal').textContent=mediaList.length;$('detailMovies').textContent=mediaList.filter(x=>x.category==='movie').length;$('detailSeries').textContent=mediaList.filter(x=>x.category==='series').length;
- refreshEpisodeCount();if(isAdmin)refreshSeriesAdmin();
-}
-async function refreshEpisodeCount(){const {count,error}=await db.from('media_episodes').select('id',{count:'exact',head:true});if(!error){$('detailEpisodes').textContent=count??0}else{$('detailEpisodes').textContent='—'}}
-async function loadMedia(){const {data,error}=await db.from('media').select('*').order('created_at',{ascending:false});if(error){console.error(error);return setStatus('هەڵە لە بارکردنی ناوەڕۆک: '+error.message)}mediaList=data||[];renderMedia()}
-function addMetaRow(table,label,val){if(val===null||val===undefined||String(val).trim()==='')return;const tr=document.createElement('tr'),th=document.createElement('th'),td=document.createElement('td');safeText(th,label);safeText(td,String(val));tr.append(th,td);table.appendChild(tr)}
-function ordinal(n){const names=['یەکەم','دووەم','سێیەم','چوارەم','پێنجەم','شەشەم','حەوتەم','هەشتەم','نۆیەم','دەیەم'];return names[n-1]||String(n)}
-function openMediaPlayer(container,url){container.innerHTML='';const wrap=document.createElement('div');wrap.className='media-player';const clean=(url||'').trim();if(!clean)return;
- if(/\.(mp4|webm|ogg|m3u8)(\?.*)?$/i.test(clean)){const video=document.createElement('video');video.controls=true;video.preload='metadata';video.playsInline=true;video.src=clean;wrap.appendChild(video)}else{const frame=document.createElement('iframe');frame.src=clean;frame.allow='autoplay; fullscreen; picture-in-picture; encrypted-media';frame.allowFullscreen=true;frame.loading='lazy';frame.referrerPolicy='strict-origin-when-cross-origin';wrap.appendChild(frame)}container.appendChild(wrap)}
-async function showDetail(item){currentDetailItem=item;const content=$('detailContent');content.innerHTML='';
- const posterWrap=document.createElement('div');posterWrap.className='detail-poster-wrap';if(item.poster_url){const img=document.createElement('img');img.className='detail-poster';img.src=item.poster_url;img.alt=item.title||'پۆستەر';posterWrap.appendChild(img)}else safeText(posterWrap,'CINEMA_CRC');content.appendChild(posterWrap);
- const titleRow=document.createElement('div');titleRow.className='detail-title-row';const ku=document.createElement('span');ku.className='ku';safeText(ku,item.title||'');titleRow.appendChild(ku);if(item.title_en){const sep=document.createElement('span');sep.className='title-separator';safeText(sep,'|');const en=document.createElement('span');en.className='en';safeText(en,item.title_en);titleRow.append(sep,en)}content.appendChild(titleRow);
- if(item.rating!==null&&item.rating!==undefined&&item.rating!==''){const rating=document.createElement('div');rating.className='imdb-rating';const logo=document.createElement('span');logo.className='imdb-logo';safeText(logo,'IMDb');const score=document.createElement('span');score.className='imdb-score';safeText(score,Number(item.rating).toFixed(1)+'/10');rating.append(logo,score);content.appendChild(rating)}
- const watch=document.createElement('div');watch.className='watch-row';const watchBtn=document.createElement('button');watchBtn.className='watch-btn';watchBtn.innerHTML='<span aria-hidden="true">▶</span> سەیرکردن';watchBtn.addEventListener('click',()=>openWatchPage(item));watch.appendChild(watchBtn);content.appendChild(watch);
- const cols=document.createElement('div');cols.className='detail-columns';const metaPanel=document.createElement('div');metaPanel.className='detail-panel';const metaTitle=document.createElement('h3');safeText(metaTitle,'زانیارییەکان');metaPanel.appendChild(metaTitle);const table=document.createElement('table');table.className='meta-table';
- addMetaRow(table,'ساڵی دەرچوون',item.release_year);addMetaRow(table,'ژانەر',item.genres);addMetaRow(table,'کوالێتی',item.quality);addMetaRow(table,'ماوەی فیلم',item.category==='movie'&&item.duration_minutes?item.duration_minutes+' خولەک':null);addMetaRow(table,'ماوەی ئەڵقە',item.category==='series'&&item.duration_minutes?item.duration_minutes+' خولەک':null);addMetaRow(table,'کۆمپانیای بەرهەمهێنان',item.production_company);addMetaRow(table,'نوسەر',item.writer);addMetaRow(table,'وەرگێڕ',item.translator);metaPanel.appendChild(table);
- const extra=document.createElement('div');extra.className='detail-extra';const descPanel=document.createElement('div');descPanel.className='detail-panel';const descTitle=document.createElement('h3');safeText(descTitle,'کورتە');descPanel.appendChild(descTitle);const desc=document.createElement('p');desc.className='synopsis';safeText(desc,item.description||'کورتەیەک زیاد نەکراوە.');descPanel.appendChild(desc);extra.appendChild(descPanel);
- if(item.actors){const actorPanel=document.createElement('div');actorPanel.className='detail-panel';const actorTitle=document.createElement('h3');safeText(actorTitle,'ئەکتەرەکان');actorPanel.appendChild(actorTitle);const actors=String(item.actors).split(/[,،;؛\n]+/).map(s=>s.trim()).filter(Boolean);const actorText=document.createElement('p');actorText.className='actor-names';const paint=expanded=>safeText(actorText,(expanded?actors:actors.slice(0,3)).map(name=>name+'،').join('\n')); paint(false);actorPanel.appendChild(actorText);if(actors.length>3){const more=document.createElement('button');more.className='actor-more';safeText(more,'بینینی زیاتر');let expanded=false;more.onclick=()=>{expanded=!expanded;paint(expanded);safeText(more,expanded?'کەمتر':'بینینی زیاتر')};actorPanel.appendChild(more)}extra.appendChild(actorPanel)}
- cols.append(extra,metaPanel);content.appendChild(cols);
- if(item.budget||item.revenue){const finance=document.createElement('section');finance.className='detail-panel detail-section';const financeTitle=document.createElement('h3');safeText(financeTitle,'بودجە و داهات');finance.appendChild(financeTitle);const financeTable=document.createElement('table');financeTable.className='meta-table';addMetaRow(financeTable,'بودجە',item.budget);addMetaRow(financeTable,'داهات',item.revenue);finance.appendChild(financeTable);content.appendChild(finance)}
- const watchArea=document.createElement('div');watchArea.id='watchArea';watchArea.className='detail-section';content.appendChild(watchArea);
 
- if(item.trailer_url){const trailer=document.createElement('div');trailer.className='detail-section';const a=document.createElement('a');a.href=item.trailer_url;a.target='_blank';a.rel='noopener noreferrer';a.className='secondary';safeText(a,'بینینی تڕەیلەر');trailer.appendChild(a);content.appendChild(trailer)}
- if(isAdmin){const actions=document.createElement('div');actions.className='detail-admin-actions';const edit=document.createElement('button');edit.className='secondary';safeText(edit,'دەستکاریکردن');edit.onclick=()=>{closeDetail();editMedia(item)};const del=document.createElement('button');del.className='danger';safeText(del,'سڕینەوە');del.onclick=()=>deleteMedia(item);actions.append(edit,del);content.appendChild(actions)}
- $('detail').style.display='block';document.body.style.overflow='hidden';}async function openWatchPage(item){
- currentDetailItem=item;$('detail').style.display='none';$('watchPage').style.display='block';document.body.style.overflow='hidden';$('watchTitle').textContent=item.title||item.title_en||'سەیرکردن';const box=$('watchContent');box.innerHTML='';
- if(item.category!=='series'){const player=document.createElement('div');player.className='watch-player';box.appendChild(player);if(item.video_url)openMediaPlayer(player,item.video_url);else{const p=document.createElement('p');p.className='watch-empty';safeText(p,'لینکی تەواوی فیلم هێشتا زیاد نەکراوە.');box.appendChild(p)}return}
- const {data:seasons,error}=await db.from('media_seasons').select('*').eq('media_id',item.id).order('season_number');if(error){const p=document.createElement('p');p.className='watch-empty';safeText(p,'هەڵە لە بارکردنی وەرزەکان: '+error.message);box.appendChild(p);return}if(!seasons?.length){const p=document.createElement('p');p.className='watch-empty';safeText(p,'هێشتا هیچ وەرزێک زیاد نەکراوە.');box.appendChild(p);return}
- const cards=document.createElement('div');cards.className='watch-season-grid';const episodeArea=document.createElement('div');episodeArea.id='watchEpisodes';box.append(cards,episodeArea);
- seasons.forEach(season=>{const btn=document.createElement('button');btn.className='watch-season-card';safeText(btn,'وەرزی '+ordinal(Number(season.season_number)));btn.addEventListener('click',async()=>{cards.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');episodeArea.innerHTML='';const {data:eps,error:epError}=await db.from('media_episodes').select('*').eq('season_id',season.id).order('episode_number');if(epError){safeText(episodeArea,'هەڵە لە بارکردنی ئەڵقەکان: '+epError.message);return}if(!eps?.length){safeText(episodeArea,'هێشتا ئەڵقە بۆ ئەم وەرزە زیاد نەکراوە.');return}const wrap=document.createElement('div');wrap.className='episode-table-wrap';const table=document.createElement('table');table.className='episode-table';const thead=document.createElement('thead');const hr=document.createElement('tr');['ئەڵقە','ناو','بەروار','ماوە','پەخش'].forEach(t=>{const th=document.createElement('th');safeText(th,t);hr.appendChild(th)});thead.appendChild(hr);table.appendChild(thead);const tbody=document.createElement('tbody');eps.forEach(ep=>{const tr=document.createElement('tr');[ep.episode_number,ep.title||'—',ep.release_date||'—',ep.duration_minutes?ep.duration_minutes+' خولەک':'—'].forEach(v=>{const td=document.createElement('td');safeText(td,String(v));tr.appendChild(td)});const action=document.createElement('td');const play=document.createElement('button');play.className='episode-play';safeText(play,'سەیرکردن ▶');play.addEventListener('click',()=>{let player=box.querySelector('.watch-player');if(!player){player=document.createElement('div');player.className='watch-player';box.appendChild(player)}if(ep.video_url)openMediaPlayer(player,ep.video_url);else{player.innerHTML='';safeText(player,'لینکی ئەم ئەڵقەیە زیاد نەکراوە.')}player.scrollIntoView({behavior:'smooth',block:'center'})});action.appendChild(play);tr.appendChild(action);tbody.appendChild(tr)});table.appendChild(tbody);wrap.appendChild(table);episodeArea.appendChild(wrap)});cards.appendChild(btn)});
+const SUPABASE_URL = 'https://pywdrfyopvvyelcwrrku.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_3GUchBQyYKXrXfDn1386eQ_h-BnT4oK';
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+let mediaList = [];
+let staffList = [];
+let isAdmin = false;
+let currentDetailItem = null;
+let currentCategory = 'all';
+
+const $ = id => document.getElementById(id);
+const value = id => ($(id)?.value ?? '').trim();
+const numberValue = id => value(id) === '' ? null : Number(value(id));
+
+const categories = {
+    movie: 'فیلم',
+    series: 'زنجیرە',
+    series_film: 'زنجیرە فیلم',
+    korean_series: 'زنجیرە کۆرییەکان',
+    bollywood: 'بۆڵیوود',
+    manga: 'مانگا',
+    anime: 'ئەنیمە'
+};
+
+function setStatus(text) {
+    if ($('statusMessage')) $('statusMessage').textContent = text || '';
 }
-function closeWatchPage(){ $('watchPage').style.display='none';if(currentDetailItem){$('detail').style.display='block';document.body.style.overflow='hidden'}else{document.body.style.overflow=''} }
 
-function closeDetail(){$('detail').style.display='none';$('watchPage').style.display='none';document.body.style.overflow='';currentDetailItem=null}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail()});$('detail').addEventListener('click',e=>{if(e.target===$('detail'))closeDetail()});
-$('search').addEventListener('input',function(){const term=this.value.trim().toLocaleLowerCase();const results=$('searchResults');results.innerHTML='';if(!term)return;const found=mediaList.filter(x=>(x.title||'').toLocaleLowerCase().includes(term)||(x.title_en||'').toLowerCase().includes(term));if(!found.length){safeText(results.appendChild(document.createElement('p')),'هیچ ئەنجامێک نەدۆزرایەوە.');return}found.slice(0,12).forEach(x=>results.appendChild(makeCard(x)))});
-function toggleAdmin(){const p=$('adminPanel');p.style.display=p.style.display==='block'?'none':'block';p.scrollIntoView({behavior:'smooth',block:'start'})}
-function showStats(e){if(e)e.preventDefault();$('statsPage').style.display='block';$('statsPage').scrollIntoView({behavior:'smooth'});}
-async function checkAdmin(){const {data:sessionData,error:sessionError}=await db.auth.getSession();if(sessionError){setStatus(sessionError.message);return}const session=sessionData?.session;if(!session){isAdmin=false;$('loginArea').classList.remove('hidden');$('manageArea').classList.add('hidden');return}const {data,error}=await db.rpc('is_admin');if(error||data!==true){isAdmin=false;await db.auth.signOut();$('loginArea').classList.remove('hidden');$('manageArea').classList.add('hidden');setStatus('ئەم هەژمارە دەسەڵاتی بەڕێوەبەری نییە.');return}isAdmin=true;$('loginArea').classList.add('hidden');$('manageArea').classList.remove('hidden');setStatus('بەخێربێیت، بەڕێوەبەر!');await refreshSeriesAdmin()}
-async function login(){const email=value('email'),password=$('password').value;if(!email||!password){setStatus('ئیمەیڵ و وشەی نهێنی بنووسە.');return}setStatus('چوونەژوورەوە...');const {error}=await db.auth.signInWithPassword({email,password});if(error){setStatus('چوونەژوورەوە سەرکەوتوو نەبوو: '+error.message);return}await checkAdmin()}async function logout(){await db.auth.signOut();isAdmin=false;$('loginArea').classList.remove('hidden');$('manageArea').classList.add('hidden');setStatus('چوویتە دەرەوە.');clearMediaForm()}
-function updateCategoryFields(){$('durationMovie').disabled=value('category')!=='movie';$('durationEpisode').disabled=value('category')!=='series';$('budget').disabled=false;$('revenue').disabled=false}
-$('category').addEventListener('change',updateCategoryFields);
-function clearMediaForm(){$('saveMediaButton').textContent='پاشەکەوتکردن';['editId','title','titleEn','description','year','rating','genres','quality','productionCompany','writer','actors','translator','durationMovie','budget','revenue','durationEpisode','movieVideoUrl','trailer'].forEach(id=>$(id).value='');$('posterFile').value='';$('category').value='movie';$('featured').checked=false;updateCategoryFields()}
-function editMedia(item){$('adminPanel').style.display='block';$('saveMediaButton').textContent='پاشەکەوتکردنی گۆڕانکاری';$('editId').value=item.id;$('title').value=item.title||'';$('titleEn').value=item.title_en||'';$('category').value=item.category||'movie';$('description').value=item.description||'';$('year').value=item.release_year??'';$('rating').value=item.rating??'';$('genres').value=item.genres||'';$('quality').value=item.quality||'';$('productionCompany').value=item.production_company||'';$('writer').value=item.writer||'';$('actors').value=item.actors||'';$('translator').value=item.translator||'';$('durationMovie').value=item.category==='movie'?(item.duration_minutes??''):'';$('durationEpisode').value=item.category==='series'?(item.duration_minutes??''):'';$('budget').value=item.budget||'';$('revenue').value=item.revenue||'';$('movieVideoUrl').value=item.video_url||'';$('trailer').value=item.trailer_url||'';$('featured').checked=!!item.featured;updateCategoryFields();$('adminPanel').scrollIntoView({behavior:'smooth'})}
-async function uploadImage(file){if(!file)return null;if(!file.type.startsWith('image/'))throw new Error('تەنها فایلە وێنەییەکان قبوڵ دەکرێن.');const safe=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const path=Date.now()+'-'+Math.random().toString(36).slice(2,8)+'-'+safe;const {error}=await db.storage.from('posters').upload(path,file,{upsert:false});if(error)throw error;return db.storage.from('posters').getPublicUrl(path).data.publicUrl}
-async function saveMedia(){if(!isAdmin){setStatus('پێویستە وەک بەڕێوەبەر بچیتە ژوورەوە.');return}const title=value('title');if(!title){setStatus('ناوی کوردی پێویستە.');return}const category=value('category');setStatus('پاشەکەوتکردن...');try{const editId=value('editId');const old=mediaList.find(x=>String(x.id)===editId);let posterUrl=old?.poster_url||null;const file=$('posterFile').files[0];if(file)posterUrl=await uploadImage(file);const record={title,title_en:value('titleEn')||null,category,poster_url:posterUrl,description:value('description')||null,release_year:numberValue('year'),rating:numberValue('rating'),genres:value('genres')||null,quality:value('quality')||null,production_company:value('productionCompany')||null,writer:value('writer')||null,actors:value('actors')||null,translator:value('translator')||null,duration_minutes:category==='movie'?numberValue('durationMovie'):category==='series'?numberValue('durationEpisode'):null,budget:value('budget')||null,revenue:value('revenue')||null,video_url:category==='movie'?(value('movieVideoUrl')||null):null,trailer_url:value('trailer')||null,featured:$('featured').checked};const result=editId?await db.from('media').update(record).eq('id',editId):await db.from('media').insert(record);if(result.error)throw result.error;setStatus('بە سەرکەوتوویی پاشەکەوت کرا.');clearMediaForm();await loadMedia()}catch(err){setStatus('پاشەکەوتکردن سەرکەوتوو نەبوو: '+(err.message||err))}}
-async function deleteMedia(item){if(!isAdmin||!confirm('دڵنیایت لە سڕینەوەی '+item.title+'؟'))return;const {error}=await db.from('media').delete().eq('id',item.id);if(error){alert('سڕینەوە سەرکەوتوو نەبوو: '+error.message);return}closeDetail();await loadMedia();alert('بە سەرکەوتوویی سڕایەوە.')}
-async function refreshSeriesAdmin(){const select=$('seasonMedia');if(!select)return;const current=select.value;select.innerHTML='<option value="">زنجیرە هەڵبژێرە</option>';mediaList.filter(x=>x.category==='series').forEach(item=>{const op=document.createElement('option');op.value=item.id;safeText(op,item.title);select.appendChild(op)});if([...select.options].some(o=>o.value===current))select.value=current;await loadSeasonAdminList()}
-$('seasonMedia').addEventListener('change',()=>{loadSeasonAdminList();$('episodeSeason').value='';$('episodeAdminList').innerHTML=''})
-async function loadSeasonAdminList(){const mediaId=value('seasonMedia');const seasonSelect=$('episodeSeason');seasonSelect.innerHTML='<option value="">وەرز هەڵبژێرە</option>';$('seasonAdminList').innerHTML='';if(!mediaId)return;const {data,error}=await db.from('media_seasons').select('*').eq('media_id',mediaId).order('season_number');if(error){setStatus(error.message);return}(data||[]).forEach(s=>{const op=document.createElement('option');op.value=s.id;safeText(op,'وەرزی '+ordinal(Number(s.season_number)));seasonSelect.appendChild(op);const row=document.createElement('div');row.className='admin-actions';const label=document.createElement('span');safeText(label,'وەرزی '+ordinal(Number(s.season_number)));const edit=document.createElement('button');edit.className='secondary';safeText(edit,'دەستکاری');edit.onclick=async()=>{const newNumber=prompt('ژمارەی نوێی وەرز:',String(s.season_number));if(newNumber===null)return;const n=Number(newNumber);if(!Number.isInteger(n)||n<1){setStatus('ژمارەی وەرز دەبێت ژمارەیەکی دروست بێت.');return}const {error:e}=await db.from('media_seasons').update({season_number:n,title:'وەرزی '+ordinal(n)}).eq('id',s.id);if(e){setStatus('گۆڕینی وەرز سەرکەوتوو نەبوو: '+e.message);return}await loadSeasonAdminList()};const del=document.createElement('button');del.className='danger';safeText(del,'سڕینەوە');del.onclick=async()=>{if(!confirm('ئەم وەرزە و هەموو ئەڵقەکانی بسڕدرێنەوە؟'))return;const {error:e}=await db.from('media_seasons').delete().eq('id',s.id);if(e){setStatus(e.message);return}await loadSeasonAdminList();await refreshEpisodeCount()};row.append(label,edit,del);$('seasonAdminList').appendChild(row)});if(seasonSelect.value)await loadEpisodeAdminList()}
-async function addSeason(){if(!isAdmin)return;const mediaId=value('seasonMedia');if(!mediaId){setStatus('زنجیرە دیاری بکە.');return}const {data:existing,error:fetchError}=await db.from('media_seasons').select('season_number').eq('media_id',mediaId);if(fetchError){setStatus('هەڵە لە وەرگرتنی وەرزەکان: '+fetchError.message);return}const nums=(existing||[]).map(x=>Number(x.season_number)).filter(Number.isFinite);const n=numberValue('seasonNumber')||((nums.length?Math.max(...nums):0)+1);if(!Number.isInteger(n)||n<1||nums.includes(n)){setStatus('ژمارەی وەرز هەڵەیە یان پێشتر بەکارهاتووە.');return}const {error}=await db.from('media_seasons').insert({media_id:mediaId,season_number:n,title:'وەرزی '+ordinal(n)});if(error){setStatus('زیادکردنی وەرز سەرکەوتوو نەبوو: '+error.message);return}$('seasonNumber').value='';setStatus('وەرز زیادکرا.');await loadSeasonAdminList()}$('episodeSeason').addEventListener('change',loadEpisodeAdminList);
-async function loadEpisodeAdminList(){const seasonId=value('episodeSeason'),box=$('episodeAdminList');box.innerHTML='';if(!seasonId)return;const {data,error}=await db.from('media_episodes').select('*').eq('season_id',seasonId).order('episode_number');if(error){setStatus(error.message);return}(data||[]).forEach(ep=>{const row=document.createElement('div');row.className='admin-actions';const name=document.createElement('span');safeText(name,'ئەڵقەی '+ep.episode_number+' — '+ep.title);const edit=document.createElement('button');edit.className='secondary';safeText(edit,'دەستکاری');edit.onclick=()=>{ $('episodeEditId').value=ep.id;$('episodeNumber').value=ep.episode_number;$('episodeTitle').value=ep.title;$('episodeDate').value=ep.release_date||'';$('episodeDuration').value=ep.duration_minutes??'';$('episodeVideoUrl').value=ep.video_url||'';  $('episodeNumber').scrollIntoView({behavior:'smooth',block:'center'})};const del=document.createElement('button');del.className='danger';safeText(del,'سڕینەوە');del.onclick=async()=>{if(!confirm('دڵنیایت لە سڕینەوەی ئەم ئەڵقەیە؟'))return;const {error:e}=await db.from('media_episodes').delete().eq('id',ep.id);if(e){setStatus(e.message);return}await loadEpisodeAdminList();await refreshEpisodeCount()};row.append(name,edit,del);box.appendChild(row)})}
-function clearEpisodeForm(){$('episodeEditId').value='';['episodeNumber','episodeTitle','episodeDate','episodeDuration','episodeVideoUrl'].forEach(id=>$(id).value='');}
-async function saveEpisode(){if(!isAdmin)return;const seasonId=value('episodeSeason'),n=numberValue('episodeNumber'),title=value('episodeTitle');if(!seasonId||!n||n<1||!title){setStatus('وەرز، ژمارە و ناوی ئەڵقە پێویستن.');return}setStatus('پاشەکەوتکردنی ئەڵقە...');try{const record={season_id:seasonId,episode_number:n,title,release_date:value('episodeDate')||null,duration_minutes:numberValue('episodeDuration'),video_url:value('episodeVideoUrl')||null};const id=value('episodeEditId');const result=id?await db.from('media_episodes').update(record).eq('id',id):await db.from('media_episodes').insert(record);if(result.error)throw result.error;setStatus('ئەڵقە پاشەکەوت کرا.');clearEpisodeForm();await loadEpisodeAdminList();await refreshEpisodeCount()}catch(err){setStatus('کێشە لە پاشەکەوتکردنی ئەڵقە: '+(err.message||err))}}
+function safeText(el, text) {
+    el.textContent = text ?? '';
+    return el;
+}
 
-db.auth.onAuthStateChange(()=>{setTimeout(()=>checkAdmin(),0)});
-updateCategoryFields();loadMedia();checkAdmin();
+function uploadImage(file) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!file) return resolve(null);
+            if (!file.type.startsWith('image/')) {
+                throw new Error('تەنها وێنە قبوڵ دەکرێت.');
+            }
+
+            const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+            const path = Date.now() + '-' +
+                Math.random().toString(36).slice(2, 8) + '-' + safe;
+
+            const { error } = await db.storage
+                .from('posters')
+                .upload(path, file, { upsert: false });
+
+            if (error) throw error;
+
+            const result = db.storage
+                .from('posters')
+                .getPublicUrl(path);
+
+            resolve(result.data.publicUrl);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+/* =========================
+   کارت و پۆستەرەکان
+========================= */
+
+function makeCard(item) {
+    const card = document.createElement('article');
+    card.className = 'media-card';
+    card.tabIndex = 0;
+
+    const poster = document.createElement('div');
+    poster.className = 'poster';
+
+    if (item.poster_url) {
+        const img = document.createElement('img');
+        img.src = item.poster_url;
+        img.alt = item.title || 'Poster';
+        img.loading = 'lazy';
+        poster.appendChild(img);
+    } else {
+        safeText(poster, 'CINEMA_CRC');
+    }
+
+    const meta = document.createElement('div');
+    meta.className = 'card-meta';
+
+    const title = document.createElement('strong');
+    safeText(title, item.title || '');
+    meta.appendChild(title);
+
+    if (item.title_en) {
+        const en = document.createElement('span');
+        en.className = 'en';
+        safeText(en, item.title_en);
+        meta.appendChild(en);
+    }
+
+    if (item.release_year) {
+        const year = document.createElement('span');
+        year.className = 'year';
+        safeText(year, String(item.release_year));
+        meta.appendChild(year);
+    }
+
+    if (item.rating !== null && item.rating !== undefined && item.rating !== '') {
+        const rating = document.createElement('span');
+        rating.className = 'card-rating';
+        safeText(rating, 'IMDb ' + Number(item.rating).toFixed(1) + '/10');
+        meta.appendChild(rating);
+    }
+
+    card.append(poster, meta);
+    card.addEventListener('click', () => showDetail(item));
+
+    card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            showDetail(item);
+        }
+    });
+
+    return card;
+}
+
+function renderGrid(id, items, limit = 0) {
+    const grid = $(id);
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    const list = limit ? items.slice(0, limit) : items;
+
+    if (!list.length) {
+        const p = document.createElement('p');
+        p.className = 'empty';
+        p.textContent = 'هێشتا هیچ ناوەڕۆکێک زیاد نەکراوە.';
+        grid.appendChild(p);
+        return;
+    }
+
+    list.forEach(item => grid.appendChild(makeCard(item)));
+}
+
+/* =========================
+   بارکردنی ناوەڕۆک
+========================= */
+
+async function loadMedia() {
+    const { data, error } = await db
+        .from('media')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error(error);
+        setStatus('هەڵە لە بارکردنی ناوەڕۆک: ' + error.message);
+        return;
+    }
+
+    mediaList = data || [];
+    renderMedia();
+}
+
+function renderMedia() {
+    const sorted = [...mediaList].sort(
+        (a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0)
+    );
+
+    const gridIds = {
+        series: 'seriesGrid',
+        movie: 'moviesGrid',
+        anime: 'animeGrid',
+        series_film: 'seriesFilmGrid',
+        korean_series: 'koreanSeriesGrid',
+        bollywood: 'bollywoodGrid',
+        manga: 'mangaGrid'
+    };
+
+    Object.entries(gridIds).forEach(([category, id]) => {
+        renderGrid(id, sorted.filter(item => item.category === category));
+    });
+
+    renderGrid('newestGrid', sorted, 8);
+    renderGrid('featuredGrid', sorted.filter(item => item.featured), 8);
+
+    if ($('detailTotal')) $('detailTotal').textContent = mediaList.length;
+    if ($('detailMovies')) {
+        $('detailMovies').textContent =
+            mediaList.filter(x => x.category === 'movie').length;
+    }
+    if ($('detailSeries')) {
+        $('detailSeries').textContent =
+            mediaList.filter(x => x.category === 'series').length;
+    }
+
+    refreshEpisodeCount();
+
+    if (isAdmin) refreshSeriesAdmin();
+
+    updateSearchSuggestions();
+}
+
+/* =========================
+   پەڕەی جۆرەکان
+========================= */
+
+function openCategory(category) {
+    currentCategory = category;
+
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.display = 'none';
+    });
+
+    const homeSections = [
+        'featuredSection',
+        'newestGrid'
+    ];
+
+    if (category === 'all') {
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.style.display = '';
+        });
+        return;
+    }
+
+    const page = $('categoryPage');
+    if (page) {
+        page.style.display = 'block';
+
+        const title = $('categoryPageTitle');
+        const grid = $('categoryPageGrid');
+
+        if (title) title.textContent = categories[category] || category;
+        if (grid) {
+            grid.innerHTML = '';
+            const found = mediaList.filter(item => item.category === category);
+
+            if (!found.length) {
+                grid.textContent = 'هێشتا هیچ ناوەڕۆکێک زیاد نەکراوە.';
+            } else {
+                found.forEach(item => grid.appendChild(makeCard(item)));
+            }
+        }
+    }
+}
+
+function backHome() {
+    currentCategory = 'all';
+
+    const page = $('categoryPage');
+    if (page) page.style.display = 'none';
+
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.display = '';
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* =========================
+   گەڕان و مێژووی گەڕان
+========================= */
+
+function getSearchHistory() {
+    try {
+        return JSON.parse(localStorage.getItem('crc_search_history') || '[]');
+    } catch {
+        return [];
+    }
+}
+
+function saveSearchHistory(term) {
+    if (!term) return;
+
+    let history = getSearchHistory();
+    history = history.filter(x => x.toLowerCase() !== term.toLowerCase());
+    history.unshift(term);
+
+    localStorage.setItem(
+        'crc_search_history',
+        JSON.stringify(history.slice(0, 15))
+    );
+
+    renderSearchHistory();
+}
+
+function clearSearchHistory() {
+    localStorage.removeItem('crc_search_history');
+    renderSearchHistory();
+}
+
+function renderSearchHistory() {
+    const box = $('searchHistory');
+    if (!box) return;
+
+    box.innerHTML = '';
+
+    const history = getSearchHistory();
+
+    if (!history.length) {
+        box.textContent = 'مێژووی گەڕان بەتاڵە.';
+        return;
+    }
+
+    history.forEach(term => {
+        const btn = document.createElement('button');
+        btn.className = 'history-item';
+        safeText(btn, term);
+
+        btn.addEventListener('click', () => {
+            if ($('search')) $('search').value = term;
+            performSearch(term);
+        });
+
+        box.appendChild(btn);
+    });
+}
+
+function performSearch(term) {
+    const results = $('searchResults');
+    if (!results) return;
+
+    results.innerHTML = '';
+
+    const query = term.trim().toLocaleLowerCase();
+
+    if (!query) return;
+
+    const found = mediaList.filter(item =>
+        (item.title || '').toLocaleLowerCase().includes(query) ||
+        (item.title_en || '').toLocaleLowerCase().includes(query)
+    );
+
+    if (!found.length) {
+        const p = document.createElement('p');
+        p.className = 'empty';
+        p.textContent = 'هیچ ئەنجامێک نەدۆزرایەوە.';
+        results.appendChild(p);
+        return;
+    }
+
+    found.slice(0, 20).forEach(item => {
+        results.appendChild(makeCard(item));
+    });
+}
+
+function updateSearchSuggestions() {
+    const input = $('search');
+    if (!input) return;
+
+    const term = input.value.trim().toLocaleLowerCase();
+    const countsBox = $('searchCounts');
+
+    if (!term) {
+        if ($('searchResults')) $('searchResults').innerHTML = '';
+        if (countsBox) countsBox.innerHTML = '';
+        return;
+    }
+
+    performSearch(term);
+
+    if (countsBox) {
+        countsBox.innerHTML = '';
+
+        Object.entries(categories).forEach(([key, label]) => {
+            const count = mediaList.filter(item =>
+                item.category === key &&
+                (
+                    (item.title || '').toLocaleLowerCase().includes(term) ||
+                    (item.title_en || '').toLocaleLowerCase().includes(term)
+                )
+            ).length;
+
+            const row = document.createElement('div');
+            row.className = 'search-count';
+            safeText(row, label + ': ' + count);
+            countsBox.appendChild(row);
+        });
+    }
+}
+
+if ($('search')) {
+    $('search').addEventListener('input', updateSearchSuggestions);
+
+    $('search').addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            saveSearchHistory($('search').value.trim());
+        }
+    });
+}
+
+/* =========================
+   مێنیۆی لای ڕاست
+========================= */
+
+function toggleMenu() {
+    const menu = $('sideMenu');
+    if (menu) menu.classList.toggle('open');
+}
+
+function closeMenu() {
+    const menu = $('sideMenu');
+    if (menu) menu.classList.remove('open');
+}
+
+/* =========================
+   ڕەنگ و دۆخی ماڵپەڕ
+========================= */
+
+function setTheme(theme) {
+    const themes = {
+        black: ['#080809', '#111114', '#f4f1ee', '#790d1b'],
+        white: ['#f4f4f4', '#ffffff', '#171717', '#a31327'],
+        red: ['#24080d', '#390c15', '#fff0f0', '#c51d36'],
+        dark: ['#101820', '#18232e', '#edf2f7', '#9b263b'],
+        grey: ['#292929', '#383838', '#f1f1f1', '#a31327']
+    };
+
+    const selected = themes[theme] || themes.black;
+
+    document.documentElement.style.setProperty('--bg', selected[0]);
+    document.documentElement.style.setProperty('--panel', selected[1]);
+    document.documentElement.style.setProperty('--text', selected[2]);
+    document.documentElement.style.setProperty('--red2', selected[3]);
+
+    localStorage.setItem('crc_theme', theme);
+}
+
+function loadTheme() {
+    setTheme(localStorage.getItem('crc_theme') || 'black');
+}
+
+/* =========================
+   زانیاریی بەرهەم
+========================= */
+
+function addMetaRow(table, label, val) {
+    if (val === null || val === undefined || String(val).trim() === '') return;
+
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    const td = document.createElement('td');
+
+    safeText(th, label);
+    safeText(td, String(val));
+
+    tr.append(th, td);
+    table.appendChild(tr);
+}
+
+function parseActors(raw) {
+    if (!raw) return [];
+
+    try {
+        const parsed = JSON.parse(raw);
+
+        if (Array.isArray(parsed)) {
+            return parsed.map(actor => {
+                if (typeof actor === 'string') {
+                    return { name: actor, photo: '' };
+                }
+
+                return {
+                    name: actor.name || '',
+                    photo: actor.photo || ''
+                };
+            }).filter(actor => actor.name);
+        }
+    } catch (e) {}
+
+    return String(raw)
+        .split(/[,،;؛\n]+/)
+        .map(name => ({ name: name.trim(), photo: '' }))
+        .filter(actor => actor.name);
+}
+
+async function showDetail(item) {
+    currentDetailItem = item;
+
+    const content = $('detailContent');
+    if (!content) return;
+
+    content.innerHTML = '';
+
+    const posterWrap = document.createElement('div');
+    posterWrap.className = 'detail-poster-wrap';
+
+    if (item.poster_url) {
+        const img = document.createElement('img');
+        img.className = 'detail-poster';
+        img.src = item.poster_url;
+        img.alt = item.title || 'پۆستەر';
+        posterWrap.appendChild(img);
+    } else {
+        safeText(posterWrap, 'CINEMA_CRC');
+    }
+
+    content.appendChild(posterWrap);
+
+    const titleRow = document.createElement('div');
+    titleRow.className = 'detail-title-row';
+
+    const ku = document.createElement('span');
+    ku.className = 'ku';
+    safeText(ku, item.title || '');
+    titleRow.appendChild(ku);
+
+    if (item.title_en) {
+        const en = document.createElement('span');
+        en.className = 'en';
+        safeText(en, item.title_en);
+        titleRow.appendChild(en);
+    }
+
+    content.appendChild(titleRow);
+
+    if (item.rating !== null && item.rating !== undefined && item.rating !== '') {
+        const rating = document.createElement('div');
+        rating.className = 'imdb-rating';
+
+        const logo = document.createElement('span');
+        logo.className = 'imdb-logo';
+        safeText(logo, 'IMDb');
+
+        const score = document.createElement('span');
+        score.className = 'imdb-score';
+        safeText(score, Number(item.rating).toFixed(1) + '/10');
+
+        rating.append(logo, score);
+        content.appendChild(rating);
+    }
+
+    const watch = document.createElement('div');
+    watch.className = 'watch-row';
+
+    const watchBtn = document.createElement('button');
+    watchBtn.className = 'watch-btn';
+    safeText(watchBtn, '▶ سەیرکردن');
+    watchBtn.addEventListener('click', () => openWatchPage(item));
+
+    watch.appendChild(watchBtn);
+    content.appendChild(watch);
+
+    const cols = document.createElement('div');
+    cols.className = 'detail-columns';
+
+    const metaPanel = document.createElement('div');
+    metaPanel.className = 'detail-panel';
+
+    const metaTitle = document.createElement('h3');
+    safeText(metaTitle, 'زانیارییەکان');
+    metaPanel.appendChild(metaTitle);
+
+    const table = document.createElement('table');
+    table.className = 'meta-table';
+
+    addMetaRow(table, 'جۆر', categories[item.category]);
+    addMetaRow(table, 'ساڵی دەرچوون', item.release_year);
+    addMetaRow(table, 'ژانەر', item.genres);
+    addMetaRow(table, 'کوالێتی', item.quality);
+    addMetaRow(table, 'کۆمپانیای بەرهەمهێنان', item.production_company);
+    addMetaRow(table, 'نوسەر', item.writer);
+    addMetaRow(table, 'وەرگێڕ', item.translator);
+
+    metaPanel.appendChild(table);
+
+    const extra = document.createElement('div');
+    extra.className = 'detail-extra';
+
+    const descPanel = document.createElement('div');
+    descPanel.className = 'detail-panel';
+
+    const descTitle = document.createElement('h3');
+    safeText(descTitle, 'کورتە');
+    descPanel.appendChild(descTitle);
+
+    const desc = document.createElement('p');
+    desc.className = 'synopsis';
+    safeText(desc, item.description || 'کورتەیەک زیاد نەکراوە.');
+    descPanel.appendChild(desc);
+
+    extra.appendChild(descPanel);
+
+    const actors = parseActors(item.actors);
+
+    if (actors.length) {
+        const actorPanel = document.createElement('div');
+        actorPanel.className = 'detail-panel';
+
+        const actorTitle = document.createElement('h3');
+        safeText(actorTitle, 'ئەکتەرەکان');
+        actorPanel.appendChild(actorTitle);
+
+        const actorGrid = document.createElement('div');
+        actorGrid.className = 'actor-grid';
+
+        actors.forEach(actor => {
+            const actorCard = document.createElement('div');
+            actorCard.className = 'actor-card';
+
+            if (actor.photo) {
+                const img = document.createElement('img');
+                img.src = actor.photo;
+                img.alt = actor.name;
+                img.loading = 'lazy';
+                actorCard.appendChild(img);
+            }
+
+            const name = document.createElement('span');
+            safeText(name, actor.name);
+            actorCard.appendChild(name);
+
+            actorGrid.appendChild(actorCard);
+        });
+
+        actorPanel.appendChild(actorGrid);
+        extra.appendChild(actorPanel);
+    }
+
+    cols.append(extra, metaPanel);
+    content.appendChild(cols);
+
+    if (item.budget || item.revenue) {
+        const finance = document.createElement('div');
+        finance.className = 'detail-panel detail-section';
+
+        const heading = document.createElement('h3');
+        safeText(heading, 'بودجە و داهات');
+        finance.appendChild(heading);
+
+        const financeTable = document.createElement('table');
+        financeTable.className = 'meta-table';
+
+        addMetaRow(financeTable, 'بودجە', item.budget);
+        addMetaRow(financeTable, 'داهات', item.revenue);
+
+        finance.appendChild(financeTable);
+        content.appendChild(finance);
+    }
+
+    if (item.trailer_url) {
+        const trailer = document.createElement('div');
+        trailer.className = 'detail-section';
+
+        const link = document.createElement('a');
+        link.href = item.trailer_url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'secondary';
+        safeText(link, 'بینینی تڕەیلەر');
+
+        trailer.appendChild(link);
+        content.appendChild(trailer);
+    }
+
+    if (isAdmin) {
+        const actions = document.createElement('div');
+        actions.className = 'detail-admin-actions';
+
+        const edit = document.createElement('button');
+        edit.className = 'secondary';
+        safeText(edit, 'دەستکاریکردن');
+        edit.onclick = () => {
+            closeDetail();
+            editMedia(item);
+        };
+
+        const del = document.createElement('button');
+        del.className = 'danger';
+        safeText(del, 'سڕینەوە');
+        del.onclick = () => deleteMedia(item);
+
+        actions.append(edit, del);
+        content.appendChild(actions);
+    }
+
+    $('detail').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+/* =========================
+   پەخشکردن
+========================= */
+
+function openMediaPlayer(container, url) {
+    container.innerHTML = '';
+
+    const clean = (url || '').trim();
+    if (!clean) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'media-player';
+
+    if (/\.(mp4|webm|ogg|m3u8)(\?.*)?$/i.test(clean)) {
+        const video = document.createElement('video');
+        video.controls = true;
+        video.preload = 'metadata';
+        video.playsInline = true;
+        video.src = clean;
+        wrap.appendChild(video);
+    } else {
+        const frame = document.createElement('iframe');
+        frame.src = clean;
+        frame.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+        frame.allowFullscreen = true;
+        frame.loading = 'lazy';
+        wrap.appendChild(frame);
+    }
+
+    container.appendChild(wrap);
+}
+
+async function openWatchPage(item) {
+    currentDetailItem = item;
+
+    $('detail').style.display = 'none';
+    $('watchPage').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+
+    $('watchTitle').textContent = item.title || item.title_en || 'سەیرکردن';
+
+    const box = $('watchContent');
+    box.innerHTML = '';
+
+    if (item.category !== 'series') {
+        const player = document.createElement('div');
+        player.className = 'watch-player';
+        box.appendChild(player);
+
+        if (item.video_url) {
+            openMediaPlayer(player, item.video_url);
+        } else {
+            safeText(player, 'لینکی تەواوی بەرهەم زیاد نەکراوە.');
+        }
+
+        return;
+    }
+
+    const { data: seasons, error } = await db
+        .from('media_seasons')
+        .select('*')
+        .eq('media_id', item.id)
+        .order('season_number');
+
+    if (error) {
+        safeText(box, 'هەڵە لە بارکردنی وەرزەکان: ' + error.message);
+        return;
+    }
+
+    if (!seasons?.length) {
+        safeText(box, 'هێشتا هیچ وەرزێک زیاد نەکراوە.');
+        return;
+    }
+
+    const cards = document.createElement('div');
+    cards.className = 'watch-season-grid';
+
+    const episodeArea = document.createElement('div');
+    episodeArea.id = 'watchEpisodes';
+
+    box.append(cards, episodeArea);
+
+    seasons.forEach(season => {
+        const btn = document.createElement('button');
+        btn.className = 'watch-season-card';
+        safeText(btn, 'وەرزی ' + season.season_number);
+
+        btn.addEventListener('click', async () => {
+            cards.querySelectorAll('button').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            btn.classList.add('active');
+            episodeArea.innerHTML = '';
+
+            const { data: episodes, error: epError } = await db
+                .from('media_episodes')
+                .select('*')
+                .eq('season_id', season.id)
+                .order('episode_number');
+
+            if (epError) {
+                safeText(episodeArea, epError.message);
+                return;
+            }
+
+            if (!episodes?.length) {
+                safeText(episodeArea, 'هیچ ئەڵقەیەک بۆ ئەم وەرزە زیاد نەکراوە.');
+                return;
+            }
+
+            episodes.forEach(ep => {
+                const row = document.createElement('div');
+                row.className = 'episode-row';
+
+                const info = document.createElement('div');
+                info.className = 'episode-info';
+
+                const title = document.createElement('strong');
+                safeText(title, 'ئەڵقەی ' + ep.episode_number + ' — ' + (ep.title || ''));
+
+                const date = document.createElement('small');
+                safeText(date, ep.release_date || '');
+
+                info.append(title, date);
+
+                const play = document.createElement('button');
+                play.className = 'episode-play';
+                safeText(play, 'سەیرکردن ▶');
+
+                play.onclick = () => {
+                    let player = box.querySelector('.watch-player');
+
+                    if (!player) {
+                        player = document.createElement('div');
+                        player.className = 'watch-player';
+                        box.appendChild(player);
+                    }
+
+                    if (ep.video_url) {
+                        openMediaPlayer(player, ep.video_url);
+                    } else {
+                        safeText(player, 'لینکی ئەم ئەڵقەیە زیاد نەکراوە.');
+                    }
+
+                    player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                };
+
+                row.append(info, play);
+                episodeArea.appendChild(row);
+            });
+        });
+
+        cards.appendChild(btn);
+    });
+}
+
+function closeWatchPage() {
+    $('watchPage').style.display = 'none';
+
+    if (currentDetailItem) {
+        $('detail').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+function closeDetail() {
+    if ($('detail')) $('detail').style.display = 'none';
+    if ($('watchPage')) $('watchPage').style.display = 'none';
+
+    document.body.style.overflow = '';
+    currentDetailItem = null;
+}
+
+/* =========================
+   بەڕێوەبەرایەتی
+========================= */
+
+function toggleAdmin() {
+    const panel = $('adminPanel');
+    if (!panel) return;
+
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+async function checkAdmin() {
+    const { data: sessionData } = await db.auth.getSession();
+    const session = sessionData?.session;
+
+    if (!session) {
+        isAdmin = false;
+        if ($('loginArea')) $('loginArea').classList.remove('hidden');
+        if ($('manageArea')) $('manageArea').classList.add('hidden');
+        return;
+    }
+
+    const { data, error } = await db.rpc('is_admin');
+
+    if (error || data !== true) {
+        isAdmin = false;
+        await db.auth.signOut();
+
+        if ($('loginArea')) $('loginArea').classList.remove('hidden');
+        if ($('manageArea')) $('manageArea').classList.add('hidden');
+
+        setStatus('ئەم هەژمارە دەسەڵاتی بەڕێوەبەری نییە.');
+        return;
+    }
+
+    isAdmin = true;
+
+    if ($('loginArea')) $('loginArea').classList.add('hidden');
+    if ($('manageArea')) $('manageArea').classList.remove('hidden');
+
+    setStatus('بەخێربێیت، بەڕێوەبەر!');
+
+    await refreshSeriesAdmin();
+    await loadStaff();
+}
+
+async function login() {
+    const email = value('email');
+    const password = $('password')?.value || '';
+
+    if (!email || !password) {
+        setStatus('ئیمەیڵ و وشەی نهێنی بنووسە.');
+        return;
+    }
+
+    setStatus('چوونەژوورەوە...');
+
+    const { error } = await db.auth.signInWithPassword({
+        email,
+        password
+    });
+
+    if (error) {
+        setStatus('چوونەژوورەوە سەرکەوتوو نەبوو: ' + error.message);
+        return;
+    }
+
+    await checkAdmin();
+}
+
+async function logout() {
+    await db.auth.signOut();
+
+    isAdmin = false;
+
+    if ($('loginArea')) $('loginArea').classList.remove('hidden');
+    if ($('manageArea')) $('manageArea').classList.add('hidden');
+
+    setStatus('چوویتە دەرەوە.');
+    clearMediaForm();
+}
+
+function updateCategoryFields() {
+    if ($('durationMovie')) {
+        $('durationMovie').disabled = value('category') !== 'movie';
+    }
+
+    if ($('durationEpisode')) {
+        $('durationEpisode').disabled = value('category') !== 'series';
+    }
+}
+
+if ($('category')) {
+    $('category').addEventListener('change', updateCategoryFields);
+}
+
+function clearMediaForm() {
+    const fields = [
+        'editId', 'title', 'titleEn', 'description', 'year',
+        'rating', 'genres', 'quality', 'productionCompany',
+        'writer', 'actors', 'translator', 'durationMovie',
+        'budget', 'revenue', 'durationEpisode',
+        'movieVideoUrl', 'trailer'
+    ];
+
+    fields.forEach(id => {
+        if ($(id)) $(id).value = '';
+    });
+
+    if ($('posterFile')) $('posterFile').value = '';
+    if ($('category')) $('category').value = 'movie';
+    if ($('featured')) $('featured').checked = false;
+    if ($('saveMediaButton')) $('saveMediaButton').textContent = 'پاشەکەوتکردن';
+
+    updateCategoryFields();
+}
+
+function editMedia(item) {
+    if (!$('adminPanel')) return;
+
+    $('adminPanel').style.display = 'block';
+
+    $('saveMediaButton').textContent = 'پاشەکەوتکردنی گۆڕانکاری';
+
+    $('editId').value = item.id;
+    $('title').value = item.title || '';
+    $('titleEn').value = item.title_en || '';
+    $('category').value = item.category || 'movie';
+    $('description').value = item.description || '';
+    $('year').value = item.release_year ?? '';
+    $('rating').value = item.rating ?? '';
+    $('genres').value = item.genres || '';
+    $('quality').value = item.quality || '';
+    $('productionCompany').value = item.production_company || '';
+    $('writer').value = item.writer || '';
+    $('actors').value = item.actors || '';
+    $('translator').value = item.translator || '';
+    $('budget').value = item.budget || '';
+    $('revenue').value = item.revenue || '';
+    $('movieVideoUrl').value = item.video_url || '';
+    $('trailer').value = item.trailer_url || '';
+    $('featured').checked = !!item.featured;
+
+    updateCategoryFields();
+
+    $('adminPanel').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+async function saveMedia() {
+    if (!isAdmin) {
+        setStatus('پێویستە وەک بەڕێوەبەر بچیتە ژوورەوە.');
+        return;
+    }
+
+    const title = value('title');
+
+    if (!title) {
+        setStatus('ناوی کوردی پێویستە.');
+        return;
+    }
+
+    const category = value('category');
+    setStatus('پاشەکەوتکردن...');
+
+    try {
+        const editId = value('editId');
+        const old = mediaList.find(x => String(x.id) === editId);
+
+        let posterUrl = old?.poster_url || null;
+
+        const file = $('posterFile')?.files?.[0];
+        if (file) posterUrl = await uploadImage(file);
+
+        const record = {
+            title,
+            title_en: value('titleEn') || null,
+            category,
+            poster_url: posterUrl,
+            description: value('description') || null,
+            release_year: numberValue('year'),
+            rating: numberValue('rating'),
+            genres: value('genres') || null,
+            quality: value('quality') || null,
+            production_company: value('productionCompany') || null,
+            writer: value('writer') || null,
+            actors: value('actors') || null,
+            translator: value('translator') || null,
+            duration_minutes:
+                category === 'movie'
+                    ? numberValue('durationMovie')
+                    : category === 'series'
+                        ? numberValue('durationEpisode')
+                        : null,
+            budget: value('budget') || null,
+            revenue: value('revenue') || null,
+            video_url: category === 'movie'
+                ? value('movieVideoUrl') || null
+                : null,
+            trailer_url: value('trailer') || null,
+            featured: $('featured')?.checked || false
+        };
+
+        const result = editId
+            ? await db.from('media').update(record).eq('id', editId)
+            : await db.from('media').insert(record);
+
+        if (result.error) throw result.error;
+
+        setStatus('بە سەرکەوتوویی پاشەکەوت کرا.');
+
+        clearMediaForm();
+        await loadMedia();
+
+    } catch (error) {
+        setStatus('پاشەکەوتکردن سەرکەوتوو نەبوو: ' + error.message);
+    }
+}
+
+async function deleteMedia(item) {
+    if (!isAdmin) return;
+
+    if (!confirm('دڵنیایت لە سڕینەوەی ' + item.title + '؟')) return;
+
+    const { error } = await db
+        .from('media')
+        .delete()
+        .eq('id', item.id);
+
+    if (error) {
+        alert('سڕینەوە سەرکەوتوو نەبوو: ' + error.message);
+        return;
+    }
+
+    closeDetail();
+    await loadMedia();
+
+    alert('بە سەرکەوتوویی سڕایەوە.');
+}
+
+/* =========================
+   وەرز و ئەڵقەکان
+========================= */
+
+function ordinal(n) {
+    const names = [
+        'یەکەم', 'دووەم', 'سێیەم', 'چوارەم', 'پێنجەم',
+        'شەشەم', 'حەوتەم', 'هەشتەم', 'نۆیەم', 'دەیەم'
+    ];
+
+    return names[n - 1] || String(n);
+}
+
+async function refreshEpisodeCount() {
+    const { count, error } = await db
+        .from('media_episodes')
+        .select('id', { count: 'exact', head: true });
+
+    if ($('detailEpisodes')) {
+        $('detailEpisodes').textContent = error ? '—' : (count ?? 0);
+    }
+}
+
+async function refreshSeriesAdmin() {
+    const select = $('seasonMedia');
+    if (!select) return;
+
+    const current = select.value;
+
+    select.innerHTML = '<option value="">زنجیرە هەڵبژێرە</option>';
+
+    mediaList
+        .filter(item => item.category === 'series')
+        .forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.id;
+            safeText(option, item.title);
+            select.appendChild(option);
+        });
+
+    if ([...select.options].some(option => option.value === current)) {
+        select.value = current;
+    }
+
+    await loadSeasonAdminList();
+}
+
+async function loadSeasonAdminList() {
+    const mediaId = value('seasonMedia');
+    const seasonSelect = $('episodeSeason');
+
+    if (!seasonSelect) return;
+
+    seasonSelect.innerHTML = '<option value="">وەرز هەڵبژێرە</option>';
+
+    if ($('seasonAdminList')) $('seasonAdminList').innerHTML = '';
+    if ($('episodeAdminList')) $('episodeAdminList').innerHTML = '';
+
+    if (!mediaId) return;
+
+    const { data, error } = await db
+        .from('media_seasons')
+        .select('*')
+        .eq('media_id', mediaId)
+        .order('season_number');
+
+    if (error) {
+        setStatus(error.message);
+        return;
+    }
+
+    (data || []).forEach(season => {
+        const option = document.createElement('option');
+        option.value = season.id;
+        safeText(option, 'وەرزی ' + ordinal(Number(season.season_number)));
+        seasonSelect.appendChild(option);
+
+        const row = document.createElement('div');
+        row.className = 'admin-actions';
+
+        const label = document.createElement('span');
+        safeText(label, 'وەرزی ' + ordinal(Number(season.season_number)));
+
+        const edit = document.createElement('button');
+        edit.className = 'secondary';
+        safeText(edit, 'دەستکاری');
+
+        edit.onclick = async () => {
+            const answer = prompt(
+                'ژمارەی نوێی وەرز:',
+                String(season.season_number)
+            );
+
+            if (answer === null) return;
+
+            const n = Number(answer);
+
+            if (!Number.isInteger(n) || n < 1) {
+                setStatus('ژمارەی وەرز دروست نییە.');
+                return;
+            }
+
+            const { error: updateError } = await db
+                .from('media_seasons')
+                .update({
+                    season_number: n,
+                    title: 'وەرزی ' + ordinal(n)
+                })
+                .eq('id', season.id);
+
+            if (updateError) {
+                setStatus(updateError.message);
+                return;
+            }
+
+            await loadSeasonAdminList();
+        };
+
+        const del = document.createElement('button');
+        del.className = 'danger';
+        safeText(del, 'سڕینەوە');
+
+        del.onclick = async () => {
+            if (!confirm('ئەم وەرزە و ئەڵقەکانی بسڕدرێنەوە؟')) return;
+
+            const { error: deleteError } = await db
+                .from('media_seasons')
+                .delete()
+                .eq('id', season.id);
+
+            if (deleteError) {
+                setStatus(deleteError.message);
+                return;
+            }
+
+            await loadSeasonAdminList();
+            await refreshEpisodeCount();
+        };
+
+        row.append(label, edit, del);
+
+        if ($('seasonAdminList')) {
+            $('seasonAdminList').appendChild(row);
+        }
+    });
+}
+
+if ($('seasonMedia')) {
+    $('seasonMedia').addEventListener('change', () => {
+        loadSeasonAdminList();
+    });
+}
+
+async function addSeason() {
+    if (!isAdmin) return;
+
+    const mediaId = value('seasonMedia');
+
+    if (!mediaId) {
+        setStatus('زنجیرە دیاری بکە.');
+        return;
+    }
+
+    const { data: existing, error: fetchError } = await db
+        .from('media_seasons')
+        .select('season_number')
+        .eq('media_id', mediaId);
+
+    if (fetchError) {
+        setStatus(fetchError.message);
+        return;
+    }
+
+    const numbers = (existing || [])
+        .map(x => Number(x.season_number))
+        .filter(Number.isFinite);
+
+    const n = numberValue('seasonNumber') ||
+        ((numbers.length ? Math.max(...numbers) : 0) + 1);
+
+    if (!Number.isInteger(n) || n < 1 || numbers.includes(n)) {
+        setStatus('ژمارەی وەرز هەڵەیە یان پێشتر بەکارهاتووە.');
+        return;
+    }
+
+    const { error } = await db.from('media_seasons').insert({
+        media_id: mediaId,
+        season_number: n,
+        title: 'وەرزی ' + ordinal(n)
+    });
+
+    if (error) {
+        setStatus(error.message);
+        return;
+    }
+
+    if ($('seasonNumber')) $('seasonNumber').value = '';
+
+    setStatus('وەرز زیادکرا.');
+    await loadSeasonAdminList();
+}
+
+if ($('episodeSeason')) {
+    $('episodeSeason').addEventListener('change', loadEpisodeAdminList);
+}
+
+async function loadEpisodeAdminList() {
+    const seasonId = value('episodeSeason');
+    const box = $('episodeAdminList');
+
+    if (!box) return;
+
+    box.innerHTML = '';
+    if (!seasonId) return;
+
+    const { data, error } = await db
+        .from('media_episodes')
+        .select('*')
+        .eq('season_id', seasonId)
+        .order('episode_number');
+
+    if (error) {
+        setStatus(error.message);
+        return;
+    }
+
+    (data || []).forEach(ep => {
+        const row = document.createElement('div');
+        row.className = 'admin-actions';
+
+        const name = document.createElement('span');
+        safeText(name, 'ئەڵقەی ' + ep.episode_number + ' — ' + ep.title);
+
+        const edit = document.createElement('button');
+        edit.className = 'secondary';
+        safeText(edit, 'دەستکاری');
+
+        edit.onclick = () => {
+            $('episodeEditId').value = ep.id;
+            $('episodeNumber').value = ep.episode_number;
+            $('episodeTitle').value = ep.title || '';
+            $('episodeDate').value = ep.release_date || '';
+            $('episodeDuration').value = ep.duration_minutes ?? '';
+            $('episodeVideoUrl').value = ep.video_url || '';
+        };
+
+        const del = document.createElement('button');
+        del.className = 'danger';
+        safeText(del, 'سڕینەوە');
+
+        del.onclick = async () => {
+            if (!confirm('دڵنیایت لە سڕینەوەی ئەم ئەڵقەیە؟')) return;
+
+            const { error: deleteError } = await db
+                .from('media_episodes')
+                .delete()
+                .eq('id', ep.id);
+
+            if (deleteError) {
+                setStatus(deleteError.message);
+                return;
+            }
+
+            await loadEpisodeAdminList();
+            await refreshEpisodeCount();
+        };
+
+        row.append(name, edit, del);
+        box.appendChild(row);
+    });
+}
+
+function clearEpisodeForm() {
+    if ($('episodeEditId')) $('episodeEditId').value = '';
+
+    [
+        'episodeNumber',
+        'episodeTitle',
+        'episodeDate',
+        'episodeDuration',
+        'episodeVideoUrl'
+    ].forEach(id => {
+        if ($(id)) $(id).value = '';
+    });
+}
+
+async function saveEpisode() {
+    if (!isAdmin) return;
+
+    const seasonId = value('episodeSeason');
+    const n = numberValue('episodeNumber');
+    const title = value('episodeTitle');
+
+    if (!seasonId || !n || n < 1 || !title) {
+        setStatus('وەرز، ژمارە و ناوی ئەڵقە پێویستن.');
+        return;
+    }
+
+    try {
+        const record = {
+            season_id: seasonId,
+            episode_number: n,
+            title,
+            release_date: value('episodeDate') || null,
+            duration_minutes: numberValue('episodeDuration'),
+            video_url: value('episodeVideoUrl') || null
+        };
+
+        const id = value('episodeEditId');
+
+        const result = id
+            ? await db.from('media_episodes').update(record).eq('id', id)
+            : await db.from('media_episodes').insert(record);
+
+        if (result.error) throw result.error;
+
+        setStatus('ئەڵقە پاشەکەوت کرا.');
+
+        clearEpisodeForm();
+        await loadEpisodeAdminList();
+        await refreshEpisodeCount();
+
+    } catch (error) {
+        setStatus('کێشە لە پاشەکەوتکردنی ئەڵقە: ' + error.message);
+    }
+}
+
+/* =========================
+   ستاف: وەرگێڕ، دیزاینەر، تەکنیکار
+========================= */
+
+async function loadStaff() {
+    const { data, error } = await db
+        .from('staff_members')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Staff loading:', error.message);
+        return;
+    }
+
+    staffList = data || [];
+    renderStaff();
+}
+
+function renderStaff() {
+    const groups = {
+        translator: 'translatorsGrid',
+        designer: 'designersGrid',
+        technician: 'techniciansGrid'
+    };
+
+    Object.entries(groups).forEach(([role, id]) => {
+        const box = $(id);
+        if (!box) return;
+
+        box.innerHTML = '';
+
+        staffList
+            .filter(person => person.role === role)
+            .forEach(person => {
+                const card = document.createElement('div');
+                card.className = 'staff-card';
+
+                if (person.photo_url) {
+                    const img = document.createElement('img');
+                    img.src = person.photo_url;
+                    img.alt = person.name;
+                    img.loading = 'lazy';
+                    card.appendChild(img);
+                }
+
+                const name = document.createElement('strong');
+                safeText(name, person.name);
+                card.appendChild(name);
+
+                if (isAdmin) {
+                    const actions = document.createElement('div');
+                    actions.className = 'staff-actions';
+
+                    const edit = document.createElement('button');
+                    edit.className = 'secondary';
+                    safeText(edit, 'دەستکاری');
+                    edit.onclick = () => editStaff(person);
+
+                    const del = document.createElement('button');
+                    del.className = 'danger';
+                    safeText(del, 'سڕینەوە');
+                    del.onclick = () => deleteStaff(person);
+
+                    actions.append(edit, del);
+                    card.appendChild(actions);
+                }
+
+                box.appendChild(card);
+            });
+    });
+}
+
+function clearStaffForm() {
+    ['staffId', 'staffName'].forEach(id => {
+        if ($(id)) $(id).value = '';
+    });
+
+    if ($('staffRole')) $('staffRole').value = 'translator';
+    if ($('staffPhoto')) $('staffPhoto').value = '';
+}
+
+function editStaff(person) {
+    if (!isAdmin) return;
+
+    $('staffId').value = person.id;
+    $('staffName').value = person.name;
+    $('staffRole').value = person.role;
+
+    $('staffForm')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+}
+
+async function saveStaff() {
+    if (!isAdmin) {
+        setStatus('پێویستە وەک بەڕێوەبەر بچیتە ژوورەوە.');
+        return;
+    }
+
+    const name = value('staffName');
+    const role = value('staffRole');
+    const id = value('staffId');
+
+    if (!name || !['translator', 'designer', 'technician'].includes(role)) {
+        setStatus('ناو و جۆری ستاف پێویستن.');
+        return;
+    }
+
+    try {
+        const old = staffList.find(person => String(person.id) === id);
+        let photoUrl = old?.photo_url || null;
+
+        const file = $('staffPhoto')?.files?.[0];
+        if (file) photoUrl = await uploadImage(file);
+
+        const record = {
+            name,
+            role,
+            photo_url: photoUrl
+        };
+
+        const result = id
+            ? await db.from('staff_members').update(record).eq('id', id)
+            : await db.from('staff_members').insert(record);
+
+        if (result.error) throw result.error;
+
+        setStatus('زانیاریی ستاف پاشەکەوت کرا.');
+        clearStaffForm();
+        await loadStaff();
+
+    } catch (error) {
+        setStatus('پاشەکەوتکردنی ستاف سەرکەوتوو نەبوو: ' + error.message);
+    }
+}
+
+async function deleteStaff(person) {
+    if (!isAdmin) return;
+
+    if (!confirm('دڵنیایت لە سڕینەوەی ' + person.name + '؟')) return;
+
+    const { error } = await db
+        .from('staff_members')
+        .delete()
+        .eq('id', person.id);
+
+    if (error) {
+        setStatus('سڕینەوە سەرکەوتوو نەبوو: ' + error.message);
+        return;
+    }
+
+    await loadStaff();
+    setStatus('ستاف سڕایەوە.');
+}
+
+/* =========================
+   ئامار و پەیوەندییەکان
+========================= */
+
+function showStats(event) {
+    if (event) event.preventDefault();
+
+    if ($('statsPage')) {
+        $('statsPage').style.display = 'block';
+        $('statsPage').scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        closeDetail();
+        closeMenu();
+    }
+});
+
+if ($('detail')) {
+    $('detail').addEventListener('click', event => {
+        if (event.target === $('detail')) closeDetail();
+    });
+}
+
+/* =========================
+   دەستپێکردنی ماڵپەڕ
+========================= */
+
+db.auth.onAuthStateChange(() => {
+    setTimeout(() => checkAdmin(), 0);
+});
+
+updateCategoryFields();
+loadTheme();
+renderSearchHistory();
+loadMedia();
+checkAdmin();
+loadStaff();
+
+</script><style>
+:root {
+    --bg:#080809;
+    --panel:#111114;
+    --text:#f4f1ee;
+    --red2:#790d1b;
+}
+body {
+    background:var(--bg);
+    color:var(--text);
+}
+#categoryPage,#statsPage,#watchPage {display:none;padding:20px}
+#categoryPageTitle {font-size:24px;margin-bottom:20px}
+#categoryPageGrid,.media-grid,.actor-grid,.staff-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
+    gap:15px;
+}
+.media-card {
+    background:var(--panel);
+    border-radius:12px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.2s;
+}
+.media-card:hover {transform:translateY(-4px)}
+.poster {height:220px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.poster img {width:100%;height:100%;object-fit:cover}
+.card-meta {padding:10px;display:flex;flex-direction:column;gap:5px}
+.card-meta strong {font-size:14px}
+.card-meta .en,.card-meta .year {font-size:12px;opacity:.7}
+.card-rating,.imdb-rating {color:#f5c518;font-weight:bold}
+.content-section {padding:22px 15px}
+.content-section h2 {margin-bottom:16px}
+#detail {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    overflow:auto;
+    background:#000e;
+    padding:15px;
+}
+#detailContent {
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+    background:var(--panel);
+    border-radius:15px;
+}
+.detail-poster-wrap {text-align:center}
+.detail-poster {width:190px;max-height:280px;object-fit:cover;border-radius:10px}
+.detail-title-row {display:flex;flex-direction:column;gap:7px;margin:15px 0}
+.detail-title-row .ku {font-size:23px;font-weight:bold}
+.detail-columns {display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
+.detail-panel {background:var(--bg);padding:15px;border-radius:10px;margin-bottom:12px}
+.detail-panel h3 {margin-bottom:12px;color:var(--red2)}
+.meta-table {width:100%;border-collapse:collapse}
+.meta-table th,.meta-table td {padding:8px;text-align:right;border-bottom:1px solid #444}
+.meta-table th {color:#aaa;width:40%}
+.synopsis {line-height:2}
+.actor-grid {grid-template-columns:repeat(auto-fill,minmax(90px,1fr))}
+.actor-card {display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center}
+.actor-card img,.staff-card img {
+    width:75px;height:75px;object-fit:cover;border-radius:50%;
+}
+.actor-card span {font-size:13px}
+.watch-btn,.episode-play,.secondary,.danger,button {
+    cursor:pointer;
+}
+.watch-btn,.episode-play {
+    background:var(--red2);color:white;border:0;
+    padding:10px 16px;border-radius:8px;
+}
+#watchPage {
+    position:fixed;inset:0;z-index:10000;
+    overflow:auto;background:var(--bg);padding:20px;
+}
+.watch-player video,.watch-player iframe {
+    width:100%;height:min(65vh,500px);border:0;
+    background:#000;border-radius:10px;
+}
+.watch-season-grid {display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.watch-season-card {padding:12px;background:var(--panel);color:var(--text);border:1px solid #555;border-radius:8px}
+.watch-season-card.active {background:var(--red2)}
+.episode-row,.admin-actions {
+    display:flex;justify-content:space-between;align-items:center;
+    gap:12px;padding:12px;margin:8px 0;
+    background:var(--panel);border-radius:8px;
+}
+.episode-info {display:flex;flex-direction:column;gap:5px}
+.episode-info small {opacity:.6}
+.staff-grid {grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+.staff-card {
+    background:var(--panel);padding:15px;border-radius:12px;
+    display:flex;align-items:center;flex-direction:column;gap:10px;
+}
+.staff-actions {display:flex;gap:5px}
+.staff-actions button {font-size:11px}
+#sideMenu {
+    position:fixed;z-index:10001;top:0;right:-290px;
+    width:270px;height:100vh;overflow:auto;
+    background:var(--panel);padding:25px;
+    transition:right .25s;box-shadow:0 0 20px #0008;
+}
+#sideMenu.open {right:0}
+#sideMenu button {
+    display:block;width:100%;text-align:right;
+    padding:13px;margin:5px 0;background:transparent;
+    color:var(--text);border:0;border-bottom:1px solid #444;
+}
+#searchPanel {padding:15px;background:var(--panel)}
+#searchResults {display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+#searchCounts {display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.search-count {background:var(--bg);padding:8px 12px;border-radius:8px}
+.history-item {padding:7px;margin:4px;background:var(--bg);color:var(--text);border:0;border-radius:6px}
+#adminPanel {display:none;padding:20px;background:var(--panel)}
+#adminPanel input,#adminPanel textarea,#adminPanel select {
+    display:block;width:100%;padding:11px;margin:8px 0;
+    border-radius:7px;border:1px solid #555;
+    background:var(--bg);color:var(--text);
+}
+#adminPanel button,.detail-admin-actions button {
+    padding:10px 15px;border:0;border-radius:7px;margin:5px;
+}
+.secondary {background:#444;color:white}
+.danger {background:#a31327;color:white}
+.empty {padding:20px;text-align:center;opacity:.7}
+.hidden {display:none!important}
+@media(max-width:650px) {
+    .detail-columns {grid-template-columns:1fr}
+    .poster {height:190px}
+    #detailContent {padding:12px}
+}
+</style>
+
+<!-- گەڕان -->
+<section id="searchPanel">
+    <input id="search" type="search" placeholder="گەڕان بەدوای فیلم و زنجیرە...">
+    <div id="searchCounts"></div>
+    <div id="searchResults"></div>
+    <h3>مێژووی گەڕان</h3>
+    <div id="searchHistory"></div>
+    <button onclick="clearSearchHistory()">لابردنی سێرچەکان</button>
+</section>
+
+<!-- مێنیۆ -->
+<nav id="sideMenu">
+    <h2>CINEMA_CRC</h2>
+    <button onclick="closeMenu();backHome()">سەرەکی</button>
+    <button onclick="closeMenu();openCategory('series')">زنجیرە</button>
+    <button onclick="closeMenu();openCategory('movie')">فیلم</button>
+    <button onclick="closeMenu();openCategory('series_film')">زنجیرە فیلم</button>
+    <button onclick="closeMenu();openCategory('korean_series')">زنجیرە کۆرییەکان</button>
+    <button onclick="closeMenu();openCategory('bollywood')">بۆڵیوود</button>
+    <button onclick="closeMenu();openCategory('manga')">مانگا</button>
+    <button onclick="closeMenu();openCategory('anime')">ئەنیمە</button>
+    <button onclick="closeMenu();document.getElementById('staffSection').scrollIntoView()">ستاف</button>
+    <hr>
+    <h3>دۆخەکان</h3>
+    <button onclick="setTheme('black')">ڕەشی</button>
+    <button onclick="setTheme('white')">سپی</button>
+    <button onclick="setTheme('red')">سوور</button>
+    <button onclick="setTheme('dark')">تاریک</button>
+    <button onclick="setTheme('grey')">خۆڵەمێشی</button>
+    <button onclick="closeMenu()">داخستن ✕</button>
+</nav>
+
+<!-- پەڕەی جۆرەکان -->
+<section id="categoryPage">
+    <button onclick="backHome()">← گەڕانەوە بۆ سەرەکی</button>
+    <h2 id="categoryPageTitle"></h2>
+    <div id="categoryPageGrid" class="media-grid"></div>
+</section>
+
+<!-- بەشی ناوەڕۆک -->
+<section class="content-section" id="featuredSection">
+    <h2>⭐ تایبەتەکان</h2>
+    <div id="featuredGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>🆕 تازە زیادکراوەکان</h2>
+    <div id="newestGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>زنجیرەکان</h2>
+    <div id="seriesGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>فیلمەکان</h2>
+    <div id="moviesGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>زنجیرە فیلم</h2>
+    <div id="seriesFilmGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>زنجیرە کۆرییەکان</h2>
+    <div id="koreanSeriesGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>بۆڵیوود</h2>
+    <div id="bollywoodGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>مانگا</h2>
+    <div id="mangaGrid" class="media-grid"></div>
+</section>
+
+<section class="content-section">
+    <h2>ئەنیمە</h2>
+    <div id="animeGrid" class="media-grid"></div>
+</section>
+
+<!-- ستاف -->
+<section class="content-section" id="staffSection">
+    <h2>وەرگێڕەکان</h2>
+    <div id="translatorsGrid" class="staff-grid"></div>
+    <h2>دیزاینەرەکان</h2>
+    <div id="designersGrid" class="staff-grid"></div>
+    <h2>تەکنیکارەکان</h2>
+    <div id="techniciansGrid" class="staff-grid"></div>
+</section>
+
+<!-- پەڕەی زانیاری -->
+<div id="detail">
+    <button onclick="closeDetail()">✕ داخستن</button>
+    <div id="detailContent"></div>
+</div>
+
+<!-- پەڕەی سەیرکردن -->
+<div id="watchPage">
+    <button onclick="closeWatchPage()">← گەڕانەوە</button>
+    <h2 id="watchTitle"></h2>
+    <div id="watchContent"></div>
+</div>
+
+<!-- بەشی ستاف لە بەڕێوەبەر -->
+<div id="staffForm" class="detail-panel">
+    <h3>بەڕێوەبردنی ستاف</h3>
+    <input id="staffId" type="hidden">
+    <input id="staffName" placeholder="ناوی ستاف">
+    <select id="staffRole">
+        <option value="translator">وەرگێڕ</option>
+        <option value="designer">دیزاینەر</option>
+        <option value="technician">تەکنیکار</option>
+    </select>
+    <input id="staffPhoto" type="file" accept="image/*">
+    <button onclick="saveStaff()">پاشەکەوتکردنی ستاف</button>
+    <button onclick="clearStaffForm()">پاککردنەوە</button>
+</div>
+
+<!-- کۆتایی و پەیوەندی -->
+<footer>
+    <p>CINEMA_CRC</p>
+    <a href="https://t.me/CINEMA_CRC1" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://www.tiktok.com/@cinema_crc" target="_blank" rel="noopener">TikTok</a>
+    <button onclick="toggleAdmin()">بەڕێوەبەر</button>
+</footer>
+
+<script>
+/* زیادکردنی دوگمەی مێنیۆ لە هەدەر */
+(function () {
+    const header = document.querySelector('header');
+
+    if (header && !document.getElementById('menuButton')) {
+        const button = document.createElement('button');
+        button.id = 'menuButton';
+        button.type = 'button';
+        button.textContent = '☰';
+        button.setAttribute('aria-label', 'مێنیۆ');
+        button.style.cssText =
+            'font-size:25px;padding:8px 14px;background:transparent;color:var(--text);border:0;cursor:pointer';
+        button.onclick = toggleMenu;
+        header.appendChild(button);
+    }
+
+    if (header && !document.getElementById('searchJump')) {
+        const button = document.createElement('button');
+        button.id = 'searchJump';
+        button.type = 'button';
+        button.textContent = '⌕';
+        button.style.cssText =
+            'font-size:25px;padding:8px 14px;background:transparent;color:var(--text);border:0;cursor:pointer';
+        button.onclick = () => {
+            document.getElementById('searchPanel')
+                ?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('search')?.focus();
+        };
+        header.appendChild(button);
+    }
+})();
+
+/* نوێکردنەوەی ستاف دوای چوونەژوورەوە */
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && isAdmin) loadStaff();
+});
 </script>
+
 </body>
 </html>
